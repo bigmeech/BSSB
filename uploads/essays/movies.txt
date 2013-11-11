@@ -1,0 +1,15 @@
+the hobbit                          8.1
+silver lining playbook              7.9
+life of pi                          8.1
+looper                              7.6
+the dark knight rises               8.6
+the master                          7.1
+the imposter                        7.5
+flight                              7.3
+django                              8.5
+cloud atlas                         7.6
+lincoln                             7.5
+the raid                            7.5
+this is 40                          6.2
+world war z                         7.2
+======================================================

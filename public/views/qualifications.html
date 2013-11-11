@@ -1,0 +1,215 @@
+<div>
+    <h4 class="form_heading">Step 3 - Basic Qualifications</h4>
+    <form>
+        <h4 class="form-sub-heading">O Level Details</h4>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">Exam Taken</label>
+                <div class="controls">
+
+                    <select id="selectExam" ng-model="selectedExam" ng-options="exam.name for exam in exams">
+                        <option value=""> -- Select an Exam -- </option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputCenterName">Center Name</label>
+                <div class="controls">
+                    <input type="text" id="inputCenterName" placeholder="Enter Center Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputYearAdmitted">Year Admitted</label>
+                <div class="controls">
+                    <input type="date" id="inputYearAdmitted" placeholder="Select Year Admitted">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputNoCredits">Number of Credits</label>
+                <div class="controls">
+                    <input type="text" id="inputNoCredits" placeholder="Number of Credits">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inputExamNumber">Exam Number</label>
+                <div class="controls">
+                    <input type="text" id="inputExamNumber" placeholder="Exam Number">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputExamYear">Exam Year</label>
+                <div class="controls">
+                    <div class="controls">
+                        <input type="date" id="inputExamYear" placeholder="Select Exam Year">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputYearGraduated">Year Graduated</label>
+                <div class="controls">
+                    <div class="controls">
+                        <input type="date" id="inputYearGraduated">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSubGrades">Subjects and Grades</label>
+                <div class="controls">
+                    <textarea required="" id="inputSubGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="control-group" style="clear: both">
+            <label class="controls">
+                Upload Attained Certificate
+                <input style="width: 90px;" type="file" value="" required title="Select a file to upload">
+            </label>
+        </div>
+        <p style="display: block;border-bottom: 1px solid #000;clear: both;width: 70%;margin: 10px;margin: 40px 40px;margin-left: 0;"></p>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">Exam Taken</label>
+                <div class="controls">
+
+                    <select id="selectExam" ng-model="selectedExam" ng-options="exam.name for exam in exams">
+                        <option value=""> -- Select an Exam -- </option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputCenterName">Center Name</label>
+                <div class="controls">
+                    <input type="text" id="inputCenterName" placeholder="Enter Center Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputYearAdmitted">Year Admitted</label>
+                <div class="controls">
+                    <input type="date" id="inputYearAdmitted" placeholder="Select Year Admitted">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputNoCredits">Number of Credits</label>
+                <div class="controls">
+                    <input type="text" id="inputNoCredits" placeholder="Number of Credits">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inputExamNumber">Exam Number</label>
+                <div class="controls">
+                    <input type="text" id="inputExamNumber" placeholder="Exam Number">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputExamYear">Exam Year</label>
+                <div class="controls">
+                    <div class="controls">
+                        <input type="date" id="inputExamYear" placeholder="Select Exam Year">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputYearGraduated">Year Graduated</label>
+                <div class="controls">
+                    <div class="controls">
+                        <input type="date" id="inputYearGraduated">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSubGrades">Subjects and Grades</label>
+                <div class="controls">
+                    <textarea required="" id="inputSubGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="control-group" style="clear: both">
+            <label class="controls">
+                Upload Attained Certificate
+                <input style="width: 90px;" type="file" value="" required title="Select a file to upload">
+            </label>
+        </div>
+        <p style="display: block;border-bottom: 1px solid #000;clear: both;width: 70%;margin: 10px;margin: 40px 40px;margin-left: 0;"></p>
+        <div class="form-part" style="clear: both">
+            <h4 style="clear: both" class="form-sub-heading">A Level Certificates</h4>
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">Exam Name</label>
+                <div class="controls">
+
+                    <select id="selectExam" ng-model="selectedExam" ng-options="exam.name for exam in exams">
+                        <option value=""> -- Select an Exam -- </option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputCenterName">Exam Center</label>
+                <div class="controls">
+                    <input type="text" id="inputCenterName" placeholder="Enter Center Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputYearAdmitted">Year Admitted</label>
+                <div class="controls">
+                    <input type="date" id="inputYearAdmitted" placeholder="Select Year Admitted">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputNoCredits">Number of Credits</label>
+                <div class="controls">
+                    <input type="text" id="inputNoCredits" placeholder="Number of Credits">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-part" style="margin-bottom: 20px">
+            <h4 style="clear: both" class="form-sub-heading">Paternal Info (Father's Details)</h4>
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">First name</label>
+                <div class="controls">
+                    <input type="text" id="inputFirstName" placeholder="First name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMiddelName">Surname Name</label>
+                <div class="controls">
+                    <input type="text" id="inputMiddelName" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSurname">Maiden Name</label>
+                <div class="controls">
+                    <input type="text" id="inputSurname" placeholder="Surname">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDOB">Village/Town</label>
+                <div class="controls">
+                    <input type="text" id="inputDOB" placeholder="Date Of Birth">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputGender">Clan</label>
+                <div class="controls">
+                    <input type="text" id="inputDOB" placeholder="Date Of Birth">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPhone">LGA</label>
+                <div class="controls">
+                    <input type="text" id="inputPhone" placeholder="Enter Phone">
+                </div>
+            </div>
+        </div>
+        <div style="clear: both" class="form-actions">
+            <button type="submit"  class="btn" ui-sref="main.biodata"> Back to BIO Data</button>
+            <button type="submit"  class="btn" ng-click="gotoHigherInst()"> Save and Continue to Higher Institution Details >> </button>
+        </div>
+    </form>
+</div>

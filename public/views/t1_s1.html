@@ -1,0 +1,70 @@
+<div ng-controller="SignupController">
+    <div id="header">
+        <img style="padding: 15px" src="img/logo.png"/>
+    </div>
+    <div id="signupContainer">
+        <div id="content" class="white_glow_box signup-box" ng-hide="loading">
+            <div>
+                <h3>Create an account</h3>
+            </div>
+            <div class="tarapet-signup">
+                <form ng-submit="signup()">
+                    <div class="form-splitter">
+                        <div class="control-group">
+                            <label>Full Name</label>
+                            <div class="controls">
+                                <input required type="text" ng-model="credentials.full_name" placeholder="Enter Full Name"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Email Address</label>
+                            <div class="controls">
+                                <input required type="text" ng-model="credentials.email" placeholder="Enter email address"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Retype Email Address</label>
+                            <div class="controls">
+                                <input required type="text" ng-model="credentials.retype_email" placeholder="Retype email address"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-splitter">
+                        <div class="control-group">
+                            <label>Password</label>
+                            <div class="controls">
+                                <input required type="password" ng-model="credentials.password" placeholder="Enter Password"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Confirm Password</label>
+                            <div class="controls">
+                                <input required type="password" ng-model="credentials.confirm_password" placeholder="Enter Password"/>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input ng-model="credentials.rememberMe" required type="checkbox">By clicking the sign up button i accept the terms and condtions of using this websites features and solemly abide by its rules
+                            </label>
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn">Create account</button>
+                    <a href="#/login" class="btn">Back to login</a>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="loading-box" ng-show="loading">
+            <img class="loading-img" src="img/gif-load.gif"/>
+            <div>{{busy_message}}</div>
+        </div>
+
+
+    </div>
+</div>
+<div id="footer">
+    <p>&copy; 2013 Tarapet. All rights reserved. Powered by O3 Interactive</p>
+</div>
