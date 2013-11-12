@@ -55,12 +55,21 @@ var tarapet=angular.module('tarapet',['ngCookies','ui.router','angularFileUpload
 );
 
 tarapet.run(function($rootScope,$location,AuthService){
-    var routesThatRequireAuth=['/main','/login','/dashboard']
+    var routesThatRequireAuth=[
+        '/main',
+        '/dashboard',
+        '/startapp',
+        '/biodata',
+        '/qualifications',
+        '/higher-inst',
+        '/profquali'
+    ]
 
     $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
-        console.log('Route Changed to :'+$location.url());
-        if(_.contains(routesThatRequireAuth, $location.path()) && !AuthService.isLoggedIn())
+        console.log('Route Changed to :'+toState.url);
+        if(_.contains(routesThatRequireAuth, toState.url) && !AuthService.isLoggedIn())
         {
+            event.preventDefault();
             $location.path('/login');
         }
     })
@@ -111,17 +120,13 @@ tarapet.factory("AuthService",function($rootScope,$location,$http,SessionService
             $rootScope.busy_message="Attempting to login....Please wait!!!";
 
             var login= $http.post("auth/login", credentials );
-            login.success(function(){
-                SessionService.set('authenticated', true);
-            });
+            login.success(cacheSession);
             return login;
         },
         logout:function()
         {
             var logout = $http.post('/auth/logout');
-            logout.success(function(){
-                SessionService.unset('authenticated');
-            });
+            logout.success(uncacheSession);
             return logout;
         },
         signup:function(fields)
@@ -219,9 +224,9 @@ tarapet.controller('DashboardController', function($scope,SessionService){
     console.log("from Dashboard Controller"+SessionService.get('applicant_id'));
 });
 
-tarapet.controller('StartController',function($scope,$location,$upload,SessionService,ApplicationService){
+tarapet.controller('StartController',function($rootScope,$scope,$location,$upload,SessionService,ApplicationService){
     console.log("Now in Start"+SessionService.get('applicant_id'));
-    var essayUrl=
+
     $scope.selectedType={}
     $scope.sTypes=
     [
@@ -230,31 +235,6 @@ tarapet.controller('StartController',function($scope,$location,$upload,SessionSe
         {name:'PHD',id:3},
         {name:'DBA',id:4}
     ]
-    $scope.onFileSelect=function($files)
-    {
-        $scope.uploading=true;
-        for(var i =0;i<$files.length;i++)
-        {
-            var $file=$files[i];
-            $scope.upload=$upload.upload({
-                url:'main/upload',
-                method:'post',
-                file:$file,
-                progress:function(evt)
-                {
-                    console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-                }
-            }).success(function(data,status,headers,config){
-
-                    console.log("File Uploaded sucessfully: "+data.message);
-                    $scope.uploadResult=data.message;
-                    $scope.startDetails.path_to_essay=data.filepath;
-                    $scope.uploading=false;
-                }).error(function(){
-                    console.log("Shit happened!!!");
-                });
-        }
-    }
     $scope.showError=false;
     $scope.startDetails={
         scholarship_type:null,
@@ -284,6 +264,34 @@ tarapet.controller('StartController',function($scope,$location,$upload,SessionSe
         }
 
     }
+
+    $scope.onFileSelect=function($files)
+    {
+        var handleFileSucess=function(data,status,headers,config)
+        {
+            $scope.uploadResult=data.message;
+            $scope.startDetails.path_to_essay=data.filepath;
+            $scope.uploading=false;
+            $rootScope.$$phase || $rootScope.$apply();
+        }
+        $scope.uploading=true;
+        for(var i =0;i<$files.length;i++)
+        {
+            var $file=$files[i];
+            $scope.upload=$upload.upload({
+                url:'main/upload',
+                method:'post',
+                file:$file,
+                progress:function(evt)
+                {
+                    console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                }
+            }).success(handleFileSucess).error(function(){
+                    console.log("Shit happened!!!");
+                });
+        }
+    }
+
 });
 
 tarapet.controller('BioDataController',function($scope,$location,ApplicationService){
