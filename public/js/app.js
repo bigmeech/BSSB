@@ -3,7 +3,7 @@
  */
 
 var tarapet=angular.module('tarapet',['ngCookies','ui.router','angularFileUpload']).config(
-    function( $stateProvider,$urlRouterProvider){
+    function($stateProvider,$urlRouterProvider){
         $stateProvider
             .state('main',{
                 url:'/main',
@@ -18,7 +18,14 @@ var tarapet=angular.module('tarapet',['ngCookies','ui.router','angularFileUpload
             .state('main.startapp',{
                 controller:'StartController',
                 url:'/startapp',
-                templateUrl:'../views/app-start.html'
+                templateUrl:'../views/app-start.html',
+                resolve:{
+                    getApplicationPromise:function($http,SessionService)
+                    {
+                        return $http.get('main/application',{params:{user_id:SessionService.get('user_id')}}
+                        )
+                    }
+                }
             })
             .state('main.biodata',{
                 controller:'BioDataController',
@@ -63,6 +70,7 @@ tarapet.run(function($rootScope,$location,AuthService){
         '/qualifications',
         '/higher-inst',
         '/profquali'
+
     ]
 
     $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
@@ -90,10 +98,32 @@ tarapet.factory('SessionService',function($cookieStore){
     }
 });
 
-tarapet.factory('ApplicationService',function($rootScope,$location,$http){
+tarapet.factory('ApplicationService',function($rootScope,$location,$http,SessionService){
     return{
+
         addScholarship:function(details){
-            console.log(details);
+                $http.post('main/startapp',details)
+                    .success(
+                    function(data, status, headers, config)
+                    {
+                        SessionService.set('essay_url',data.essay_url);
+                        SessionService.set('reg_number',data.reg_number);
+                        SessionService.set('course_of_study',data.course_of_study);
+                        SessionService.set('scholarship_type',data.scholarship_type);
+                        SessionService.set('government_bounded',data.government_bounded);
+                        SessionService.set('already_in_school',data.already_in_school);
+                        SessionService.set('has_admission',data.has_admission);
+                    })
+                    .error(
+                    function(data, status, headers, config){
+
+                            console.log("Error Adding stuff to db!");
+                    });
+
+        },
+        getScholarship:function()
+        {
+
         },
         addBioData:function(biodata){
 
@@ -112,6 +142,7 @@ tarapet.factory("AuthService",function($rootScope,$location,$http,SessionService
     var uncacheSession=function(){
         SessionService.unset('authenticated');
     };
+
 
     return{
         login:function(credentials)
@@ -171,9 +202,8 @@ tarapet.controller('LoginController',function($scope,$location,AuthService,Sessi
     $scope.login=function(){
         $scope.loading=true;
         AuthService.login($scope.credentials).success(function(data){
-            SessionService.set('userdata',data.id);
+            SessionService.set('user_id',data.id);
             SessionService.set('full_name',data.full_name);
-            SessionService.set('applicant_id',data.applicant_id);
             $location.path('/main/dashboard');
         }).error(function(){
                 $scope.loading=false;
@@ -224,9 +254,8 @@ tarapet.controller('DashboardController', function($scope,SessionService){
     console.log("from Dashboard Controller"+SessionService.get('applicant_id'));
 });
 
-tarapet.controller('StartController',function($rootScope,$scope,$location,$upload,SessionService,ApplicationService){
-    console.log("Now in Start"+SessionService.get('applicant_id'));
-
+tarapet.controller('StartController',function($rootScope,$scope,$location,$upload,SessionService,ApplicationService,getApplicationPromise){
+    $scope.application_data=getApplicationPromise.data;
     $scope.selectedType={}
     $scope.sTypes=
     [
@@ -236,13 +265,19 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
         {name:'DBA',id:4}
     ]
     $scope.showError=false;
+
+    //search scholarship type array for Type Code
+
     $scope.startDetails={
-        scholarship_type:null,
-        course_of_study:null,
-        ready_to_bound:false,
-        already_in_school:false,
-        has_an_admission:false,
-        path_to_essay:null
+        user_id:SessionService.get('user_id'),
+        scholarship_type:_.find($scope.sTypes,function(type){
+            return type.name==getApplicationPromise.data.scholarship_type;
+        }),
+        course_of_study:getApplicationPromise.data.course_of_study,
+        ready_to_bound:getApplicationPromise.data.government_bounded=='YES'?true:false,
+        already_in_school:getApplicationPromise.data.already_in_school=='YES'?true:false,
+        has_an_admission:getApplicationPromise.data.has_admission=='YES'?true:false,
+        path_to_essay:getApplicationPromise.data.essay_url
     }
 
     $scope.start=function()
@@ -250,9 +285,6 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
         $scope.showError=false;
         if($scope.startDetails.scholarship_type
             && $scope.startDetails.course_of_study
-            && $scope.startDetails.ready_to_bound
-            && $scope.startDetails.already_in_school
-            && $scope.startDetails.has_an_admission
             && $scope.startDetails.path_to_essay)
         {
             ApplicationService.addScholarship($scope.startDetails);

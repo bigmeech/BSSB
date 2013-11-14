@@ -18,7 +18,6 @@ class CreateUsers extends Migration {
             $table->string('email');
             $table->string('password');
             $table->string('full_name');
-            $table->string('applicant_id')->nullable();
             $table->timestamps();
         });
 	}

@@ -20,12 +20,9 @@ class AuthController extends \BaseController {
 	 */
 	public function login()
 	{
-		if(Auth::attempt(array('email' => Input::json('username'), 'password' => Input::json('password'))))
-        {
+		if(Auth::attempt(array('email' => Input::json('username'), 'password' => Input::json('password')))){
             return Response::json(Auth::user());
-        }
-        else
-        {
+        }else{
             return Response::json(array('flash' => 'Invalid Username or Password Supplied'),500);
         }
 	}
@@ -67,8 +64,6 @@ class AuthController extends \BaseController {
         $newUser->email=$input['email'];
         $newUser->password=$password;
         $newUser->full_name=$input['full_name'];
-        $newUser->save();
-        $newUser->applicant_id=$newUser->generateApplicantId($newUser->id);
         $newUser->save();
 	}
 

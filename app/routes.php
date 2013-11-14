@@ -20,3 +20,12 @@ Route::post('auth/login','AuthController@login');
 Route::post('auth/signup','AuthController@signup');
 Route::post('auth/logout','AuthController@logout');
 Route::post('main/upload','ApplicantController@handleEssayFileUpload');
+Route::post('main/startapp','ApplicantController@saveStartApp');
+Route::get('main/application','ApplicantController@fetchApplication');
+Route::get('pdf',function(){
+    Fpdf::AddPage();
+    Fpdf::SetFont('Arial','B',16);
+    Fpdf::Cell(40,10,'Hello World!');
+    Fpdf::Output();
+    exit;
+});
