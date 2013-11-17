@@ -4,6 +4,7 @@
     <title>BSSB :: BAYELSA STATE SCHOLARSHIP JOB</title>
     <link href="css/tarepet.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <div id="main">
