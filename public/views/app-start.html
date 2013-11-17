@@ -1,4 +1,50 @@
 <div id="appstart">
+    <div  id="wizard" class="swMain">
+        <ul>
+            <li>
+                <a href="#step-1">
+                    <div class="stepNumber">
+                        1
+                    </div>
+														<span class="stepDesc"> Step 1
+															<br />
+															<small>Bio Data</small> </span>
+                </a>
+            </li>
+            <li>
+                <a href="#step-2">
+                    <div class="stepNumber">
+                        2
+                    </div>
+														<span class="stepDesc"> Step 2
+															<br />
+															<small>Educational Data</small> </span>
+                </a>
+            </li>
+            <li>
+                <a href="#step-3">
+                    <div class="stepNumber">
+                        3
+                    </div>
+														<span class="stepDesc"> Step 3
+															<br />
+															<small>Upload Documents</small> </span>
+                </a>
+            </li>
+            <li>
+                <a href="#step-4">
+                    <div class="stepNumber">
+                        4
+                    </div>
+														<span class="stepDesc"> Step 4
+															<br />
+															<small>Preview Applicantion</small> </span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
     <div class="alert alert-error alert-block fade in" ng-show="showError">
         <h4>Error!</h4>
         <p>You <strong>MUST</strong> complete all the fields to move on to the next step</p>
@@ -48,6 +94,7 @@
     <div class="progress progress-striped active" ng-show="uploading">
             <div class="bar" style="width: 100%;"></div>
     </div>
+        <div><a href="main/"></a></div>
     <div class="form-actions">
         <button type="submit"  class="btn" ng-click="start()"> Save and Continue to BIO Data >> </button>
     </div>
