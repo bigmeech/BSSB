@@ -244,7 +244,7 @@ html, body
 #main-content
 {
     margin-top: 0;
-    padding-top: 120px;
+    padding-top: 10px;
     padding-left: 20px;
     width: 1300px;
     margin-left: auto;
@@ -260,7 +260,7 @@ html, body
     background-color: #ffffff;
     padding-top: 0px;
     padding: 20px;
-    position: fixed;
+    /*position: fixed;*/
     -webkit-box-shadow: 1px 1px 6px #ccc;
     -moz-box-shadow: 1px 1px 6px #ccc;
     box-shadow: 1px 1px 6px #ccc;
@@ -270,6 +270,7 @@ html, body
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    height: 50px;
 }
 
 #main-nav-bar
