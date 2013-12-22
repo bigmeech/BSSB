@@ -1,0 +1,67 @@
+<div>
+    <div id="appstart" class="view-container">
+        <div class="alert alert-error alert-block fade in" ng-show="showError">
+            <h4>Error!</h4>
+            <p>You <strong>MUST</strong> complete all the fields to move on to the next step</p>
+        </div>
+        <h4 class="form_heading">Step 1 - Scholarship Application Details</h4>
+
+        <form  ng-submit="login()">
+        <div class="control-group">
+            <label class="control-label" for="selectScholType">Type of Scholarship</label>
+            <div class="controls">
+                <select id="selectScholType" required="" ng-model="startDetails.scholarship_type" ng-options="sType.name for sType in sTypes">
+                    <option value="">--- Select Scholarship ---</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPassword">Course of Study</label>
+            <div class="controls">
+                <input ng-model="startDetails.course_of_study" type="text" required id="inputPassword" placeholder="Enter course of study">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="checkbox inline">
+                <input ng-model="startDetails.ready_to_bound" type="checkbox" id="inlineCheckbox1" value="bound agreed">
+                i am ready to be bounded to the governemnent of Bayelsa State after your graduation.
+            </label>
+        </div>
+        <div class="control-group">
+            <label class="checkbox inline">
+                <input ng-model="startDetails.already_in_school" type="checkbox" id="inlineCheckbox2" value="in school">
+                I am already in school.
+            </label>
+        </div>
+        <div class="control-group">
+            <label class="checkbox inline">
+                <input ng-model="startDetails.has_an_admission" type="checkbox" id="inlineCheckbox3" value="has admission">
+                I have an admission presently.
+            </label>
+        </div>
+        <div class="control-group">
+            <label class="controls">
+                Upload Handwritten 1000 words of motivation
+                <input name="essay" value="{{application_data.essay_url}}" type="file" ng-file-select="onFileSelect($files)" {{application_data.essay_url||required}} title="Select your handwritten 1000 words of motivation">
+            </label>
+            <div class="progress progress-striped active" ng-show="uploading">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+            <div ng-show="application_data.essay_url"
+                 class="alert alert-info">Saved File - <strong>{{application_data.essay_url}} </strong> </div>
+            <div ng-show="pathReturned"
+                 class="alert alert-success">Successfully uploaded file - <strong>{{filename}} </strong> </div>
+            <div ng-show="uploadErrorMessage"
+                 class="alert alert-error"><strong>Upload Error!!!</strong> - {{uploadErrorMessage}}</div>
+        </div>
+            <div class="form-actions">
+            <button type="submit"  class="btn" ng-click="start()"> Save and Continue to BIO Data >> </button>
+        </div>
+        </form>
+        <!--<div class="loading-box" ng-show="loading">
+        <img class="loading-img" src="img/gif-load.gif"/>
+        <div>Loading....Please wait</div>
+    </div> -->
+    </div>
+    <bssb-loader></bssb-loader>
+</div>

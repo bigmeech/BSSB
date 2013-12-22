@@ -1,0 +1,45 @@
+
+
+
+<div id="templateBox" ng-controller="LoginController">
+        <div id="login-box">
+
+            <div id="vert-pos">
+
+                <div id="login-content" ng-hide="loading">
+            <div class="logo_container">
+                <img src="img/logo_small.png"/>
+            </div>
+            <div class="alert alert-error" ng-show="error">{{error}}</div>
+            <div class="tarapet-login">
+                <form ng-submit="login()">
+                    <div class="control-group">
+                        <label>Email Address</label>
+                        <div class="controls">
+                            <input required autofocus type="email" ng-model="credentials.username" placeholder="Enter email address"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>Password</label>
+                        <div class="controls">
+                            <input required type="password" ng-model="credentials.password" placeholder="Enter Password"/>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <label class="checkbox">
+                            <input ng-model="credentials.rememberMe" type="checkbox">Remember me
+                        </label>
+                        <button type="submit" class="btn">Sign in</button>
+                        <a type="button" href="#/signup" class="btn btn-primary">Click here to sign up</a>
+
+                    </div>
+                </form>
+                <p style="margin-top: 37px;font-size: 12px;">&copy; 2013 Tarapet. All rights reserved. Powered by O3 Interactive</p>
+            </div>
+        </div>
+
+            </div>
+
+        </div>
+        <bssb-loader></bssb-loader>
+</div>

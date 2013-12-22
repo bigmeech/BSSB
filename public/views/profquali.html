@@ -1,0 +1,128 @@
+<div class="view-container">
+    <h4 class="form_heading">Step 5 - Professional Qualifications</h4>
+    <form>
+        <div class="form-part">
+            <h4 class="form-sub-heading">Institution Attained From</h4>
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">Name Of institution</label>
+                <div class="controls">
+                    <input type="text" id="inputFirstName" ng-model="profQualiDetails.inst1_name" placeholder="First name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMiddelName">License Number</label>
+                <div class="controls">
+                    <input type="text" id="inputMiddelName" ng-model="profQualiDetails.inst1_license" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSurname">Year Attained</label>
+                <div class="controls">
+                    <input type="date" id="inputSurname" ng-model="profQualiDetails.inst1_year" placeholder="Year Attained">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDOB">Designaton</label>
+                <div class="controls">
+                    <input type="text" id="inputDOB" ng-model="profQualiDetails.inst1_designation" placeholder="Designation">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="controls">
+                    Upload Attained Certificate
+                    <input style="width: 90px" type="file" ng-file-select="onFileSelect($files,'prof1_cert')" required title="Select a file to upload" >
+                </label>
+            </div>
+            <div class="progress progress-striped active" ng-show="uploadingInst1">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+            <div ng-show="inst1_filename" class="alert alert-info">Saved Qualification 1 Certificate: <strong>{{inst1_filename}}</strong></a></div>
+        </div>
+        <div class="form-part">
+            <h4 class="form-sub-heading">Additional Institution Attained From</h4>
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">Name Of institution</label>
+                <div class="controls">
+                    <input type="text" id="inputFirstName" ng-model="profQualiDetails.inst2_name" placeholder="First name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMiddelName">License Number</label>
+                <div class="controls">
+                    <input type="text" ng-model="profQualiDetails.inst2_license" id="inputMiddelName" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSurname">Year Attained</label>
+                <div class="controls">
+                    <input type="date" id="inputSurname" ng-model="profQualiDetails.inst2_year" placeholder="Year Attained">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDOB">Designaton</label>
+                <div class="controls">
+                    <input type="text" id="inputDOB" ng-model="profQualiDetails.inst2_designation" placeholder="Designation">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="controls">
+                    Upload Attained Certificate
+                    <input style="width: 90px" type="file" ng-file-select="onFileSelect($files,'prof2_cert')" value="" required title="Select a file to upload">
+                </label>
+                <div class="progress progress-striped active" ng-show="uploadingInst2">
+                    <div class="bar" style="width: 100%;"></div>
+                </div>
+            </div>
+
+        </div>
+        <div style="clear: both" class="alert alert-info" ng-show="inst1_cert_filename">Professional Qualification 1 Certificate: <strong>{{inst1_cert_filename}}</strong></div>
+        <div style="clear: both" class="alert alert-info" ng-show="inst2_cert_filename">Professional Qualification 2 Certificate: <strong>{{inst2_cert_filename}}</strong></div>
+
+
+        <div style="clear: both">
+            <h4 style="clear: both" class="form-sub-heading">Referees</h4>
+            <div class="form-part">
+                <div class="control-group">
+                    <label class="control-label" for="inputFirstName">Full Name</label>
+                    <div class="controls">
+                        <input type="text" id="inputFirstName" ng-model="profQualiDetails.ref_full_name" placeholder="First name">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputOccupation">Occupation</label>
+                    <div class="controls">
+                        <input type="text" id="inputOccupation" ng-model="profQualiDetails.ref_occupation" placeholder="Occupation">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPhone">Phone Number</label>
+                    <div class="controls">
+                        <input type="text" id="inputPhone" ng-model="profQualiDetails.ref_phone_number" placeholder="Phone">
+                    </div>
+                </div>
+            </div>
+            <div class="form-part">
+                <div class="control-group">
+                    <label class="control-label" for="inputAddress">Address</label>
+                    <div class="controls">
+                        <input type="text" id="inputAddress" ng-model="profQualiDetails.ref_address" placeholder="Address">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Email</label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" ng-model="profQualiDetails.ref_email" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div style="clear: both" class="form-actions">
+            <button type="submit"  class="btn" ui-sref="main.higher-inst"> Back to Higher Institution Details</button>
+            <button type="submit"  class="btn btn-primary" ng-click="saveAndPreview()"> Save and Preview</button>
+        </div>
+    </form>
+    <bssb-loader></bssb-loader>
+</div>

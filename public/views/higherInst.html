@@ -1,0 +1,207 @@
+<div class="view-container">
+    <h4 class="form_heading">Step 4 - Higher Institution</h4>
+    <form>
+        <h4 class="form-sub-heading">First Institution</h4>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inst1name">Name Of institution</label>
+                <div class="controls">
+                    <input type="text" required id="inst1name" ng-model="higherInstDetails.inst1_name" placeholder="Name of Institution">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inst1cos">Course of Study</label>
+                <div class="controls">
+                    <input type="text" required id="inst1cos" ng-model="higherInstDetails.inst1_cos" placeholder="Course of Study">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="cosd">Course Duration</label>
+                <div class="controls">
+                    <input type="text" required id="cosd" ng-model="higherInstDetails.inst1_duration" placeholder="Enter Number of years">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="certObtained">Certificate obtained</label>
+                <div class="controls">
+                    <input type="text" required ng-model="higherInstDetails.inst1_cert" id="certObtained" placeholder="Enter Name of Certificate">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="adminY">Admission Year</label>
+                <div class="controls">
+                    <input type="date" required id="adminY" ng-model="higherInstDetails.inst1_admission_year">
+                </div>
+            </div>
+        </div>
+        <div class="form-part" style="float: left">
+            <div class="control-group">
+                <label class="control-label" for="expgradYear">Expected Graduation Year</label>
+                <div class="controls">
+                    <input type="date" required id="expgradYear" ng-model="higherInstDetails.inst1_exp_grad_year">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="gradYear">Graduation Year</label>
+                <div class="controls">
+                    <input type="date" required id="gradYear" ng-model="higherInstDetails.inst1_grad_year">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="grade1">Grade</label>
+                <div class="controls">
+                    <input type="text" required id="grade1" ng-model="higherInstDetails.inst1_grade" placeholder="Enter your overall grade">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="reason1">State Reason if expected year of graduation<br> differs from graduated year</label>
+                <div class="controls">
+                    <textarea id="reason1" required ng-model="higherInstDetails.inst1_reason" placeholder="Enter Residential Address" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="control-group" style="clear: both">
+            <label class="controls">
+                Upload Institution 1 Certificate
+                <input style="width: 90px;" required type="file" value="" ng-file-select="onFileSelect($files,'inst1')" title="Select a file to upload">
+            </label>
+        </div>
+        <div class="progress progress-striped active" ng-show="uploadingInst1">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+        <div ng-show="inst1_filename" style="clear: both" class="alert alert-info">Saved Institution 1 Certificate: <strong>{{inst1_filename}}</strong></div>
+        <h4 style="margin-top: 30px" class="form-sub-heading">Second Institution</h4>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inst2name">Name Of institution</label>
+                <div class="controls">
+                    <input type="text" id="inst2name" ng-model="higherInstDetails.inst2_name" placeholder="Name of Institution">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inst2cos">Course of Study</label>
+                <div class="controls">
+                    <input type="text" id="inst2cos" ng-model="higherInstDetails.inst2_cos" placeholder="Course of Study">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="cosd">Course Duration</label>
+                <div class="controls">
+                    <input type="text" id="cosd" ng-model="higherInstDetails.inst2_duration" placeholder="Enter Number of years">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="certObtained">Certificate obtained</label>
+                <div class="controls">
+                    <input type="text" ng-model="higherInstDetails.inst2_cert" id="certObtained" placeholder="Enter Name of Certificate">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="adminY">Admission Year</label>
+                <div class="controls">
+                    <input type="date" id="adminY" ng-model="higherInstDetails.inst2_admission_year">
+                </div>
+            </div>
+        </div>
+        <div class="form-part" style="float: left">
+            <div class="control-group">
+                <label class="control-label" for="expgradYear">Expected Graduation Year</label>
+                <div class="controls">
+                    <input type="date" id="expgradYear" ng-model="higherInstDetails.inst2_exp_grad_year">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="gradYear">Graduation Year</label>
+                <div class="controls">
+                    <input type="date" id="gradYear" ng-model="higherInstDetails.inst2_grad_year">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="grade2">Grade</label>
+                <div class="controls">
+                    <input type="text" id="grade2" ng-model="higherInstDetails.inst2_grade" placeholder="Enter your overall grade">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="reason2">State Reason if expected year of graduation<br> differs from graduated year</label>
+                <div class="controls">
+                    <textarea id="reason2"ng-model="higherInstDetails.inst2_reason" placeholder="Enter Residential Address" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="control-group" style="clear: both">
+            <label class="controls">
+                Upload Institution 2 Certificate
+                <input style="width: 90px;" type="file" value="" ng-file-select="onFileSelect($files,'inst2')" title="Select a file to upload">
+            </label>
+        </div>
+        <div class="progress progress-striped active" ng-show="uploadingInst2">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+        <div ng-show="inst2_filename" style="clear: both" class="alert alert-info">Saved Institution 2 Certificate: <strong>{{inst2_filename}}</strong></div>
+
+        <h4 style="margin-top: 30px" class="form-sub-heading">NYSC Details</h4>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inst1name">State</label>
+                <div class="controls">
+                    <input type="text" required id="inst1name" ng-model="higherInstDetails.nysc_state" placeholder="Name of Institution">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inst1cos">Call-Up Number</label>
+                <div class="controls">
+                    <input type="text" required id="inst1cos" ng-model="higherInstDetails.nysc_call_up" placeholder="Course of Study">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="cosd">Batch</label>
+                <div class="controls">
+                    <input type="text" required id="cosd" ng-model="higherInstDetails.nysc_batch" placeholder="Enter batch">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="certObtained">Year</label>
+                <div class="controls">
+                    <input type="date" required ng-model="higherInstDetails.nysc_year" id="certObtained" placeholder="Enter Name of Certificate">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="compy">year of completion</label>
+                <div class="controls">
+                    <input type="date" required id="compy" ng-model="higherInstDetails.nysc_completion_year">
+                </div>
+            </div>
+        </div>
+        <div class="form-part" style="float: left">
+            <div class="control-group">
+                <label class="checkbox inline">
+                    <input type="checkbox" required ng-model="higherInstDetails.nysc_exempted">
+                    Were you exmepted?
+                </label>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="resExmpted">State reason if exempted</label>
+                <div class="controls">
+                    <textarea id="resExmpted" required ng-model="higherInstDetails.reason_exempted" placeholder="State reason here" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="control-group" style="clear: both">
+            <label class="controls">
+                Upload NYSC Certificate
+                <input style="width: 90px;" required type="file" value="" ng-file-select="onFileSelect($files,'nysc')" title="Select a file to upload">
+            </label>
+        </div>
+        <div class="progress progress-striped active" ng-show="uploadingNYSC">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+        <div ng-show="nysc_filename" style="clear: both" class="alert alert-info">Saved NYSC Certificate: <strong>{{nysc_filename}}</strong></div>
+        <div style="clear: both" class="form-actions">
+            <button type="submit"  class="btn" ui-sref="main.qualifications"> Back to Basic Qualifications</button>
+            <button type="submit"  class="btn" ng-click="gotoProfQuali()"> Save and Continue to Professional Qualification Details >> </button>
+        </div>
+    </form>
+
+    <bssb-loader></bssb-loader>
+</div>

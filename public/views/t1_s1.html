@@ -1,0 +1,69 @@
+<div ng-controller="SignupController">
+    <div id="signupContainer">
+        <div id="content" class="white_glow_box signup-box" ng-hide="hideSignup">
+            <div style="padding-bottom: 10px;padding-top: 20px">
+                <img src="img/logo_small.png"/>
+            </div>
+            <div class="alert alert-error" ng-show="error">{{error}}</div>
+            <div>
+                <h5>Create an account</h5>
+            </div>
+            <div class="tarapet-signup">
+                <form ng-submit="signup()">
+                    <div class="form-splitter">
+                        <div class="control-group">
+                            <label>First name</label>
+                            <div class="controls">
+                                <input required type="text" ng-model="credentials.firstname" placeholder="Enter First Name"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Last name</label>
+                            <div class="controls">
+                                <input required type="text" ng-model="credentials.lastname" placeholder="Enter Last Name"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Email Address</label>
+                            <div class="controls">
+                                <input required type="email" ng-model="credentials.email" placeholder="Enter email address"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label>Retype Email Address</label>
+                            <div class="controls">
+                                <input required type="email" ng-model="credentials.retype_email" placeholder="Retype email address"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label style="font-size: 11px;" class="checkbox">
+                                <input ng-model="credentials.termsAccept" required type="checkbox">By clicking the sign up button i accept the terms and condtions of using this websites features and solemly abide by its rules
+                            </label>
+
+                        </div>
+                        <button type="submit" class="btn">Create account</button>
+                        <a href="#/login" class="btn">Back to login</a>
+                        <p style="margin-top: 37px;font-size: 10px;">&copy; 2013 BSSB. All rights reserved. Powered by O3 Interactive</p>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+
+
+        <div class="signup-conf-box" ng-show="signupComplete">
+            <h4 style="color: #009933;font-size: 13px">Account Created.</h4>
+            <div>
+                <p>An email has been sent to <strong>{{email}}</strong> with your details. If you have not received an email, please be sure to check your junk mail folder.</p>
+                <p>Login to your dashboard to start the application process</p>
+            </div>
+            <a href="#/login" class="btn btn-primary">Return to login</a>
+        </div>
+
+
+    </div>
+    <bssb-loader></bssb-loader>
+</div>

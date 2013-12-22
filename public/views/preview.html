@@ -1,0 +1,522 @@
+<div style="padding: 57px; background-color: white">
+    <h3>Your Application</h3>
+    <div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td class="preview-thead"><strong>Scholarship Details</strong></td>
+                    <td><a href="#/main/startapp">Edit this section</a></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Scholarship Type </td>
+                    <td><em>{{previewDetails.scholarship.scholarship_type}}</em></td>
+                </tr>
+                <tr>
+                    <td>Course Of Study </td>
+                    <td><em>{{previewDetails.scholarship.course_of_study}}</em></td>
+                </tr>
+                <tr>
+                    <td>Agreed to be bounded by Government </td>
+                    <td><em>{{previewDetails.scholarship.government_bounded}}</em></td>
+                </tr>
+                <tr>
+                    <td>Already has an Admission </td>
+                    <td><em>{{previewDetails.scholarship.has_admission}}</em></td>
+                </tr>
+                <tr>
+                    <td>Already In School </td>
+                    <td><em>{{previewDetails.scholarship.already_in_school}}</em></td>
+                </tr>
+                <tr>
+                    <td>Motivational Essay </td>
+                    <td><em>{{previewDetails.scholarship.essay_url | trimOffPath}}</em></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td class="preview-thead"><strong>Bio Data</strong></td>
+                <td><a href="#/main/biodata">Edit this section</a></td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First Name </td>
+                    <td><em>{{previewDetails.bioData.firstname}}</em></td>
+                </tr>
+                <tr>
+                    <td>Middle Name</td>
+                    <td><em>{{previewDetails.bioData.middleName}}</em></td>
+                </tr>
+                <tr>
+                    <td>Surname </td>
+                    <td><em>{{previewDetails.bioData.surname}}</em></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><em>{{previewDetails.bioData.dob}}</em></td>
+                </tr>
+                <tr>
+                    <td>Place of Birth</td>
+                    <td><em>{{previewDetails.bioData.pob}}</em></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><em>{{previewDetails.bioData.gender}}</em></td>
+                </tr>
+                <tr>
+                    <td>Phone </td>
+                    <td><em>{{previewDetails.bioData.phone}}</em></td>
+                </tr>
+                <tr>
+                    <td>Email </td>
+                    <td><em>{{previewDetails.bioData.email}}</em></td>
+                </tr>
+                <tr>
+                    <td>Compound Name</td>
+                    <td><em>{{previewDetails.bioData.compoundName}}</em></td>
+                </tr>
+                <tr>
+                    <td>Residential Address</td>
+                    <td><em>{{previewDetails.bioData.residentialAddress}}</em></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Mother's First Name</td>
+                    <td><em>{{previewDetails.bioData.mFirstName}}</em></td>
+                </tr>
+                <tr>
+                    <td>Mother's Surname</td>
+                    <td><em>{{previewDetails.bioData.mSurname}}</em></td>
+                </tr>
+                <tr>
+                    <td>Mother's Maiden Name</td>
+                    <td><em>{{previewDetails.bioData.maidenName}}</em></td>
+                </tr>
+                <tr>
+                    <td>Mother's Village</td>
+                    <td><em>{{previewDetails.bioData.mVillage}}</em></td>
+                </tr>
+                <tr>
+                    <td>Mother's Clan</td>
+                    <td><em>{{previewDetails.bioData.mClan}}</em></td>
+                </tr>
+                <tr>
+                    <td>Mother's Local Govt Area</td>
+                    <td><em>{{previewDetails.bioData.mLGA}}</em></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Father's First Name</td>
+                    <td><em>{{previewDetails.bioData.pFirstName}}</em></td>
+                </tr>
+                <tr>
+                    <td>Father's Surname</td>
+                    <td><em>{{previewDetails.bioData.pSurname}}</em></td>
+                </tr>
+                <tr>
+                    <td>Father's Paternal Name</td>
+                    <td><em>{{previewDetails.bioData.paternalName}}</em></td>
+                </tr>
+                <tr>
+                    <td>Father's Village</td>
+                    <td><em>{{previewDetails.bioData.pVillage}}</em></td>
+                </tr>
+                <tr>
+                    <td>Father's Clan</td>
+                    <td><em>{{previewDetails.bioData.pClan}}</em></td>
+                </tr>
+                <tr>
+                    <td>Father's Local Govt Area</td>
+                    <td><em>{{previewDetails.bioData.pLGA}}</em></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td class="preview-thead"><strong>Basic Qualifications</strong></td>
+                <td><a href="#/main/qualifications">Edit this section</a></td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First sitting exam name</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_exam}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting exam number</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_exam_number}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting center name</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_center_name}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting exam year</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_exam_year}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting admission year</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_year_admitted}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting year graduated</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_year_graduated}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting number of credits </td>
+                    <td><em>{{previewDetails.basicQualifications.s1_credits}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting subject and grades</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_subAndGrades}}</em></td>
+                </tr>
+                <tr>
+                    <td>First sitting certificate</td>
+                    <td><em>{{previewDetails.basicQualifications.s1_cert_url | trimOffPath}}</em></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Second sitting exam name</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_exam}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting exam number</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_exam_number}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting center name</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_center_name}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting exam year</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_exam_year}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting admission year</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_year_admitted}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting year graduated</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_year_graduated}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting number of credits </td>
+                    <td><em>{{previewDetails.basicQualifications.s2_credits}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting subject and grades</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_subAndGrades}}</em></td>
+                </tr>
+                <tr>
+                    <td>Second sitting certificate</td>
+                    <td><em>{{previewDetails.basicQualifications.s2_cert_url | trimOffPath}}</em></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>A levels exam name</td>
+                    <td><em>{{previewDetails.basicQualifications.a_exam}}</em></td>
+                </tr>
+                <tr>
+                    <td>A levels exam number</td>
+                    <td><em>{{previewDetails.basicQualifications.a_exam_number}}</em></td>
+                </tr>
+                <tr>
+                    <td>A levels center name</td>
+                    <td><em>{{previewDetails.basicQualifications.a_center_name}}</em></td>
+                </tr>
+                <tr>
+                    <td>A levels credits</td>
+                    <td><em>{{previewDetails.basicQualifications.a_credits}}</em></td>
+                </tr>
+                <tr>
+                    <td>A levels subject and grades</td>
+                    <td><em>{{previewDetails.basicQualifications.a_subAndGrades}}</em></td>
+                </tr>
+                <tr>
+                    <td>A levels Certificate</td>
+                    <td><em>{{previewDetails.basicQualifications.a_cert_url | trimOffPath}}</em></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Jamb exam number</td>
+                    <td><em>{{previewDetails.basicQualifications.a_exam_number}}</em></td>
+                </tr>
+                <tr>
+                    <td>Jamb center name</td>
+                    <td><em>{{previewDetails.basicQualifications.jamb_center_name}}</em></td>
+                </tr>
+                <tr>
+                    <td>jamb exam year</td>
+                    <td><em>{{previewDetails.basicQualifications.jamb_exam_year}}</em></td>
+                </tr>
+                <tr>
+                    <td>Jamb total score</td>
+                    <td><em>{{previewDetails.basicQualifications.jamb_total_score}}</em></td>
+                </tr>
+                <tr>
+                    <td>Jamb Subject and Score</td>
+                    <td><em>{{previewDetails.basicQualifications.jamb_subAndScore}}</em></td>
+                </tr>
+                <tr>
+                    <td>Jamb Certificate</td>
+                    <td><em>{{previewDetails.basicQualifications.jamb_cert_url | trimOffPath}}</em></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td class="preview-thead"><strong>Higher Institution Details</strong></td>
+                <td><a href="#/main/higher-inst">Edit this section</a></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Name of Instituition 1</td>
+                <td><em>{{previewDetails.higherInst.inst1_name}}</em></td>
+            </tr>
+            <tr>
+                <td>Course Of Study </td>
+                <td><em>{{previewDetails.higherInst.inst1_cos}}</em></td>
+            </tr>
+            <tr>
+                <td>Course Duration </td>
+                <td><em>{{previewDetails.higherInst.inst1_duration}}</em></td>
+            </tr>
+            <tr>
+                <td>Institution 1 certificate obtained</td>
+                <td><em>{{previewDetails.higherInst.inst1_cert}}</em></td>
+            </tr>
+            <tr>
+                <td>Admission year</td>
+                <td><em>{{previewDetails.higherInst.inst1_admission_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Graduation year</td>
+                <td><em>{{previewDetails.higherInst.inst1_grad_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Expected graduation year</td>
+                <td><em>{{previewDetails.higherInst.inst1_exp_grad_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Final grade</td>
+                <td><em>{{previewDetails.higherInst.inst1_grade}}</em></td>
+            </tr>
+            <tr>
+                <td>Graduation Certificate</td>
+                <td><em>{{previewDetails.higherInst.inst1_cert_url | trimOffPath}}</em></td>
+            </tr>
+            <tr>
+                <td>Reason for late graduatiion</td>
+                <td><em>{{previewDetails.higherInst.inst1_reason}}</em></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Name of Instituition 2</td>
+                <td><em>{{previewDetails.higherInst.inst2_name}}</em></td>
+            </tr>
+            <tr>
+                <td>Course Of Study </td>
+                <td><em>{{previewDetails.higherInst.inst2_cos}}</em></td>
+            </tr>
+            <tr>
+                <td>Course Duration </td>
+                <td><em>{{previewDetails.higherInst.inst2_duration}}</em></td>
+            </tr>
+            <tr>
+                <td>Institution 2 certificate obtained</td>
+                <td><em>{{previewDetails.higherInst.inst2_cert}}</em></td>
+            </tr>
+            <tr>
+                <td>Admission year</td>
+                <td><em>{{previewDetails.higherInst.inst2_admission_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Graduation year</td>
+                <td><em>{{previewDetails.higherInst.inst2_grad_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Expected graduation year</td>
+                <td><em>{{previewDetails.higherInst.inst2_exp_grad_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Final grade</td>
+                <td><em>{{previewDetails.higherInst.inst2_grade}}</em></td>
+            </tr>
+            <tr>
+                <td>Graduation Certificate</td>
+                <td><em>{{previewDetails.higherInst.inst2_cert_url | trimOffPath}}</em></td>
+            </tr>
+            <tr>
+                <td>Reason for late graduatiion</td>
+                <td><em>{{previewDetails.higherInst.inst2_reason}}</em></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>National Youth Service (NYSC) State</td>
+                <td><em>{{previewDetails.higherInst.nysc_state}}</em></td>
+            </tr>
+            <tr>
+                <td>NYSC Callup Number</td>
+                <td><em>{{previewDetails.higherInst.nysc_call_up}}</em></td>
+            </tr>
+            <tr>
+                <td>NYSC Batch Number</td>
+                <td><em>{{previewDetails.higherInst.nysc_batch}}</em></td>
+            </tr>
+            <tr>
+                <td>NYSC Year</td>
+                <td><em>{{previewDetails.higherInst.nysc_year}}</em></td>
+            </tr>
+            <tr>
+                <td>NYSC Completion year</td>
+                <td><em>{{previewDetails.higherInst.nysc_completion_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Were you exempted?</td>
+                <td><em>{{previewDetails.higherInst.nysc_exempted}}</em></td>
+            </tr>
+            <tr>
+                <td>Reason for exemption</td>
+                <td><em>{{previewDetails.higherInst.reason_exempted}}</em></td>
+            </tr>
+            <tr>
+                <td>NYSC Certificate</td>
+                <td><em>{{previewDetails.higherInst.nysc_cert | trimOffPath}}</em></td>
+            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td class="preview-thead"><strong>Professional Qualifications</strong></td>
+                <td><a href="#/main/profquali">Edit this section</a></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Name of Institution</td>
+                <td><em>{{previewDetails.profquali.inst1_name}}</em></td>
+            </tr>
+            <tr>
+                <td>Insitution License Number</td>
+                <td><em>{{previewDetails.profquali.inst1_license}}</em></td>
+            </tr>
+            <tr>
+                <td>Year Attained</td>
+                <td><em>{{previewDetails.profquali.inst1_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td><em>{{previewDetails.profquali.inst1_designation}}</em></td>
+            </tr>
+            <tr>
+                <td>Certificate Attained</td>
+                <td><em>{{previewDetails.profquali.inst1_cert_url | trimOffPath}}</em></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Name of Institution</td>
+                <td><em>{{previewDetails.profquali.inst2_name}}</em></td>
+            </tr>
+            <tr>
+                <td>Insitution License Number</td>
+                <td><em>{{previewDetails.profquali.inst2_license}}</em></td>
+            </tr>
+            <tr>
+                <td>year Attained</td>
+                <td><em>{{previewDetails.profquali.inst2_year}}</em></td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td><em>{{previewDetails.profquali.inst2_designation}}</em></td>
+            </tr>
+            <tr>
+                <td>Certificate Attained</td>
+                <td><em>{{previewDetails.profquali.inst2_cert_url | trimOffPath}}</em></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Referee Full name</td>
+                <td><em>{{previewDetails.profquali.ref_full_name}}</em></td>
+            </tr>
+            <tr>
+                <td>Referee Occupation</td>
+                <td><em>{{previewDetails.profquali.ref_occupation}}</em></td>
+            </tr>
+            <tr>
+                <td>Referee Phone Number</td>
+                <td><em>{{previewDetails.profquali.ref_phone_number}}</em></td>
+            </tr>
+            <tr>
+                <td>Referee Address(Full)</td>
+                <td><em>{{previewDetails.profquali.ref_address}}</em></td>
+            </tr>
+            <tr>
+                <td>Referee Email</td>
+                <td><em>{{previewDetails.profquali.ref_email}}</em></td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="clear: both" class="form-actions">
+            <a class="btn" href="#submitAlert" data-toggle="modal"> Submit Application</a>
+        </div>
+        <div id="submitAlert" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Submit Application!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="alert">
+                    <h3>Warning!</h3>
+                    <p>Are you really sure you want to submit this application.
+                        <br>Please make sure you have entered all the required details. <br>
+                        This process cannot be<strong>undone</strong> and any mistake will gravely affect the <br>
+                        outcome of your scholarship application.</p>
+
+                </div>
+           </div>
+            <div class="modal-footer">
+                <a class="btn">No, I still have more details to add</a>
+                <a class="btn btn-primary">Yes i'm sure i want to submit</a>
+            </div>
+        </div>
+    </div>
+    <bssb-loader></bssb-loader>
+</div>

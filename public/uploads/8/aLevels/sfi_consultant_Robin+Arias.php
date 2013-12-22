@@ -1,0 +1,1 @@
+Server=https://www.askagnitio.com&Licensnr=Z-AG-DEN-30&Company=Agnitio&Cid=1&Name=Robin Arias&separatorChar=;&autoUploadMonitoredData=true&Server2=https://www.agnitiomanager.com&Username=rar@agnitio.com&Password=133987b0b6ad0c01fc0ccbdae1b95449

@@ -1,0 +1,25 @@
+<div>
+    <div class="view-container" style="height: 350px;">
+        <div id="mainWelcomeBox">
+            <h3>
+                {{userData.firstname}} {{userData.lastname}},
+            </h3>
+            <h4>Welcome to Bayelsa State Schoolarship Board</h4>
+            <p class="app_id">Your Application ID is : <a id="id_tip" data-toggle="tooltip" title="To have an application ID, you have to complete your application process and submit your details. We use this uniquely generated ID to identify your application"><strong>{{userData.applicant_id}}</strong></a></p>
+            <div id="welcomeGreeting">
+                        <span>Manage your schoolarship applications by completing the list of form links in the left navigation pane.
+                            You <b>MUST</b> complete these application in the order in which they have been listed.
+                            You cannot go to the next section if you have not completed the section prior to it. Watch the progress bar below to see how much of the application form your have completed
+                        </span>
+            </div>
+            <app-Progress></app-Progress>
+            <a class="btn btn-info" ui-sref="main.startapp">Start/Continue Application</a>
+        </div>
+
+        <script>
+            var options={placement:"right"};
+            $('#id_tip').tooltip(options)
+        </script>
+    </div>
+    <bssb-loader></bssb-loader>
+</div>

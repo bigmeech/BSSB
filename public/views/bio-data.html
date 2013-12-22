@@ -1,0 +1,162 @@
+<div>
+<div class="view-container">
+    <h4 class="form_heading">Step 2 - BIO Data</h4>
+
+    <form>
+        <h4 class="form-sub-heading">Personal Details</h4>
+        <div class="form-part">
+
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">First name</label>
+                <div class="controls">
+                    <input type="text" required ng-model="bioData.firstName" id="inputFirstName" placeholder="First name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMiddelName">Middle Name</label>
+                <div class="controls">
+                    <input type="text" required ng-model="bioData.middleName" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSurname">Surname</label>
+                <div class="controls">
+                    <input required type="text" id="inputSurname" ng-model="bioData.surname" placeholder="Surname">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDOB">Date Of Birth</label>
+                <div class="controls">
+                    <input required type="date" ng-model="bioData.dob" id="inputDOB" placeholder="Date Of Birth">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPOB">Place Of Birth</label>
+                <div class="controls">
+                    <input required type="text" id="inputPOB" ng-model="bioData.pob" placeholder="Place Of Birth">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputGender">Gender</label>
+                <div class="controls">
+                    <select required id="inputGender" ng-model="bioData.gender" ng-options="g.value for g in gender">
+                        <option value=""> -- Select your Gender -- </option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPhone">Phone</label>
+                <div class="controls">
+                    <input required type="text" id="inputPhone" ng-model="bioData.phone" placeholder="Enter Phone">
+                </div>
+            </div>
+        </div>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Email</label>
+                <div class="controls">
+                    <input required type="email" id="inputEmail" ng-model="bioData.email" placeholder="Email">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputCompoundName">Compound name</label>
+                <div class="controls">
+                    <input required type="text" id="inputCompoundName" ng-model="bioData.compoundname" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputResAdd">Residential Address</label>
+                <div class="controls">
+                    <textarea required id="inputResAdd" ng-model="bioData.residentialAddress" placeholder="Enter Residential Address" rows="3"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-part" style="clear: both">
+            <h4 style="clear: both" class="form-sub-heading">Maternal Info (Mother's Details)</h4>
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">First name</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.mFirstName" id="inputMFirstName" placeholder="First name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMiddelName">Surname</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.mSurname" id="inputMMiddelName" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMMaidenName">Maiden Name</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.maidenName" id="inputMMaidenName" placeholder="Maiden Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMVillage">Village/Town</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.mVillage" id="inputMVillage" placeholder="Village/Town">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMClan">Clan</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.mClan" id="inputMClan" placeholder="Clan">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMLGA">LGA</label>
+                <div class="controls">
+                    <input type="text" id="inputMLGA" ng-model="bioData.mLGA" placeholder="LGA">
+                </div>
+            </div>
+        </div>
+        <div class="form-part" style="margin-bottom: 20px">
+            <h4 style="clear: both" class="form-sub-heading">Paternal Info (Father's Details)</h4>
+            <div class="control-group">
+                <label class="control-label" for="inputFirstName">First name</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.pFirstName" id="inputFirstName" placeholder="First name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputMiddelName">Surname Name</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.pSurname" id="inputMiddelName" placeholder="Middle Name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputSurname">Paternal Name</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.paternalName" id="inputSurname" placeholder="Surname">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDOB">Village/Town</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.pVillage" id="inputDOB" placeholder="Date Of Birth">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputGender">Clan</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.pClan" id="inputDOB" placeholder="Date Of Birth">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPhone">LGA</label>
+                <div class="controls">
+                    <input type="text" ng-model="bioData.pLGA" id="inputPhone" placeholder="Enter Phone">
+                </div>
+            </div>
+        </div>
+        <div style="clear: both" class="form-actions">
+
+            <button type="submit"  class="btn" ng-click="gotoQualifications()"> Save and Continue to Qualification Details</button>
+        </div>
+    </form>
+</div>
+    <bssb-loader></bssb-loader>
+</div>
