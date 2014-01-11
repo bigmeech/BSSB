@@ -22,6 +22,7 @@ class CreateBiodataTable extends Migration {
             $table->enum('gender',array('Male','Female'));
             $table->string('phone');
             $table->string('email');
+            $table->text('passportPhoto');
             $table->string('compoundName');
             $table->text('residentialAddress');
 

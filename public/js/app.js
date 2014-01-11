@@ -617,13 +617,12 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
 
 });
 
-tarapet.controller('BioDataController',function($scope,$location,ApplicationService,getBioDataPromise){
-
+tarapet.controller('BioDataController',function($upload,$scope,$location,ApplicationService,getBioDataPromise,SessionService){
     $scope.gender=[
         {id:1,value:'Male'},
         {id:2,value:'Female'}
     ];
-
+    $scope.uploadingPhoto = false;
     $scope.loading=false;
     $scope.bioData={
         firstName:getBioDataPromise.data.firstName,
@@ -635,6 +634,7 @@ tarapet.controller('BioDataController',function($scope,$location,ApplicationServ
             return gender.value==getBioDataPromise.data.gender;
         }),
         phone:getBioDataPromise.data.phone,
+        passportPhoto:getBioDataPromise.data.passportPhoto,
         email:getBioDataPromise.data.email,
         compoundname:getBioDataPromise.data.compoundName,
         residentialAddress:getBioDataPromise.data.residentialAddress,
@@ -656,6 +656,69 @@ tarapet.controller('BioDataController',function($scope,$location,ApplicationServ
     {
         $scope.loading=true;
         ApplicationService.addBioData($scope.bioData);
+    }
+
+    $scope.uploadPhoto = function()
+    {
+        //$scope.uploadingPhoto = true;
+
+        var fileuploader = angular.element("#passfile");
+        //console.log(fileuploader);
+        fileuploader.on('click',function(){
+            console.log("File upload triggered programatically");
+        })
+        fileuploader.trigger('click')
+    }
+
+
+
+    $scope.onPhotoSelect = function(files,type)
+    {
+        $scope.uploadingPhoto = true
+        $scope.pathReturned=false;
+        var handleFileSucess=function(data,status,headers,config)
+        {
+            var imgArea = angular.element('<img width="234" height="234"/>');
+            var imgContainer = angular.element('#imgArea');
+            imgArea.attr('src',data.url);
+            imgArea.css('height','227px');
+            imgArea.css('width','227px');
+            imgArea.css('border','3px Solid #fff');
+            imgContainer.empty();
+            imgContainer.append(imgArea);
+
+            $scope.pathReturned=true;
+            $scope.uploadingPhoto = false;
+            $scope.bioData.passportPhoto=data.url;
+        }
+        var handleFileError=function(data,status,headers,config){
+            $scope.uploadErrorMessage=data.message;
+        }
+        for(var i =0;i<files.length;i++)
+        {
+            var file=files[i];
+            $scope.upload=$upload.upload({
+                url:'main/upload',
+                method:'post',
+                file:file,
+                data:{
+                    file_type:type,
+                    user_id:SessionService.get('user_id')
+                }
+            }).success(handleFileSucess).error(handleFileError);
+        }
+    }
+
+    if($scope.bioData.passportPhoto)
+    {
+        var imgArea = angular.element('<img width="234" height="234"/>');
+        var imgContainer = angular.element('#imgArea');
+        imgArea.attr('src',$scope.bioData.passportPhoto);
+        imgArea.css('height','227px');
+        imgArea.css('width','227px');
+        imgArea.css('border','3px Solid #fff');
+        imgContainer.empty();
+        imgContainer.append(imgArea);
     }
 
 });
@@ -1117,5 +1180,3 @@ tarapet.filter('trimOffPath',function(){
             return null
     }
 })
-
-

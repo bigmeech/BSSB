@@ -13,6 +13,7 @@ class FileController extends BaseController {
     const NYSC_CERT = "nysc";
     const PROF_QUALI1_CERT = "prof1_cert";
     const PROF_QUALI2_CERT = "prof2_cert";
+    const PASSPORT_PHOTO = "passportPhoto";
 
 
     function uploadFileByType($files,$type,$user_id)
@@ -28,6 +29,8 @@ class FileController extends BaseController {
         }
         //move file from temp to physical path
         $destination=$files->move($uploadPath,$files->getClientOriginalName());
+        $real_path = $destination->getPath()."\\".$destination->getFilename();;
+        $url = substr($real_path,7);
 
         //if file was uploaded sucessfully
         if($destination)
@@ -58,7 +61,7 @@ class FileController extends BaseController {
                         array(
                             "filename"=>$destination->getFileName(),
                             "filepath"=>$destination->getRealPath(),
-                            "url"=>''.asset($destination),
+                            "url"=>''.asset($url),
                             "type"=>$type
                         ),200);
                 }
@@ -68,7 +71,7 @@ class FileController extends BaseController {
                     array(
                         "filename"=>$destination->getFileName(),
                         "filepath"=>$destination->getRealPath(),
-                        "url"=>''.asset($destination),
+                        "url"=>''.asset($url),
                             "type"=>$type
                     ),200);
             }
@@ -126,6 +129,9 @@ class FileController extends BaseController {
                     break;
                 case FileController::PROF_QUALI2_CERT:
                     return $this->uploadFileByType($files,FileController::PROF_QUALI2_CERT,$user_id);
+                    break;
+                case FileController::PASSPORT_PHOTO:
+                    return $this->uploadFileByType($files,FileController::PASSPORT_PHOTO,$user_id);
                     break;
                 default:
                     return Response::json(array('Error'=>'Unrecognised Scholarship File'),406);

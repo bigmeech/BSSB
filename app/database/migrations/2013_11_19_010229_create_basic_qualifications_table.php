@@ -38,12 +38,12 @@ class CreateBasicQualificationsTable extends Migration {
             $table->text('s2_cert_url')->nullable();
 
             //alavels
-            $table->string('a_exam');
-            $table->string('a_exam_number');
-            $table->string('a_center_name');
-            $table->string('a_credits');
-            $table->text('a_subAndGrades');
-            $table->text('a_cert_url');
+            $table->string('a_exam')->nullable();
+            $table->string('a_exam_number')->nullable();
+            $table->string('a_center_name')->nullable();
+            $table->string('a_credits')->nullable();
+            $table->text('a_subAndGrades')->nullable();
+            $table->text('a_cert_url')->nullable();
 
             //jamb
             $table->string('jamb_center_name');#
@@ -55,7 +55,6 @@ class CreateBasicQualificationsTable extends Migration {
 
             //timestamps
             $table->timestamps();
-
         });
 	}
 

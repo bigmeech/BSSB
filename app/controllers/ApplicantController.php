@@ -184,6 +184,9 @@ class ApplicantController extends BaseController {
             $scholarship->has_admission=$input['has_an_admission']=='YES'?'YES':'NO';
             $scholarship->essay_url=$input['path_to_essay'];
             $scholarship->push();
+
+            $appData->app_progress = 20 + $appData->app_progress;
+            $appData->save();
             return Response::json(
                 array("Message"=>"Just added New stuff")
             );
@@ -194,6 +197,7 @@ class ApplicantController extends BaseController {
     {
         $client=Input::all();
         $db = BioData::where('user_id','=',$client['user_id'])->first();
+        $appData = ApplicationData::find(Input::all()['user_id']);
 
         if(is_null($db))
         {
@@ -212,6 +216,8 @@ class ApplicantController extends BaseController {
                 }
             }
             $db->save();
+            $appData->app_progress = 20 + $appData->app_progress;
+            $appData->save();
             return Response::json(array('warning'=>'Adding new stuff'));
         }
         else
@@ -238,6 +244,7 @@ class ApplicantController extends BaseController {
     {
         $client=(object)Input::all();
         $db = BasicQualifications::where('user_id','=',$client->user_id)->first();
+        $appData = ApplicationData::find(Input::all()['user_id']);
         if(!is_null($db))
         {
             foreach($client as $key => $value)
@@ -261,6 +268,8 @@ class ApplicantController extends BaseController {
                     $db->$key=$value;
             }
             $db->save();
+            $appData->app_progress = 20 + $appData->app_progress;
+            $appData->save();
             return Response::json($db,200);
         }
 
@@ -270,6 +279,7 @@ class ApplicantController extends BaseController {
     {
         $client=(object)Input::all();
         $db=HigherInst::where('user_id','=',$client->user_id)->first();
+        $appData = ApplicationData::find(Input::all()['user_id']);
         if(is_null($db))
         {
             $db=new HigherInst;
@@ -278,6 +288,9 @@ class ApplicantController extends BaseController {
                $db->$key=$value;
             }
             $db->save();
+            $appData->app_progress = 20 + $appData->app_progress;
+            $appData->save();
+
             return Response::json(array('warning'=>'Adding new stuff'));
         }
         else
@@ -295,6 +308,8 @@ class ApplicantController extends BaseController {
     {
         $client=(object)Input::all();
         $db=ProfQualifications::where('user_id','=',$client->user_id)->first();
+        $appData = ApplicationData::find(Input::all()['user_id']);
+
         if(is_null($db))
         {
             $db=new ProfQualifications;
@@ -303,6 +318,8 @@ class ApplicantController extends BaseController {
                 $db->$key=$value;
             }
             $db->save();
+            $appData->app_progress = 20 + $appData->app_progress;
+            $appData->save();
             return Response::json(array('warning'=>'Adding new stuff'));
         }
         else

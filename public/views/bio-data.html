@@ -50,13 +50,28 @@
                     <input required type="text" id="inputPhone" ng-model="bioData.phone" placeholder="Enter Phone">
                 </div>
             </div>
-        </div>
-        <div class="form-part">
+
             <div class="control-group">
                 <label class="control-label" for="inputEmail">Email</label>
                 <div class="controls">
                     <input required type="email" id="inputEmail" ng-model="bioData.email" placeholder="Email">
                 </div>
+            </div>
+        </div>
+        <div class="form-part">
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Passport Photograph</label>
+                <div id="imgArea" style="display: block;border: 8px solid #ccc;background-color:#eeeeee;width: 234px;height: 234px">
+                    <p style="font-size:10px;margin-top: 70px;margin-left: auto;margin-right: auto;display: block;width: 68px;color:#999">Passport Image</p>
+                </div>
+
+            </div>
+            <div class="control-group">
+                <div ng-show="uploadingPhoto" style="margin-bottom: 5px;width: 204px" class="progress progress-striped active">
+                    <div class="bar" style="width: 100%"></div>
+                </div>
+                <input id="passfile" ng-file-select="onPhotoSelect($files,'passportPhoto')"  type="file" style="display: none"/>
+                <input type="button" value="Upload Passport" ng-click="uploadPhoto()" class="btn-block btn" style="margin-bottom:15px;width: 204px"/>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputCompoundName">Compound name</label>
