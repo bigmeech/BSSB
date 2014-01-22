@@ -1,41 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c534df42-2dd4-4f2b-98f2-d2aade5342a3" name="Default" comment="Added Admin UI, Routes, Controllers, Migrations, Password Changing Feature and a ton of angularjs goodies.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo-social.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo-social.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo-social.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo-social.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/entypo.svg" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\app\database\migrations\2013_12_05_213239_add_lastname_firstname_to_user_table.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\app\database\migrations\2013_12_05_214444_remove_full_name_column.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\uploads\1\essay\here.docx" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\uploads\52\essay\LarryCV.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_10_27_020626_create_users.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_10_27_020626_create_users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_12_014013_create_schoolarship_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_12_014013_create_schoolarship_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_17_131830_create_biodata_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_17_131830_create_biodata_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_19_010229_create_basic_qualifications_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_19_010229_create_basic_qualifications_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_23_181546_add_higher_inst_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_23_181546_add_higher_inst_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_26_094304_create_prof_quali_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_26_094304_create_prof_quali_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_12_16_194950_create_appdata_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_12_16_194950_create_appdata_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ApplicantController.php" afterPath="$PROJECT_DIR$/app/controllers/ApplicantController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AuthController.php" afterPath="$PROJECT_DIR$/app/controllers/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/Tests/FormTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/Tests/FormTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/UserTableSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/UserTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/app-start.html" afterPath="$PROJECT_DIR$/public/views/app-start.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/bio-data.html" afterPath="$PROJECT_DIR$/public/views/bio-data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/higherInst.html" afterPath="$PROJECT_DIR$/public/views/higherInst.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/main-dashboard.html" afterPath="$PROJECT_DIR$/public/views/main-dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/t1_m1.html" afterPath="$PROJECT_DIR$/public/views/t1_m1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/test-suite/lib/simpletest/test/url_test.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/test-suite/lib/simpletest/test/url_test.php" />
+    <list default="true" id="c534df42-2dd4-4f2b-98f2-d2aade5342a3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/Roboto-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/Roboto-LightItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/Roboto-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/Roboto-Thin.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/Roboto-ThinItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/AdminAuthController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/admin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin_login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin_main.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bssb_admin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/glyphicons-halflings-regular.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Scholarship_app.iws" />
@@ -619,20 +601,25 @@
       <created>1389440917069</created>
       <updated>1389440917069</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Admin UI (JS,CSS,HTML, Template), Routes, Controllers, Migrations, Password Changing Feature and a ton of angularjs goodies.">
+      <created>1390383325544</created>
+      <updated>1390383325544</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20454545" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.670068" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.670068" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -642,7 +629,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -679,7 +665,8 @@
     </option>
     <MESSAGE value="A bunch of new features...Need to add generated id and fix grades UI" />
     <MESSAGE value="Added Admin UI, Routes, Controllers, Migrations, Password Changing Feature and a ton of angularjs goodies." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Admin UI, Routes, Controllers, Migrations, Password Changing Feature and a ton of angularjs goodies." />
+    <MESSAGE value="Added Admin UI (JS,CSS,HTML, Template), Routes, Controllers, Migrations, Password Changing Feature and a ton of angularjs goodies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Admin UI (JS,CSS,HTML, Template), Routes, Controllers, Migrations, Password Changing Feature and a ton of angularjs goodies." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
