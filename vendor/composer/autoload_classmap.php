@@ -7,7 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddHigherInstTable' => $baseDir . '/app/database/migrations/2013_11_23_181546_add_higher_inst_table.php',
-    'AddLastnameFirstnameToUserTable' => $baseDir . '/app/database/migrations/2013_12_05_213239_add_lastname_firstname_to_user_table.php',
+    'AdminAuthController' => $baseDir . '/app/controllers/AdminAuthController.php',
+    'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'Anouar\\Fpdf\\Facades\\Fpdf' => $vendorDir . '/anouar/fpdf/src/Anouar/Fpdf/Facades/Fpdf.php',
     'Anouar\\Fpdf\\Fpdf' => $vendorDir . '/anouar/fpdf/src/Anouar/Fpdf/Fpdf.php',
     'Anouar\\Fpdf\\FpdfServiceProvider' => $vendorDir . '/anouar/fpdf/src/Anouar/Fpdf/FpdfServiceProvider.php',
@@ -28,6 +29,7 @@ return array(
     'ClassPreloader\\Parser\\DirVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/DirVisitor.php',
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
+    'CreateAdminTable' => $baseDir . '/app/database/migrations/2014_01_19_020425_create_admin_table.php',
     'CreateAppdataTable' => $baseDir . '/app/database/migrations/2013_12_16_194950_create_appdata_table.php',
     'CreateApplicants' => $baseDir . '/app/database/migrations/2013_10_30_225449_create_applicants.php',
     'CreateBasicQualificationsTable' => $baseDir . '/app/database/migrations/2013_11_19_010229_create_basic_qualifications_table.php',
@@ -1131,7 +1133,6 @@ return array(
     'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/Psr/Log/LoggerInterface.php',
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
-    'RemoveFullNameColumn' => $baseDir . '/app/database/migrations/2013_12_05_214444_remove_full_name_column.php',
     'Scholarship' => $baseDir . '/app/models/Scholarship.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'Symfony\\Component\\BrowserKit\\Client' => $vendorDir . '/symfony/browser-kit/Symfony/Component/BrowserKit/Client.php',

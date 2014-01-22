@@ -52,6 +52,7 @@ class CreateBasicQualificationsTable extends Migration {
             $table->string('jamb_total_score');
             $table->text('jamb_subAndScore');
             $table->text('jamb_cert_url');
+            $table->enum('completed',array('true','false'))->default('false');
 
             //timestamps
             $table->timestamps();

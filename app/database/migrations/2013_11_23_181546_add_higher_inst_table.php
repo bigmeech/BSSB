@@ -45,7 +45,7 @@ class AddHigherInstTable extends Migration {
             $table->enum('nysc_exempted',array('YES','NO'));
             $table->string('reason_exempted');
             $table->string('nysc_cert');
-
+            $table->enum('completed',array('true','false'))->default('false');
             $table->timestamps();
 
 

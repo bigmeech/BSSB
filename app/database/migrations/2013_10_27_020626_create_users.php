@@ -15,9 +15,11 @@ class CreateUsers extends Migration {
 	{
 		Schema::create('users', function(Blueprint $table){
             $table->increments('id');
+            $table->enum('type',array('admin','applicant'))->default('applicant');
             $table->string('email');
             $table->string('password');
-            $table->string('full_name');
+            $table->string('lastname');
+            $table->string('firstname');
             $table->timestamps();
         });
 	}

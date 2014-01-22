@@ -85,7 +85,7 @@ class TestOfUrl extends UnitTestCase {
     
     function testEncodingParameters() {
         $url = new SimpleUrl('');
-        $url->addRequestParameter('a', '?!"\'#~@[]{}:;<>,./|£$%^&*()_+-=');
+        $url->addRequestParameter('a', '?!"\'#~@[]{}:;<>,./|ï¿½$%^&*()_+-=');
         $this->assertIdentical(
                 $request = $url->getEncodedRequest(),
                 '?a=%3F%21%22%27%23%7E%40%5B%5D%7B%7D%3A%3B%3C%3E%2C.%2F%7C%A3%24%25%5E%26%2A%28%29_%2B-%3D');
@@ -95,14 +95,14 @@ class TestOfUrl extends UnitTestCase {
         $url = new SimpleUrl('?a=%3F%21%22%27%23%7E%40%5B%5D%7B%7D%3A%3B%3C%3E%2C.%2F%7C%A3%24%25%5E%26%2A%28%29_%2B-%3D');
         $this->assertEqual(
                 $url->getEncodedRequest(),
-                '?a=' . urlencode('?!"\'#~@[]{}:;<>,./|£$%^&*()_+-='));
+                '?a=' . urlencode('?!"\'#~@[]{}:;<>,./|ï¿½$%^&*()_+-='));
     }
     
     function testUrlInQueryDoesNotConfuseParsing() {
-        $url = new SimpleUrl('wibble/login.php?url=http://www.google.com/moo/');
+        $url = new SimpleUrl('wibble/admin_login.php?url=http://www.google.com/moo/');
         $this->assertFalse($url->getScheme());
         $this->assertFalse($url->getHost());
-        $this->assertEqual($url->getPath(), 'wibble/login.php');
+        $this->assertEqual($url->getPath(), 'wibble/admin_login.php');
         $this->assertEqual($url->getEncodedRequest(), '?url=http://www.google.com/moo/');
     }
     
@@ -198,9 +198,9 @@ class TestOfUrl extends UnitTestCase {
 
     function testUsernameAndPasswordAreUrlDecoded() {
         $url = new SimpleUrl('http://' . urlencode('test@test') .
-                ':' . urlencode('$!£@*&%') . '@www.lastcraft.com');
+                ':' . urlencode('$!ï¿½@*&%') . '@www.lastcraft.com');
         $this->assertEqual($url->getUsername(), 'test@test');
-        $this->assertEqual($url->getPassword(), '$!£@*&%');
+        $this->assertEqual($url->getPassword(), '$!ï¿½@*&%');
     }
     
     function testBlitz() {

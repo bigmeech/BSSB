@@ -413,6 +413,11 @@ tarapet.factory("AuthService",function($rootScope,$location,$http,SessionService
         isLoggedIn:function()
         {
             return SessionService.get('authenticated');
+        },
+        changePassword:function(passwords)
+        {
+            passwords.id = SessionService.get('user_id');
+            return $http.post("auth/changePassword",passwords);
         }
     }
 });
@@ -494,8 +499,8 @@ tarapet.controller('SignupController',function($scope,$location,AuthService,Sess
     }
 });
 
-tarapet.controller('BSSBController',function($rootScope,$scope,$location,AuthService,SessionService,ApplicationDataService){
-    //console.log("Applicationdata: "+getAppDataPromise.data);
+tarapet.controller('BSSBController',function($rootScope,$scope,$location,AuthService,SessionService,ApplicationDataService,getAppDataPromise){
+    console.log("Applicationdata: "+getAppDataPromise.data);
     console.log(SessionService.get('applicant_id'));
     $scope.userData={};
     $rootScope.appData={};
@@ -504,7 +509,7 @@ tarapet.controller('BSSBController',function($rootScope,$scope,$location,AuthSer
     $scope.userData.email=SessionService.get('email');
     $scope.showMainBar=true;
     $scope.applicantStated=false
-    $scope.userData.applicant_id="Not yet Availably. Why?"//SessionService.get('applicant_id');
+    $scope.userData.applicant_id=getAppDataPromise.data.reg_id||"Not yet Availably. Why?"//SessionService.get('applicant_id');
 
     $rootScope.appData.appProgress="style=width:"+SessionService.get('appProgress')+"%";
     $rootScope.appData.scholarship_form_complete=SessionService.get('scholarship_form_complete') || "true";
@@ -512,6 +517,9 @@ tarapet.controller('BSSBController',function($rootScope,$scope,$location,AuthSer
     $rootScope.appData.basic_quali_form_complete=SessionService.get('basic_quali_form_complete') || "true";
     $rootScope.appData.higher_inst_form_complete=SessionService.get('higher_inst_form_complete') || "true";
     $rootScope.appData.prof_quali_form_complete=SessionService.get('prof_quali_form_complete') || "true";
+    $rootScope.appData.reg_id = getAppDataPromise.data.reg_id
+    $scope.reg_id_tip = $rootScope.appData.reg_id ? null : "To have an application ID, you have to complete your application process and submit your details. We use this uniquely generated ID to identify your application"
+
     $scope.logout=function()
     {
            AuthService.logout().success(function(){
@@ -870,6 +878,31 @@ tarapet.controller('QualificationsController',function($scope,$rootScope,$locati
 });
 tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$upload,ApplicationService,SessionService,getHigherInstPromise){
 
+    $scope.grade_types=[
+        {id:1,value:'First Class'},
+        {id:2,value:'Second Class Upper'},
+        {id:3,value:'Second Class Lower'},
+        {id:4,value:'Third Class'}
+    ]
+
+
+    $scope.uploadCert1=function()
+    {
+        var cert1File = angular.element("#cert1File");
+        cert1File.on('click',function(){
+            console.log('Programatically triggering cert 1 file upload!!!');
+        });
+        cert1File.trigger('click');
+    }
+
+    $scope.uploadCert2=function()
+    {
+        var cert2File = angular.element("#cert2File");
+        cert2File.on('click',function(){
+            console.log('Programatically triggering cert 2 file upload!!!');
+        });
+        cert2File.trigger('click');
+    }
     $scope.nysc_filename=!getHigherInstPromise.data.nysc_cert ? null : getHigherInstPromise.data.nysc_cert.substring
         (getHigherInstPromise.data.nysc_cert.lastIndexOf('\\')+1);
     $scope.inst1_filename=!getHigherInstPromise.data.inst1_cert_url ? null : getHigherInstPromise.data.inst1_cert_url.substring
@@ -1092,6 +1125,33 @@ tarapet.controller('PreviewController',function($scope,$location,ApplicationServ
         ApplicationService.submit();
     }
 })
+
+tarapet.controller('ChangePasswordController',function($scope,AuthService){
+
+    $scope.error=null
+    $scope.showConfirmError=false;
+    $scope.passwords={
+        old:null,
+        new:null,
+        confirm:null
+    }
+    $scope.changePassword=function()
+    {
+        if($scope.passwords.new !== $scope.passwords.confirm)
+        {
+
+            $scope.error="Your new passwords do not match";
+            $scope.showConfirmError=true;
+        }
+        else
+            AuthService.changePassword($scope.passwords)
+                .success(function(data){
+            }).error(function(data){
+                    $scope.error=data.message;
+                    $scope.showConfirmError=true;
+                });
+    }
+});
 
 tarapet.controller('SignupConfController',function($scope,$location){
     $scope.loading=false;

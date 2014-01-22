@@ -435,23 +435,23 @@ class FormTest extends \PHPUnit_Framework_TestCase
 
     public function testGetUriActionAbsolute()
     {
-        $formHtml='<form id="login_form" action="https://login.foo.com/login.php?login_attempt=1" method="POST"><input type="text" name="foo" value="foo" /><input type="submit" /></form>';
+        $formHtml='<form id="login_form" action="https://login.foo.com/admin_login.php?login_attempt=1" method="POST"><input type="text" name="foo" value="foo" /><input type="submit" /></form>';
 
         $form = $this->createForm($formHtml);
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
+        $this->assertEquals('https://login.foo.com/admin_login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
 
         $form = $this->createForm($formHtml, null, 'https://login.foo.com');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
+        $this->assertEquals('https://login.foo.com/admin_login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
 
         $form = $this->createForm($formHtml, null, 'https://login.foo.com/bar/');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
+        $this->assertEquals('https://login.foo.com/admin_login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
 
         // The action URI haven't the same domain Host have an another domain as Host
         $form = $this->createForm($formHtml, null, 'https://www.foo.com');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
+        $this->assertEquals('https://login.foo.com/admin_login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
 
         $form = $this->createForm($formHtml, null, 'https://www.foo.com/bar/');
-        $this->assertEquals('https://login.foo.com/login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
+        $this->assertEquals('https://login.foo.com/admin_login.php?login_attempt=1', $form->getUri(), '->getUri() returns absolute URIs set in the action form');
     }
 
     public function testGetUriAbsolute()

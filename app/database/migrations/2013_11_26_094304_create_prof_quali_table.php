@@ -32,6 +32,7 @@ class CreateProfQualiTable extends Migration {
             $table->string('ref_phone_number')->nullable();
             $table->string('ref_address')->nullable();
             $table->string('ref_email')->nullable();
+            $table->enum('completed',array('true','false'))->default('false');
             $table->timestamps();
 
         });

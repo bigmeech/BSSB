@@ -50,7 +50,9 @@
             <div class="control-group">
                 <label class="control-label" for="grade1">Grade</label>
                 <div class="controls">
-                    <input type="text" required id="grade1" ng-model="higherInstDetails.inst1_grade" placeholder="Enter your overall grade">
+                    <select required id="grade" ng-model="higherInstDetails.inst1_grade" ng-options="grade_type.value for grade_type in grade_types">
+                        <option value="">--- Select Your Grade---</option>
+                    </select>
                 </div>
             </div>
             <div class="control-group">
@@ -62,8 +64,9 @@
         </div>
         <div class="control-group" style="clear: both">
             <label class="controls">
-                Upload Institution 1 Certificate
-                <input style="width: 90px;" required type="file" value="" ng-file-select="onFileSelect($files,'inst1')" title="Select a file to upload">
+                Upload Institution 1 Certificate<br/>
+                <button ng-click="uploadCert1()" type="button" class="btn" style="margin-top: 10px">Upload Certificate 1</button>
+                <input id="cert1File" style="display: none;" required type="file" value="" ng-file-select="onFileSelect($files,'inst1')">
             </label>
         </div>
         <div class="progress progress-striped active" ng-show="uploadingInst1">
@@ -119,7 +122,9 @@
             <div class="control-group">
                 <label class="control-label" for="grade2">Grade</label>
                 <div class="controls">
-                    <input type="text" id="grade2" ng-model="higherInstDetails.inst2_grade" placeholder="Enter your overall grade">
+                    <select required id="grade2" ng-model="higherInstDetails.inst2_grade" ng-options="grade_type.value for grade_type in grade_types">
+                        <option value="">--- Select Your Grade---</option>
+                    </select>
                 </div>
             </div>
             <div class="control-group">
@@ -131,8 +136,9 @@
         </div>
         <div class="control-group" style="clear: both">
             <label class="controls">
-                Upload Institution 2 Certificate
-                <input style="width: 90px;" type="file" value="" ng-file-select="onFileSelect($files,'inst2')" title="Select a file to upload">
+                 Upload Institution 2 Certificate<br/>
+                <button ng-click="uploadCert2()" type="button" class="btn" style="margin-top: 10px">Upload Certificate 2</button>
+                <input id="cert2File" style="width: 90px;display: none" type="file" value="" ng-file-select="onFileSelect($files,'inst2')" title="Select a file to upload">
             </label>
         </div>
         <div class="progress progress-striped active" ng-show="uploadingInst2">

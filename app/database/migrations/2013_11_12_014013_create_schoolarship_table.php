@@ -23,6 +23,7 @@ class CreateSchoolarshipTable extends Migration {
             $table->enum('already_in_school',array('YES','NO'));
             $table->enum('has_admission',array('YES','NO'));
             $table->text('essay_url');
+            $table->enum('completed',array('true','false'))->default('false');
             $table->timestamps();
 
         });

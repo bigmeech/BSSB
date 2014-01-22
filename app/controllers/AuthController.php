@@ -38,6 +38,44 @@ class AuthController extends \BaseController {
         return Response::json(array('flash' =>'User Logged Out'));
 	}
 
+    public function changePassword()
+    {
+        $input=Input::all();
+        $user=User::where('id','=',$input['id'])->first();
+        if(!is_null($user))
+        {
+            $oldhash = Hash::make($input['old']);
+            if(Hash::check($user->password,$oldhash))
+            {
+                //return $user->password;
+                return Response::json(
+                    array(
+                        "result"=>false,
+                        "message"=>"You have entered an incorrect old password."),406
+                );
+            }
+            else{
+                $newhash = Hash::make($input['new']);
+                $user->password = $newhash;
+                $user->save();
+                return Response::json(
+                    array(
+                        "result"=>true,
+                        "message"=>"Password Changed Successfully"),200
+                );
+            }
+
+        }
+        else{
+            return Response::json(
+                array(
+                    "result"=>false,
+                    "message"=>"Your records do not exist, Please contact admin!!!")
+            );
+        }
+
+    }
+
 	public function signup()
 	{
         $input=Input::all();
@@ -63,6 +101,7 @@ class AuthController extends \BaseController {
         $newUser->password=Hash::make($temp_password);
         $newUser->firstname=$input['firstname'];
         $newUser->lastname=$input['lastname'];
+        $newUser->type="applicant";
         $newUser->save();
 
         //send email

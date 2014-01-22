@@ -15,12 +15,6 @@ class CreateAppdataTable extends Migration {
 	    Schema::create('application_data',function(Blueprint $table){
             $table->integer("user_id")->unique();
             $table->integer("app_progress")->default(0);
-            $table->enum("scholarship_form_complete",array('false','true'))->default('false');
-            $table->enum("biodata_form_complete",array('false','true'))->default('false');
-            $table->enum("basic_quali_form_complete",array('false','true'))->default('false');
-            $table->enum("higher_inst_form_complete",array('false','true'))->default('false');
-            $table->enum("prof_quali_form_complete",array('false','true'))->default('false');
-
             $table->timestamps();
         });
 	}

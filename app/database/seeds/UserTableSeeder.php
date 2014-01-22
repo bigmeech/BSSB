@@ -16,12 +16,25 @@ class UserTableSeeder extends Seeder{
         $users=array(
             array(
                 'email'    => 'denachural@gmail.com',
+                'type' => 'applicant',
+                'firstname' => 'Larry',
+                'lastname'  => 'Eliemenye',
                 'password' => Hash::make('Opensesamie85'),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
             )
         );
+        $adminUser=array(
+            'email'    => 'admin@bssb-gov.com',
+            'type' => 'admin',
+            'firstname' => 'admin',
+            'lastname'  => 'admin',
+            'password' => Hash::make('admin'),
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime
+        );
 
+        DB::table('users')->insert($adminUser);
         DB::table('users')->insert($users);
     }
 

@@ -41,6 +41,7 @@ class CreateBiodataTable extends Migration {
             $table->text('pVillage')->nullable();
             $table->text('pClan')->nullable();
             $table->text('pLGA')->nullable();
+            $table->enum('completed',array('true','false'))->default('false');
             $table->timestamps();
         });
 	}

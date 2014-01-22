@@ -19,6 +19,7 @@ Route::get('/', function()
 Route::post('auth/login','AuthController@login');
 Route::post('auth/signup','AuthController@signup');
 Route::post('auth/logout','AuthController@logout');
+Route::post('auth/changePassword','AuthController@changePassword');
 
 Route::post('main/upload','FileController@uploadFile');
 Route::post('main/startapp','ApplicantController@saveStartApp');
@@ -35,3 +36,7 @@ Route::get('main/higher-institution','ApplicantController@fetchHigherInst');
 Route::get('main/getProfQuali','ApplicantController@fetchProfQuali');
 Route::get('main/getPreview','ApplicantController@fetchPreview');
 Route::get('main/getAppData','ApplicantController@fetchAppData');
+
+Route::get('admin','AdminController@index');
+Route::post('admin/auth','AdminAuthController@authenticate');
+Route::get('admin/main','AdminController@dashboard');

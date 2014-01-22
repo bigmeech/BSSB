@@ -15,9 +15,14 @@ class ApplicantController extends BaseController {
 
     public function fetchAppData()
     {
-        $appdata= ApplicationData::find(Input::all()['user_id']);//where('user_id','=',Input::all()['user_id'])->first();
+        $appdata = ApplicationData::find(Input::all()['user_id']);//where('user_id','=',Input::all()['user_id'])->first();
+        $scholarship = Scholarship::find(Input::all()['user_id']);
         if(!is_null($appdata))
         {
+            if(!is_null($scholarship))
+            {
+                $appdata['reg_id'] = $scholarship->reg_number;
+            }
             return Response::json($appdata,200);
         }
         else
@@ -169,6 +174,7 @@ class ApplicantController extends BaseController {
                     "already_in_school"=>$scholarship->already_in_school,
                     "has_admission"=>$scholarship->has_admission,
                     "essay_url"=>$essayfile_name
+
 
                 ),200
             );
