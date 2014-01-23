@@ -299,78 +299,30 @@ tarapet.factory('ApplicationService',function($rootScope,$location,$http,Session
     return{
 
         addScholarship:function(details){
-                $http.post('main/startapp',details)
-                    .success(
-                    function(data, status, headers, config)
-                    {
-                        SessionService.set('scholarship_form_complete',true);
-                        $location.path('/main/biodata');
-                    })
-                    .error(
-                    function(data, status, headers, config){
-                            console.log("Error Adding stuff to db!");
-                    });
+                return $http.post('main/startapp',details);
 
         },
         addBioData:function(biodata){
             biodata.user_id=SessionService.get('user_id');
-            $http.post('main/biodata',biodata)
-                .success(
-                function(data, status, headers, config)
-                {
-                    SessionService.set('biodata_form_complete',true);
-                    $location.path('/main/qualifications');
-                })
-                .error(
-                function(data, status, headers, config){
-                    console.log("Error Adding BIO to db!");
-                });
+            return $http.post('main/biodata',biodata)
+
         },
         addBasicQualificastions:function(qualifications)
         {
             qualifications.user_id=SessionService.get('user_id');
-            $http.post('main/qualifications',qualifications)
-                .success(
-                function(data, status, headers, config)
-                {
-                    SessionService.set('quali_details_complete',true);
-                    $location.path('/main/higher-inst');
-                })
-                .error(
-                    function(data, status, headers, config)
-                    {
-                        console.log("Error Adding Qualifications to db!");
-                    }
-                )
+            return $http.post('main/qualifications',qualifications)
+
         },
         addHigherInst:function(higherInstDetails){
             higherInstDetails.user_id=SessionService.get('user_id');
-            $http.post('main/higher-inst',higherInstDetails)
-                .success(
-                function(data, status, headers, config)
-                {
-                    SessionService.set('hInst_details_complete',true);
-                    $location.path('/main/profquali');
-                })
-                .error(function(data, status, headers, config)
-                {
-                    SessionService.set('hInst_details_complete',false);
-                    console.log('Error adding high inst details');
-                })
+            return $http.post('main/higher-inst',higherInstDetails);
+
         },
         addProfQuali:function(proQualiDetails)
         {
             proQualiDetails.user_id=SessionService.get('user_id');
             $http.post('main/professional-qualifications',proQualiDetails)
-                .success(function(data, status, headers, config)
-                {
-                    SessionService.set('prof_details_complete',true);
-                    $location.path('/main/preview');
-                }).error(function(data, status, headers, config)
-                {
-                    SessionService.set('prof_details_complete',false);
-                    console.log('Error adding high inst details');
-                });
+
         },
         submit:function()
         {
@@ -570,15 +522,26 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
         path_to_essay:getApplicationPromise.data.essay_url
     }
 
-    $scope.start=function()
+    $scope.save = function()
     {
+        $scope.showSave = false;
+        $scope.showSaveError = false;
         $scope.loading=true;
         $scope.showError=false;
         if($scope.startDetails.scholarship_type
             && $scope.startDetails.course_of_study
-            && $scope.startDetails.path_to_essay)
-        {
-            ApplicationService.addScholarship($scope.startDetails);
+            && $scope.startDetails.path_to_essay){
+            ApplicationService.addScholarship($scope.startDetails)
+                .success(
+                function(data, status, headers, config)
+                {
+                    SessionService.set('scholarship_form_complete',true);
+                    $scope.showSave=true;
+                })
+                .error(
+                function(data, status, headers, config){
+                    $scope.showSaveError = true;
+                });
         }
         else
         {
@@ -626,6 +589,8 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
 });
 
 tarapet.controller('BioDataController',function($upload,$scope,$location,ApplicationService,getBioDataPromise,SessionService){
+
+
     $scope.gender=[
         {id:1,value:'Male'},
         {id:2,value:'Female'}
@@ -660,10 +625,22 @@ tarapet.controller('BioDataController',function($upload,$scope,$location,Applica
         pLGA:getBioDataPromise.data.pLGA
 
     };
-    $scope.gotoQualifications=function()
+    $scope.save=function()
     {
+        $scope.showSave = false;
+        $scope.showSaveError = false;
         $scope.loading=true;
-        ApplicationService.addBioData($scope.bioData);
+        ApplicationService.addBioData($scope.bioData)
+            .success(function(data, status, headers, config)
+            {
+                SessionService.set('biodata_form_complete',true);
+                $scope.showSave=true;
+                $scope.showSaveError=false;
+            })
+            .error(function(data, status, headers, config){
+                $scope.showSaveError=true;
+                $scope.showSave=false;
+            });
     }
 
     $scope.uploadPhoto = function()
@@ -870,10 +847,25 @@ tarapet.controller('QualificationsController',function($scope,$rootScope,$locati
     }
 
 
-    $scope.gotoHigherInst=function()
-    {
+    $scope.save = function(){
+        $scope.showSave = false;
+        $scope.showSaveError = false
         $scope.loading=true;
-        ApplicationService.addBasicQualificastions($scope.qualiDetails);
+        ApplicationService.addBasicQualificastions($scope.qualiDetails)
+            .success(
+            function(data, status, headers, config)
+            {
+                SessionService.set('quali_details_complete',true);
+                $scope.showSave = true;
+                $scope.showSaveError = false;
+            })
+            .error(
+            function(data, status, headers, config)
+            {
+                $scope.showSaveError = true;
+                $scope.showSave = false;
+            }
+        );
     }
 });
 tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$upload,ApplicationService,SessionService,getHigherInstPromise){
@@ -1006,9 +998,24 @@ tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$
             }).success(handleUploadSucess).error(handleUploadError);
         }
     }
-    $scope.gotoProfQuali=function()
+    $scope.save=function()
     {
+        $scope.showSave = false;
+        $scope.showSaveError = false;
         ApplicationService.addHigherInst($scope.higherInstDetails)
+            .success(
+            function(data, status, headers, config)
+            {
+                SessionService.set('hInst_details_complete',true);
+                $scope.showSave = true;
+                $scope.showSaveError = false;
+            })
+            .error(function(data, status, headers, config)
+            {
+                SessionService.set('hInst_details_complete',false);
+                $scope.showSave = false;
+                $scope.showSaveError = true;
+            })
     }
 });
 tarapet.controller('ProfQualiController',function($scope,$rootScope,$location,$upload,ApplicationService,SessionService,getProfQualiPromise){
@@ -1096,9 +1103,22 @@ tarapet.controller('ProfQualiController',function($scope,$rootScope,$location,$u
         }
     }
 
-    $scope.saveAndPreview=function()
+    $scope.save=function()
     {
-        ApplicationService.addProfQuali($scope.profQualiDetails);
+        $scope.showSave = false;
+        $scope.showSaveEroor =  false;
+        ApplicationService.addProfQuali($scope.profQualiDetails)
+            .success(function(data, status, headers, config)
+            {
+                SessionService.set('prof_details_complete',true);
+                $scope.showSave  = true;
+                $scope.showSaveError = false;
+            }).error(function(data, status, headers, config)
+                {
+                    SessionService.set('prof_details_complete',false);
+                    $scope.showSave  = false;
+                    $scope.showSaveError = true;
+                });
     }
 });
 tarapet.controller('PreviewController',function($scope,$location,ApplicationService,getPreviewPromise){
@@ -1122,7 +1142,9 @@ tarapet.controller('PreviewController',function($scope,$location,ApplicationServ
 
     $scope.submitApplication=function()
     {
-        ApplicationService.submit();
+        ApplicationService.submit()
+
+
     }
 })
 

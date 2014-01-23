@@ -238,8 +238,11 @@
         <div ng-show="aLevels_filename" style="clear: both" class="alert alert-info">Saved A Level Result: <strong>{{aLevels_filename}}</strong></div>
         <div ng-show="jamb_filename" style="clear: both" class="alert alert-info">Saved JAMB Result: <strong>{{jamb_filename}}</strong></div>
         <div style="clear: both" class="form-actions">
-            <button type="button"  class="btn" ui-sref="main.biodata"> Back to BIO Data</button>
-            <button type="submit"  class="btn"> Save and Continue to Higher Institution Details >> </button>
+            <a  class="btn" ui-sref="main.biodata"><< Previous Step</a>
+            <button class="btn" ng-click="save()">Save</button>
+            <a  class="btn btn-primary" ui-sref="main.higher-inst">Next Step >></a>
+            <span class="alert alert-info" ng-show="showSave">Saved!!</span>
+            <span class="alert alert-error" ng-show="showSaveError">Save Error!!</span>
         </div>
     </form>
     <bssb-loader></bssb-loader>

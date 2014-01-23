@@ -115,13 +115,14 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
         <div style="clear: both" class="form-actions">
-            <button type="submit"  class="btn" ui-sref="main.higher-inst"> Back to Higher Institution Details</button>
-            <button type="submit"  class="btn btn-primary" ng-click="saveAndPreview()"> Save and Preview</button>
+            <a  class="btn" ui-sref="main.higher-inst"> << Previous Step</a>
+            <button class="btn" ng-click="save()">Save</button>
+            <a  class="btn btn-primary" ui-sref="main.preview">Preview</a>
+            <div class="alert alert-info" ng-show="showSave">Saved!!</div>
+            <div class="alert alert-error" ng-show="showSaveError">Save Error!!</div>
         </div>
     </form>
     <bssb-loader></bssb-loader>

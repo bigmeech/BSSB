@@ -168,11 +168,11 @@
             </div>
         </div>
         <div style="clear: both" class="form-actions">
-            <button type="submit"  class="btn" ng-click="gotoQualifications()"> << Previous Step</button>
-            <button type="submit"  class="btn" ng-click="gotoQualifications()"> Save </button>
-            <button type="submit"  class="btn" ng-click="gotoQualifications()"> Next Step >> </button>
-
-
+            <a  class="btn" ui-sref="main.startapp"><< Previous Step</a>
+            <button type="submit"  class="btn" ng-click="save()"> Save </button>
+            <a  class="btn btn-primary" ui-sref="main.qualifications">Next Step >></a>
+            <span class="alert alert-info" ng-show="showSave">Saved!!</span>
+            <span class="alert alert-error" ng-show="showSaveError">Save Error</span>
         </div>
     </form>
 </div>

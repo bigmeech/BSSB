@@ -55,8 +55,10 @@
                  class="alert alert-error"><strong>Upload Error!!!</strong> - {{uploadErrorMessage}}</div>
         </div>
             <div class="form-actions">
-                <button type="submit"  class="btn" ng-click="start()"> Save </button>
-                <button type="submit"  class="btn" ng-click="start()"> Next Step >> </button>
+                <button type="submit"  class="btn" ng-click="save()"> Save </button>
+                <a class="btn" ui-sref="main.biodata"> Next Step >> </a>
+                <span style="margin-top: 20px" class="alert alert-info" ng-show="showSave">Saved!</span>
+                <span style="margin-top: 20px" class="alert alert-error" ng-show="showSaveError">Error Saving!</span>
             </div>
         </form>
         <!--<div class="loading-box" ng-show="loading">

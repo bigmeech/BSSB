@@ -204,8 +204,11 @@
         </div>
         <div ng-show="nysc_filename" style="clear: both" class="alert alert-info">Saved NYSC Certificate: <strong>{{nysc_filename}}</strong></div>
         <div style="clear: both" class="form-actions">
-            <button type="submit"  class="btn" ui-sref="main.qualifications"> Back to Basic Qualifications</button>
-            <button type="submit"  class="btn" ng-click="gotoProfQuali()"> Save and Continue to Professional Qualification Details >> </button>
+            <a  class="btn" ui-sref="main.qualifications"><< Previous Step</a>
+            <button class="btn" ng-click="save()">Save</button>
+            <a  class="btn btn-primary" ui-sref="main.higher-inst"> Next Step >> </a>
+            <span class="alert alert-info" ng-show="showSave">Saved!!</span>
+            <span class="alert alert-error" ng-show="showSaveError">Save Error!!</span>
         </div>
     </form>
 
