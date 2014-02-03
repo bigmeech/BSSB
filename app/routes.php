@@ -37,6 +37,8 @@ Route::get('main/getProfQuali','ApplicantController@fetchProfQuali');
 Route::get('main/getPreview','ApplicantController@fetchPreview');
 Route::get('main/getAppData','ApplicantController@fetchAppData');
 
+Route::post('main/submit','ApplicantController@submitApplication');
+
 Route::get('admin','AdminController@index');
 Route::post('admin/auth','AdminAuthController@authenticate');
 Route::get('admin/main','AdminController@dashboard');
