@@ -6,7 +6,7 @@
             <div class="control-group">
                 <label class="control-label" for="selectExam">Exam Taken</label>
                 <div class="controls">
-                    <select required id="selectExam" ng-model="qualiDetails.s1_exam" ng-options="exam.name for exam in exams">
+                    <select required id="selectExam" ng-model="quali_details.s1_exam" ng-options="exam.name for exam in exams">
                         <option value=""> -- Select an Exam -- </option>
                     </select>
                 </div>
@@ -14,19 +14,19 @@
             <div class="control-group">
                 <label class="control-label" for="inputCenterName">Center Name</label>
                 <div class="controls">
-                    <input required type="text" ng-model="qualiDetails.s1_center_name" id="inputCenterName" placeholder="Enter Center Name">
+                    <input required type="text" ng-model="quali_details.s1_center_name" id="inputCenterName" placeholder="Enter Center Name">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputYearAdmitted">Year Admitted</label>
                 <div class="controls">
-                    <input required type="date" ng-model="qualiDetails.s1_year_admitted" id="inputYearAdmitted" placeholder="Select Year Admitted">
+                    <input required type="date" ng-model="quali_details.s1_year_admitted" id="inputYearAdmitted" placeholder="Select Year Admitted">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputNoCredits">Number of Credits</label>
                 <div class="controls">
-                    <input required ng-model="qualiDetails.s1_credits" type="text" id="inputNoCredits" placeholder="Number of Credits">
+                    <input required ng-model="quali_details.s1_credits" type="text" id="inputNoCredits" placeholder="Number of Credits">
                 </div>
             </div>
 
@@ -35,14 +35,14 @@
             <div class="control-group">
                 <label class="control-label" for="inputExamNumber">Exam Number</label>
                 <div class="controls">
-                    <input required ng-model="qualiDetails.s1_exam_number" type="text" id="inputExamNumber" placeholder="Exam Number">
+                    <input required ng-model="quali_details.s1_exam_number" type="text" id="inputExamNumber" placeholder="Exam Number">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputExamYear">Exam Year</label>
                 <div class="controls">
                     <div class="controls">
-                        <input required type="date" ng-model="qualiDetails.s1_exam_year" id="inputExamYear" placeholder="Select Exam Year">
+                        <input required type="date" ng-model="quali_details.s1_exam_year" id="inputExamYear" placeholder="Select Exam Year">
                     </div>
                 </div>
             </div>
@@ -50,21 +50,21 @@
                 <label class="control-label" for="inputYearGraduated">Year Graduated</label>
                 <div class="controls">
                     <div class="controls">
-                        <input required type="date" ng-model="qualiDetails.s1_year_graduated" id="inputYearGraduated">
+                        <input required type="date" ng-model="quali_details.s1_year_graduated" id="inputYearGraduated">
                     </div>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputSubGrades">Subjects and Grades</label>
                 <div class="controls">
-                    <textarea required id="inputSubGrades" ng-model="qualiDetails.s1_subAndGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
+                    <textarea required id="inputSubGrades" ng-model="quali_details.s1_subAndGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
                 </div>
             </div>
         </div>
         <div class="control-group" style="clear: both">
             <label class="controls">
                 Upload Attained Certificate
-                <input style="width: 90px;" type="file" ng-file-select="onFileSelect($files,'sitting1')" value="" title="Select a file to upload">
+                <input {{quali_details.s1_cert_url||required}} style="width: 90px;" type="file" ng-file-select="onFileSelect($files,'sitting1')" value="" title="Select a file to upload">
             </label>
         </div>
         <div class="progress progress-striped active" ng-show="uploadingSitting1">
@@ -82,7 +82,7 @@
                 <label class="control-label" for="inputFirstName">Exam Taken</label>
                 <div class="controls">
 
-                    <select id="selectExam" ng-model="qualiDetails.s2_exam" ng-options="exam.name for exam in exams">
+                    <select id="selectExam" ng-model="quali_details.s2_exam" ng-options="exam.name for exam in exams">
                         <option value=""> -- Select an Exam -- </option>
                     </select>
                 </div>
@@ -90,19 +90,19 @@
             <div class="control-group">
                 <label class="control-label" for="inputCenterName">Center Name</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.s2_center_name" id="inputCenterName" placeholder="Enter Center Name">
+                    <input type="text" ng-model="quali_details.s2_center_name" id="inputCenterName" placeholder="Enter Center Name">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputYearAdmitted">Year Admitted</label>
                 <div class="controls">
-                    <input type="date" id="inputYearAdmitted" ng-model="qualiDetails.s2_year_admitted" placeholder="Select Year Admitted">
+                    <input type="date" id="inputYearAdmitted" ng-model="quali_details.s2_year_admitted" placeholder="Select Year Admitted">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputNoCredits">Number of Credits</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.s2_credits" id="inputNoCredits" placeholder="Number of Credits">
+                    <input type="text" ng-model="quali_details.s2_credits" id="inputNoCredits" placeholder="Number of Credits">
                 </div>
             </div>
 
@@ -111,14 +111,14 @@
             <div class="control-group">
                 <label class="control-label" for="inputExamNumber">Exam Number</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.s2_exam_number" id="inputExamNumber" placeholder="Exam Number">
+                    <input type="text" ng-model="quali_details.s2_exam_number" id="inputExamNumber" placeholder="Exam Number">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputExamYear">Exam Year</label>
                 <div class="controls">
                     <div class="controls">
-                        <input type="date" id="inputExamYear" ng-model="qualiDetails.s2_exam_year" placeholder="Select Exam Year">
+                        <input type="date" id="inputExamYear" ng-model="quali_details.s2_exam_year" placeholder="Select Exam Year">
                     </div>
                 </div>
             </div>
@@ -126,14 +126,14 @@
                 <label class="control-label" for="inputYearGraduated">Year Graduated</label>
                 <div class="controls">
                     <div class="controls">
-                        <input type="date" ng-model="qualiDetails.s2_year_graduated" id="inputYearGraduated">
+                        <input type="date" ng-model="quali_details.s2_year_graduated" id="inputYearGraduated">
                     </div>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputSubGrades">Subjects and Grades</label>
                 <div class="controls">
-                    <textarea id="inputSubGrades" ng-model="qualiDetails.s2_subAndGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
+                    <textarea id="inputSubGrades" ng-model="quali_details.s2_subAndGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
                 </div>
             </div>
 
@@ -155,32 +155,32 @@
                 <label class="control-label" for="inputFirstName">Exam Name</label>
                 <div class="controls">
 
-                    <input type="text" id="selectExam" ng-model="qualiDetails.a_exam"/>
+                    <input type="text" id="selectExam" ng-model="quali_details.a_exam"/>
 
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputCenterName">Exam Center</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.a_center_name" id="inputCenterName" placeholder="Enter Center Name">
+                    <input type="text" ng-model="quali_details.a_center_name" id="inputCenterName" placeholder="Enter Center Name">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="credits">Number of credits</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.a_credits" id="credits" placeholder="Number of credits">
+                    <input type="text" ng-model="quali_details.a_credits" id="credits" placeholder="Number of credits">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="examNumber">Exam Number</label>
                 <div class="controls">
-                    <input type="text" id="examNumber" ng-model="qualiDetails.a_exam_number" placeholder="Exam Number">
+                    <input type="text" id="examNumber" ng-model="quali_details.a_exam_number" placeholder="Exam Number">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="examNumber">Subject and Grades</label>
                 <div class="controls">
-                    <textarea id="examNumber" ng-model="qualiDetails.a_subAndGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
+                    <textarea id="examNumber" ng-model="quali_details.a_subAndGrades" placeholder="Example: Mathematics(A1), English(B2) etc."></textarea>
                 </div>
             </div>
             <div class="control-group" style="clear: both">
@@ -198,31 +198,31 @@
             <div class="control-group">
                 <label class="control-label" for="centerName">Centre Name</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.jamb_center_name" id="centerName" placeholder="Centre Name">
+                    <input type="text" ng-model="quali_details.jamb_center_name" id="centerName" placeholder="Centre Name">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="exmNumber">Exam Number</label>
                 <div class="controls">
-                    <input type="text" ng-model="qualiDetails.jamb_exam_number" id="exmNumber" placeholder="Exam Number">
+                    <input type="text" ng-model="quali_details.jamb_exam_number" id="exmNumber" placeholder="Exam Number">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="examYear">Exam year</label>
                 <div class="controls">
-                    <input type="date" ng-model="qualiDetails.jamb_exam_year" id="examYear" placeholder="Exam year">
+                    <input type="date" ng-model="quali_details.jamb_exam_year" id="examYear" placeholder="Exam year">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="totalScore">Total Score</label>
                 <div class="controls">
-                    <input type="text" id="totalScore" ng-model="qualiDetails.jamb_total_score" placeholder="Total Score">
+                    <input type="text" id="totalScore" ng-model="quali_details.jamb_total_score" placeholder="Total Score">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="subjectAndScores">Subject and Scores</label>
                 <div class="controls">
-                    <textarea id="subjectAndScores" ng-model="qualiDetails.jamb_subAndScore" placeholder="Example: Mathematics(120), English(112) etc."></textarea>
+                    <textarea id="subjectAndScores" ng-model="quali_details.jamb_subAndScore" placeholder="Example: Mathematics(120), English(112) etc."></textarea>
                 </div>
             </div>
             <div class="control-group" style="clear: both">
@@ -240,7 +240,7 @@
         <div style="clear: both" class="form-actions">
             <a  class="btn" ui-sref="main.biodata"><< Previous Step</a>
             <button class="btn" ng-click="save()">Save</button>
-            <a  class="btn btn-primary" ui-sref="main.higher-inst">Next Step >></a>
+            <a id="basicQualiNext" class="btn btn-primary disabled">Next Step >></a>
             <span class="alert alert-info" ng-show="showSave">Saved!!</span>
             <span class="alert alert-error" ng-show="showSaveError">Save Error!!</span>
         </div>

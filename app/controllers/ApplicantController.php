@@ -13,6 +13,25 @@ class ApplicantController extends BaseController {
 		//
 	}
 
+    public function fetchFormCompleteData()
+    {
+        $form_comp_data = FormCompleteData::find(Input::all()['user_id']);
+        if(is_null($form_comp_data))
+        {
+            $form_comp_data=new FormCompleteData();
+            $form_comp_data->user_id = Input::all()['user_id'];
+            $form_comp_data->save();
+            return Response::json(
+                array(
+                    "warning"=>"emptydata"
+                ),200
+            );
+        }
+        else{
+            return Response::json($form_comp_data,200);
+        }
+    }
+
     public function fetchAppData()
     {
         $appdata = ApplicationData::find(Input::all()['user_id']);//where('user_id','=',Input::all()['user_id'])->first();
@@ -145,6 +164,7 @@ class ApplicantController extends BaseController {
         $input=Input::all();
         $scholarship=Scholarship::where('user_id','=',$input['user_id'])->first();
         $appData=ApplicationData::where('user_id','=',$input['user_id'])->first();
+        $form_comp_data = FormCompleteData::find(Input::all()['user_id']);
         //checks to see if user already has scholaship details and return the details if they exist,
         //if it doesnt exist, it inserts a new row in the database with
         //return var_dump($appData);
@@ -162,7 +182,6 @@ class ApplicantController extends BaseController {
             $scholarship->has_admission=$input['has_an_admission']=='YES'?'YES':'NO';
             $scholarship->essay_url=$input['path_to_essay'];
             $scholarship->save();
-
 
             return Response::json(
                 array(
@@ -191,6 +210,9 @@ class ApplicantController extends BaseController {
             $scholarship->essay_url=$input['path_to_essay'];
             $scholarship->push();
 
+            $form_comp_data->scholarship_app_completed = "1";
+            $form_comp_data->save();
+
             $appData->app_progress = 20 + $appData->app_progress;
             $appData->save();
             return Response::json(
@@ -204,6 +226,7 @@ class ApplicantController extends BaseController {
         $client=Input::all();
         $db = BioData::where('user_id','=',$client['user_id'])->first();
         $appData = ApplicationData::find(Input::all()['user_id']);
+        $form_comp_data = FormCompleteData::find(Input::all()['user_id']);
 
         if(is_null($db))
         {
@@ -224,6 +247,10 @@ class ApplicantController extends BaseController {
             $db->save();
             $appData->app_progress = 20 + $appData->app_progress;
             $appData->save();
+
+            $form_comp_data->biodata_completed = "1";
+            $form_comp_data->save();
+
             return Response::json(array('warning'=>'Adding new stuff'));
         }
         else
@@ -251,6 +278,8 @@ class ApplicantController extends BaseController {
         $client=(object)Input::all();
         $db = BasicQualifications::where('user_id','=',$client->user_id)->first();
         $appData = ApplicationData::find(Input::all()['user_id']);
+        $form_comp_data = FormCompleteData::find(Input::all()['user_id']);
+
         if(!is_null($db))
         {
             foreach($client as $key => $value)
@@ -263,8 +292,7 @@ class ApplicantController extends BaseController {
             $db->save();
             return Response::json($db,200);
         }
-        else
-        {
+        else{
             $db=new BasicQualifications;
             foreach($client as $key => $value)
             {
@@ -276,6 +304,9 @@ class ApplicantController extends BaseController {
             $db->save();
             $appData->app_progress = 20 + $appData->app_progress;
             $appData->save();
+
+            $form_comp_data->basic_qualification_completed = "1";
+            $form_comp_data->save();
             return Response::json($db,200);
         }
 
@@ -286,16 +317,26 @@ class ApplicantController extends BaseController {
         $client=(object)Input::all();
         $db=HigherInst::where('user_id','=',$client->user_id)->first();
         $appData = ApplicationData::find(Input::all()['user_id']);
+        $form_comp_data = FormCompleteData::find(Input::all()['user_id']);
+
         if(is_null($db))
         {
             $db=new HigherInst;
             foreach($client as $key => $value)
             {
-               $db->$key=$value;
+                if(is_array($value)){
+                    $db->$key=$value['value'];
+                }
+                else{
+                    $db->$key=$value;
+                }
             }
             $db->save();
             $appData->app_progress = 20 + $appData->app_progress;
             $appData->save();
+
+            $form_comp_data->higher_institution_completed = "1";
+            $form_comp_data->save();
 
             return Response::json(array('warning'=>'Adding new stuff'));
         }
@@ -303,7 +344,12 @@ class ApplicantController extends BaseController {
         {
             foreach($client as $key => $value)
             {
-               $db->$key=$value;
+                if(is_array($value)){
+                    $db->$key=$value['value'];
+                }
+                else{
+                    $db->$key=$value;
+                }
             }
             $db->save();
             return Response::json(array('Warning'=>'Updating old stuff'));
@@ -315,6 +361,7 @@ class ApplicantController extends BaseController {
         $client=(object)Input::all();
         $db=ProfQualifications::where('user_id','=',$client->user_id)->first();
         $appData = ApplicationData::find(Input::all()['user_id']);
+        $form_comp_data = FormCompleteData::find(Input::all()['user_id']);
 
         if(is_null($db))
         {
@@ -324,8 +371,12 @@ class ApplicantController extends BaseController {
                 $db->$key=$value;
             }
             $db->save();
+
             $appData->app_progress = 20 + $appData->app_progress;
             $appData->save();
+
+            $form_comp_data -> professionbal_qualification_completed = "1";
+            $form_comp_data->save();
             return Response::json(array('warning'=>'Adding new stuff'));
         }
         else

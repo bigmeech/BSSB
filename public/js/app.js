@@ -291,13 +291,11 @@ tarapet.factory('ApplicationDataService',function($http,$cookieStore,SessionServ
         {
             return SessionService.set('prof_quali_form_complete',value);
         }
-
     }
 })
 
 tarapet.factory('ApplicationService',function($rootScope,$location,$http,SessionService){
     return{
-
         addScholarship:function(details){
                 return $http.post('main/startapp',details);
 
@@ -321,12 +319,21 @@ tarapet.factory('ApplicationService',function($rootScope,$location,$http,Session
         addProfQuali:function(proQualiDetails)
         {
             proQualiDetails.user_id=SessionService.get('user_id');
-            $http.post('main/professional-qualifications',proQualiDetails)
+            return $http.post('main/professional-qualifications',proQualiDetails)
 
         },
         submit:function()
         {
             console.log("Submitting all your data. This cannot be undone");
+        },
+        getFormCompleteData:function()
+        {
+            return $http.get('main/getFormCompleteData',{
+                    params:{
+                        user_id:SessionService.get('user_id')
+                    }
+                }
+            )
         }
     }
 });
@@ -352,7 +359,7 @@ tarapet.factory("AuthService",function($rootScope,$location,$http,SessionService
         },
         logout:function()
         {
-            var logout = $http.post('/auth/logout');
+            var logout = $http.post('auth/logout');
             logout.success(uncacheSession);
             return logout;
         },
@@ -485,6 +492,12 @@ tarapet.controller('DashboardController', function($scope,SessionService){
 });
 
 tarapet.controller('StartController',function($rootScope,$scope,$location,$upload,SessionService,ApplicationService,getApplicationPromise){
+    if(SessionService.get("startAppCompleted")){
+        var nextBtn = angular.element("#startAppNext");
+        nextBtn.removeClass("disabled");
+        nextBtn.attr('ui-sref','main.biodata');
+        nextBtn.attr('href','#/main/biodata');
+    }
     if(getApplicationPromise.data.essay_url)
     {
         var essay_link=getApplicationPromise.data.essay_url;
@@ -535,12 +548,26 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
                 .success(
                 function(data, status, headers, config)
                 {
-                    SessionService.set('scholarship_form_complete',true);
+                    $scope.$emit("event:ScholarshipFormCompleted","FormComplete");
                     $scope.showSave=true;
+
+                    //save formcomplete details locally
+                    SessionService.set("startAppCompleted",true);
+                    //enable bideodata next
+
+                    var nextBtn = angular.element("#startAppNext");
+                    nextBtn.removeClass("disabled");
+                    nextBtn.attr('ui-sref','main.biodata');
+                    nextBtn.attr('href','#/main/biodata');
                 })
                 .error(
                 function(data, status, headers, config){
                     $scope.showSaveError = true;
+                    SessionService.unset("startAppCompleted");
+
+                    //diosbaled next btn
+                    var nextBtn = angular.element("#bioDataNext");
+                    nextBtn.addClass("disabled");
                 });
         }
         else
@@ -589,8 +616,12 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
 });
 
 tarapet.controller('BioDataController',function($upload,$scope,$location,ApplicationService,getBioDataPromise,SessionService){
-
-
+    if(SessionService.get("bioDataComplete")){
+        var nextBtn = angular.element("#bioDataNext");
+        nextBtn.removeClass("disabled");
+        nextBtn.attr('ui-sref','main.qualifications');
+        nextBtn.attr('href','#/main/qualifications');
+    }
     $scope.gender=[
         {id:1,value:'Male'},
         {id:2,value:'Female'}
@@ -633,11 +664,28 @@ tarapet.controller('BioDataController',function($upload,$scope,$location,Applica
         ApplicationService.addBioData($scope.bioData)
             .success(function(data, status, headers, config)
             {
-                SessionService.set('biodata_form_complete',true);
+                $scope.$emit("event:BiodataFormCompleted");
                 $scope.showSave=true;
                 $scope.showSaveError=false;
+
+                //save formcomplete details locally
+                SessionService.set("bioDataComplete",true);
+                //enable bideodata next
+
+                var nextBtn = angular.element("#bioDataNext");
+                nextBtn.removeClass("disabled");
+                nextBtn.attr('ui-sref','main.qualifications');
+                nextBtn.attr('href','#/main/qualifications');
             })
             .error(function(data, status, headers, config){
+                //notify client that form has not been completed
+                SessionService.unset("bioDataComplete");
+
+                //diosbaled next btn
+                var nextBtn = angular.element("#bioDataNext");
+                nextBtn.addClass("disabled");
+                nextBtn.attr('ui-sref','');
+                nextBtn.attr('href','');
                 $scope.showSaveError=true;
                 $scope.showSave=false;
             });
@@ -709,6 +757,13 @@ tarapet.controller('BioDataController',function($upload,$scope,$location,Applica
 });
 
 tarapet.controller('QualificationsController',function($scope,$rootScope,$location,$upload,SessionService,ApplicationService,getBasicQualificationPromise){
+    if(SessionService.get("basicQualiComplete")){
+        var basicQualiNextBtn = angular.element("#basicQualiNext");
+        basicQualiNextBtn.removeClass('disabled');
+        basicQualiNextBtn.attr('ui-sref','main.higher-Inst');
+        basicQualiNextBtn.attr('href','#/main/higher-Inst');
+    }
+
     $scope.qualificationData=getBasicQualificationPromise.data;
 
     $scope.s1_filename = !getBasicQualificationPromise.data.s1_cert_url ? null : getBasicQualificationPromise.data.s1_cert_url.substring
@@ -727,7 +782,7 @@ tarapet.controller('QualificationsController',function($scope,$rootScope,$locati
     ];
 
     $scope.loading=false;
-    $scope.qualiDetails={
+    $scope.quali_details={
             s1_exam: _.find($scope.exams,function(exam){
                 return exam.name == getBasicQualificationPromise.data.s1_exam
             }),
@@ -794,27 +849,27 @@ tarapet.controller('QualificationsController',function($scope,$rootScope,$locati
             switch(data.type)
             {
                 case "sitting1":
-                    $scope.qualiDetails.s1_cert_url=data.filepath;
+                    $scope.quali_details.s1_cert_url=data.filepath;
                     $scope.s1_filename=data.filename;
                     $scope.s1_url=data.url;
                     break;
                 case "sitting2":
-                    $scope.qualiDetails.s2_cert_url=data.filepath;
+                    $scope.quali_details.s2_cert_url=data.filepath;
                     $scope.s2_filename=data.filename;
                     $scope.s2_url=data.url;
                     break;
                 case "jamb":
-                    $scope.qualiDetails.jamb_cert_url=data.filepath;
+                    $scope.quali_details.jamb_cert_url=data.filepath;
                     $scope.jamb_filename=data.filename;
                     $scope.jamb_url=data.url
                     break;
                 case "aLevels":
-                    $scope.qualiDetails.a_cert_url=data.filepath;
+                    $scope.quali_details.a_cert_url=data.filepath;
                     $scope.aLevels_filename=data.filename;
                     $scope.aLevels_url=data.url;
             }
             $scope.pathReturned=true;
-            $scope.qualiDetails.s2_cert_url=data.filepath;
+            $scope.quali_details.s2_cert_url=data.filepath;
             $scope.uploadErrorMessage=null;
 
             $scope.uploadingSitting1=false;
@@ -851,24 +906,42 @@ tarapet.controller('QualificationsController',function($scope,$rootScope,$locati
         $scope.showSave = false;
         $scope.showSaveError = false
         $scope.loading=true;
-        ApplicationService.addBasicQualificastions($scope.qualiDetails)
+        ApplicationService.addBasicQualificastions($scope.quali_details)
             .success(
             function(data, status, headers, config)
             {
-                SessionService.set('quali_details_complete',true);
+                $scope.$emit("event:BasicQualiFormCompleted");
                 $scope.showSave = true;
                 $scope.showSaveError = false;
+                SessionService.set("basicQualiComplete",true);
+                var basicQualiNextBtn = angular.element("#basicQualiNext");
+                basicQualiNextBtn.removeClass('disabled');
+                basicQualiNextBtn.attr('ui-sref','main.higher-Inst');
+                basicQualiNextBtn.attr('href','#/main/higher-inst');
+
             })
             .error(
             function(data, status, headers, config)
             {
                 $scope.showSaveError = true;
                 $scope.showSave = false;
+                SessionService.unset("basicQualiComplete");
+                var basicQualiNextBtn = angular.element("#basicQualiNext");
+                basicQualiNextBtn.addClass('disabled');
+                basicQualiNextBtn.attr('ui-sref','');
+                basicQualiNextBtn.attr('href','');
             }
         );
     }
 });
 tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$upload,ApplicationService,SessionService,getHigherInstPromise){
+
+    if(SessionService.get("HighInstComplete")){
+        var basicQualiNextBtn = angular.element("#higherInstNext");
+        basicQualiNextBtn.removeClass('disabled');
+        basicQualiNextBtn.attr('ui-sref','main.profQuali');
+        basicQualiNextBtn.attr('href','#/main/profquali');
+    }
 
     $scope.grade_types=[
         {id:1,value:'First Class'},
@@ -910,7 +983,10 @@ tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$
             inst1_admission_year:getHigherInstPromise.data.inst1_admission_year,
             inst1_exp_grad_year:getHigherInstPromise.data.inst1_exp_grad_year,
             inst1_grad_year:getHigherInstPromise.data.inst1_grad_year,
-            inst1_grade:getHigherInstPromise.data.inst1_grade,
+            inst1_grade:_.find($scope.grade_types,function(grade_type){
+                return grade_type.value==getHigherInstPromise.data.inst1_grade;
+            }),
+            //inst1_grade:getHigherInstPromise.data.inst1_grade,
             inst1_cert_url:getHigherInstPromise.data.inst1_cert_url,
             inst1_reason:getHigherInstPromise.data.inst1_reason,
 
@@ -921,7 +997,10 @@ tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$
             inst2_admission_year:getHigherInstPromise.data.inst2_admission_year,
             inst2_exp_grad_year:getHigherInstPromise.data.inst2_exp_grad_year,
             inst2_grad_year:getHigherInstPromise.data.inst2_grad_year,
-            inst2_grade:getHigherInstPromise.data.inst2_grade,
+            inst2_grade:_.find($scope.grade_types,function(grade_type){
+                return grade_type.value==getHigherInstPromise.data.inst2_grade;
+            }),
+            //inst2_grade:getHigherInstPromise.data.inst2_grade,
             inst2_cert_url:getHigherInstPromise.data.inst2_cert_url,
             inst2_reason:getHigherInstPromise.data.inst2_reason,
 
@@ -1006,15 +1085,25 @@ tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$
             .success(
             function(data, status, headers, config)
             {
-                SessionService.set('hInst_details_complete',true);
+                $scope.$emit("event:HigherInstFormCompleted");
                 $scope.showSave = true;
                 $scope.showSaveError = false;
+                SessionService.get("HighInstComplete",true);
+                var basicQualiNextBtn = angular.element("#higherInstNext");
+                basicQualiNextBtn.removeClass('disabled');
+                basicQualiNextBtn.attr('ui-sref','main.profQuali');
+                basicQualiNextBtn.attr('href','#/main/profquali');
+
             })
             .error(function(data, status, headers, config)
             {
-                SessionService.set('hInst_details_complete',false);
                 $scope.showSave = false;
                 $scope.showSaveError = true;
+                SessionService.get("HighInstComplete",true);
+                var basicQualiNextBtn = angular.element("#higherInstNext");
+                basicQualiNextBtn.addClass('disabled');
+                basicQualiNextBtn.attr('ui-sref','main.profQuali');
+                basicQualiNextBtn.attr('href','#/main/profquali');
             })
     }
 });
@@ -1110,7 +1199,7 @@ tarapet.controller('ProfQualiController',function($scope,$rootScope,$location,$u
         ApplicationService.addProfQuali($scope.profQualiDetails)
             .success(function(data, status, headers, config)
             {
-                SessionService.set('prof_details_complete',true);
+                $scope.$emit("event:ProfQualiFormCompleted");
                 $scope.showSave  = true;
                 $scope.showSaveError = false;
             }).error(function(data, status, headers, config)
@@ -1247,6 +1336,116 @@ tarapet.directive('alert',function($rootScope){
     }
 })
 
+tarapet.directive('sideMenu',function($rootScope,ApplicationService){
+    return{
+
+        restrict:"E",
+        templateUrl:"../views/side-menu.html",
+        controller:function($scope){
+            $scope.disableBioData = false;
+            $scope.disableBasicQualifications = false;
+            $scope.disableHigherInstitution = false;
+            $scope.disableProfessionalQualification = false;
+
+        },
+        link:function(scope,element,attrib,crtlr)
+        {
+            ApplicationService.getFormCompleteData()
+                .success(function(data){
+
+                    if(data.scholarship_app_completed === "1"){
+                        var list_item = angular.element("#biodata_list_item");
+                        list_item.find("a")
+                            .attr("ui-sref","main.biodata")
+                            .attr("href","#/main/biodata");
+                        list_item.removeClass("disabled");
+                    }
+                    else{
+                        var list_item = angular.element("#biodata_list_item");
+                        list_item.find("a").attr("href","");
+                        list_item.addClass("disabled");
+                    }
+
+                    if(data.biodata_completed === "1")
+                    {
+                        var list_item = angular.element("#basic_quali_list_item");
+                        list_item.find("a")
+                            .attr("ui-sref","main.qualifications")
+                            .attr("href","#/main/qualifications");
+                        list_item.removeClass("disabled");
+                    }
+                    else{
+                        var list_item = angular.element("#basic_quali_list_item");
+                        list_item.find("a").attr("href","");
+                        list_item.addClass("disabled");
+                    }
+                    //higher inst
+                   // basic_qualification_completed
+                    if(data.basic_qualification_completed === "1")
+                    {
+                        var list_item = angular.element("#higher_inst_list_item");
+                        list_item.find("a")
+                            .attr("ui-sref","main.higher-inst")
+                            .attr("href","#/main/higher-inst");
+                        list_item.removeClass("disabled");
+                    }
+                    else{
+                        var list_item = angular.element("#higher_inst_list_item");
+                        list_item.find("a").attr("href","");
+                        list_item.addClass("disabled");
+                    }
+
+                    //professional qualifications
+                    //higher_institution_completed
+                    if(data.higher_institution_completed === "1"){
+                        var list_item = angular.element("#prof_quali_list_item");
+                        list_item.find("a")
+                            .attr("ui-sref","main.profQuali")
+                            .attr("href","#/main/profquali");
+                        list_item.removeClass("disabled");
+                    }else{
+                        var list_item = angular.element("#prof_quali_list_item");
+                        list_item.find("a")
+                            .attr("href","");
+                        list_item.addClass("disabled")}
+                })
+                .error(function(data){
+                    console.log(data)
+                });
+
+            //happens when data for previous form has been accepted
+            scope.$on("event:ScholarshipFormCompleted",function(){
+                var list_item = angular.element("#biodata_list_item");
+                list_item.find("a")
+                    .attr("ui-sref","main.biodata")
+                    .attr("href","#/main/biodata");
+                list_item.removeClass("disabled");
+            })
+            scope.$on("event:BiodataFormCompleted",function(){
+                var list_item = angular.element("#basic_quali_list_item");
+                list_item.find("a")
+                    .attr("ui-sref","main.qualifications")
+                    .attr("href","#/main/qualifications");
+                list_item.removeClass("disabled");
+            })
+            scope.$on("event:BasicQualiFormCompleted",function(){
+                var list_item = angular.element("#higher_inst_list_item");
+                list_item.find("a")
+                    .attr("ui-sref","main.higher-inst")
+                    .attr("href","#/main/higher-inst");
+                list_item.removeClass("disabled");
+            })
+            scope.$on("event:HigherInstFormCompleted",function(){
+                var list_item = angular.element("#prof_quali_list_item");
+                list_item.find("a")
+                    .attr("ui-sref","main.profQuali")
+                    .attr("href","#/main/profquali");
+                list_item.removeClass("disabled");
+            })
+        }
+    }
+})
+
 tarapet.filter('trimOffPath',function(){
     return function(fullPath)
     {
@@ -1261,4 +1460,4 @@ tarapet.filter('trimOffPath',function(){
         else
             return null
     }
-})
+});

@@ -247,7 +247,7 @@ html, body
     margin-right: auto;
     overflow: visible;
     white-space: nowrap;
-    min-width: 100%
+    /*min-width: 100%*/
 
 }
 
