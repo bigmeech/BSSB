@@ -390,4 +390,9 @@ class ApplicantController extends BaseController {
         }
     }
 
+    public function submitApplication()
+    {
+    	$submit_table = new SubmittedApplication;
+    }
+
 }

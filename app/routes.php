@@ -38,6 +38,8 @@ Route::get('main/getPreview','ApplicantController@fetchPreview');
 Route::get('main/getAppData','ApplicantController@fetchAppData');
 Route::get('main/getFormCompleteData','ApplicantController@fetchFormCompleteData');
 
+Route::post('main/submit','ApplicantController@submitApplication');
+
 Route::get('admin','AdminController@index');
 Route::post('admin/auth','AdminAuthController@authenticate');
 Route::get('admin/main','AdminController@dashboard');
