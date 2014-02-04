@@ -53,9 +53,15 @@
 
 
 <script src="/js/ext/jquery.js"></script>
+<script src="/js/admin/js/bootstrap.js"></script>
 <script src="/js/ext/angular-1-2-0.js"></script>
 <script src="/js/ext/angular-cookies.js"></script>
 <script src="/js/ext/angular-ui-router.js"></script>
 <script src="/js/admin.js"></script>
+<script>
+    $('.view-control').tooltip({
+        placement:'left'
+    });
+</script>
 </body>
 </html>

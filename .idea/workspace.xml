@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c534df42-2dd4-4f2b-98f2-d2aade5342a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/segoeui.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/segoeuib.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/segoeuii.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/segoeuil.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/segoeuisl.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/segoeuiz.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/seguili.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/seguisb.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/seguisbi.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/fonts/seguisli.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/FormCompleteData.php" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\css\admin\fonts\Roboto-Light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\css\admin\fonts\Roboto-LightItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\css\admin\fonts\Roboto-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\css\admin\fonts\Roboto-Thin.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\css\admin\fonts\Roboto-ThinItalic.ttf" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_01_24_004117_create_form_complete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_01_25_194958_create_form_submit_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/admin/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/admin/js/bootstrap.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin_main.php" afterPath="$PROJECT_DIR$/app/views/admin_main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bssb_admin.css" afterPath="$PROJECT_DIR$/public/css/bssb_admin.css" />
@@ -60,15 +48,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="higherInst.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/higherInst.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="14" selection-start="11947" selection-end="11947" vertical-scroll-proportion="-11.269231" vertical-offset="3294" max-vertical-offset="3757">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ApplicantController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ApplicantController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormCompleteData.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FormCompleteData.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/FormCompleteData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="2" selection-start="289" selection-end="289" vertical-scroll-proportion="0.41046277" vertical-offset="0" max-vertical-offset="497">
+            <state line="17" column="2" selection-start="289" selection-end="289" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -99,7 +78,7 @@
       <file leaf-file-name="admin-dashboard.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="82" selection-start="346" selection-end="346" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="340">
+            <state line="6" column="92" selection-start="592" selection-end="592" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="340">
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -116,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_main.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admin_main.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="34" selection-start="63" selection-end="63" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1122">
+            <state line="10" column="16" selection-start="334" selection-end="334" vertical-scroll-proportion="0.3420523" vertical-offset="0" max-vertical-offset="1224">
               <folding />
             </state>
           </provider>
@@ -140,7 +119,7 @@
       <file leaf-file-name="bssb_admin.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="15" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2669">
+            <state line="141" column="16" selection-start="3060" selection-end="3060" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="2635">
               <folding />
             </state>
           </provider>
@@ -177,9 +156,9 @@
         <option value="$PROJECT_DIR$/public/views/higherInst.html" />
         <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..higher_inst" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/app/views/admin_main.php" />
         <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
         <option value="$PROJECT_DIR$/public/css/bssb_admin.css" />
+        <option value="$PROJECT_DIR$/app/views/admin_main.php" />
       </list>
     </option>
   </component>
@@ -303,6 +282,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scholarship_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scholarship_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scholarship_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scholarship_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -394,6 +417,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scholarship_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scholarship_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -507,12 +548,16 @@
       <created>1391470567472</created>
       <updated>1391470567472</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FormCompleteData class and some half assed admin UI changes">
+      <created>1391506878586</created>
+      <updated>1391506878586</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33157894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -526,7 +571,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961598" sideWeight="0.66842103" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33256528" sideWeight="0.66842103" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33256528" sideWeight="0.66842103" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -580,13 +625,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/views/t1_m1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="1130" selection-end="1130" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..users">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
@@ -654,42 +692,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="63" selection-end="63" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="990" column="52" selection-start="37146" selection-end="37146" vertical-scroll-proportion="0.0" vertical-offset="16590" max-vertical-offset="24922">
           <folding>
             <element signature="e#36862#36957#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="34416" selection-start="34636" selection-end="34636" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="82" selection-start="346" selection-end="346" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="340">
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="15" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2669">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +710,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/FormCompleteData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="2" selection-start="289" selection-end="289" vertical-scroll-proportion="0.41046277" vertical-offset="0" max-vertical-offset="497">
+        <state line="17" column="2" selection-start="289" selection-end="289" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/UserTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="92" selection-start="592" selection-end="592" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="340">
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="34416" selection-start="34636" selection-end="34636" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="16" selection-start="3060" selection-end="3060" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="2635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="16" selection-start="334" selection-end="334" vertical-scroll-proportion="0.3420523" vertical-offset="0" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
