@@ -1,15 +1,58 @@
 <div class="dashboard-content">
  <div class="view-control-bar">
-     <span>Admin Dashboard</span>
+     <span class="glyphicon glyphicon-th-large"></span>&nbsp;Dashboard
      <ul style="float:right;margin: 0;padding: 0;list-style-type: none">
          <li class="view-control" data-toggle="tooltip" data-placement="left" title="Dashboard Home"><a href="#" class="glyphicon glyphicon-th-large"></a></li>
-         <li class="view-control" data-toggle="tooltip" data-placement="left" title="Send out Notifications"><a href="#" class="glyphicon glyphicon-info-sign"></a></li>
-         <li class="view-control" data-toggle="tooltip" data-placement="left" title="Log Out"><a href="#" class="glyphicon glyphicon-log-out"></a></li>
+         <li class="view-control" data-toggle="modal" data-target="#sendNotificationModal" data-toggle="tooltip" data-placement="left" title="Send out Notifications"><a href="#" class="glyphicon glyphicon-info-sign"></a></li>
+         <li class="view-control" data-toggle="tooltip" data-placement="left" title="Log Out"><a href="#" class="glyphicon glyphicon-off"></a></li>
      </ul>
  </div>
     <div class="view">
         <div class="desc">
-            View and Manage all Scholarship applications here
+            <h3 class="admin-h3">General System Overview</h3>
+            <div class="hr-div" style="padding-top: 40px;padding-bottom: 90px;">
+                <ul style="list-style: none">
+                    <li>
+                        <span>Applications Tended In</span>
+                        <br>
+                        <span>0</span>
+                    </li>
+                    <li>
+                        <span>Registered Users</span>
+                        <br>
+                        <span>0</span>
+                    </li>
+                    <li>
+                        <span>Applications Under Review</span>
+                        <br>
+                        <span>0</span></li>
+                    <li>
+                        <span>Approved Applications</span>
+                        <br>
+                        <span>0</span>
+                    </li>
+                    <li>
+                        <span>Declined Applications</span>
+                        <br>
+                        <span>0</span>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Recent Activity</div>
+            <div class="panel-body">
+                No Recent Activity
+            </div>
+
+        </div>
+
     </div>
+
+    <script>
+        $('.view-control').tooltip({
+            placement:'bottom'
+        });
+        //$('#sendNotification').modal(options)
+    </script>
 </div>

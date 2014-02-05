@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c534df42-2dd4-4f2b-98f2-d2aade5342a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_01_24_004117_create_form_complete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_01_25_194958_create_form_submit_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/admin/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/admin/js/bootstrap.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin_main.php" afterPath="$PROJECT_DIR$/app/views/admin_main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bssb_admin.css" afterPath="$PROJECT_DIR$/public/css/bssb_admin.css" />
@@ -57,15 +53,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profquali.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/profquali.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="68.03846" vertical-offset="1769" max-vertical-offset="2278">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FormCompleteData.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/FormCompleteData.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,11 +65,25 @@
       <file leaf-file-name="admin-dashboard.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="92" selection-start="592" selection-end="592" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="340">
+            <state line="50" column="0" selection-start="2147" selection-end="2147" vertical-scroll-proportion="-4.254902" vertical-offset="633" max-vertical-offset="1071">
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bshis.scholarship" pinned="false" current="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..scholarship">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -98,8 +99,11 @@
       <file leaf-file-name="admin_main.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="16" selection-start="334" selection-end="334" vertical-scroll-proportion="0.3420523" vertical-offset="0" max-vertical-offset="1224">
-              <folding />
+            <state line="57" column="17" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.22894168" vertical-offset="863" max-vertical-offset="1581">
+              <folding>
+                <element signature="n#style#0;n#li#7;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,7 +123,7 @@
       <file leaf-file-name="bssb_admin.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="16" selection-start="3060" selection-end="3060" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="2635">
+            <state line="232" column="29" selection-start="4299" selection-end="4299" vertical-scroll-proportion="-12.8" vertical-offset="3624" max-vertical-offset="4114">
               <folding />
             </state>
           </provider>
@@ -143,9 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/FormCompleteData.php" />
-        <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..form_complete" />
-        <option value="$PROJECT_DIR$/public/views/side-menu.html" />
         <option value="$PROJECT_DIR$/public/css/tarepet.css" />
         <option value="$PROJECT_DIR$/app/controllers/ApplicantController.php" />
         <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..users" />
@@ -156,8 +157,11 @@
         <option value="$PROJECT_DIR$/public/views/higherInst.html" />
         <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..higher_inst" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
+        <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..applicants" />
+        <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..application_data" />
+        <option value="dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..scholarship" />
         <option value="$PROJECT_DIR$/public/css/bssb_admin.css" />
+        <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
         <option value="$PROJECT_DIR$/app/views/admin_main.php" />
       </list>
     </option>
@@ -552,17 +556,21 @@
       <created>1391506878586</created>
       <updated>1391506878586</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Some left over stuff related to form complete data. submitted form table and form complete table definitions">
+      <created>1391510406965</created>
+      <updated>1391510406965</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33157894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2281106" sideWeight="0.66842103" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2281106" sideWeight="0.66842103" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -571,7 +579,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961598" sideWeight="0.66842103" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33256528" sideWeight="0.66842103" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33256528" sideWeight="0.66842103" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -587,7 +595,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33157894" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2281106" sideWeight="0.66842103" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2281106" sideWeight="0.66842103" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -617,7 +625,9 @@
     <MESSAGE value="Some minor changes to view navigation for application forms (Previous/next buttons with save feature)" />
     <MESSAGE value="Isolated Side menu bar and wrapped it in a directive to allow it receive and dispatch events from various views" />
     <MESSAGE value="FormCompleteData class and some half assed admin UI changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="FormCompleteData class and some half assed admin UI changes" />
+    <MESSAGE value="Some left over stuff related to form complete data. submitted form table and form complete table definitions" />
+    <MESSAGE value="Some Major UI changes..Added Notification Dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some Major UI changes..Added Notification Dialog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,49 +635,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..users">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/bio-data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="67" selection-start="8511" selection-end="8511" vertical-scroll-proportion="-8.423077" vertical-offset="2552" max-vertical-offset="3145">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/app-start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="18" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-5.8846154" vertical-offset="663" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..basic_qualifications">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/qualifications.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="40" selection-start="12278" selection-end="12278" vertical-scroll-proportion="-50.33766" vertical-offset="0" max-vertical-offset="4318">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/higherInst.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="211" column="14" selection-start="11947" selection-end="11947" vertical-scroll-proportion="-11.269231" vertical-offset="3294" max-vertical-offset="3757">
@@ -683,6 +650,61 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..higher_inst">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/FormCompleteData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="2" selection-start="289" selection-end="289" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/UserTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="34416" selection-start="34636" selection-end="34636" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="331" column="23" selection-start="6295" selection-end="6295" vertical-scroll-proportion="0.332696" vertical-offset="5453" max-vertical-offset="6902">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="23" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.332696" vertical-offset="3226" max-vertical-offset="8228">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..application_data">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..applicants">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <folding />
@@ -708,47 +730,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/FormCompleteData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="2" selection-start="289" selection-end="289" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+    <entry file="dbDummy://dbtable:/eea5766c/849b84a7-5941-4540-be73-455ad2fec5d6/bshis..scholarship">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/UserTableSeeder.php">
+    <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+        <state line="232" column="29" selection-start="4299" selection-end="4299" vertical-scroll-proportion="-12.8" vertical-offset="3624" max-vertical-offset="4114">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="92" selection-start="592" selection-end="592" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="340">
+        <state line="50" column="0" selection-start="2147" selection-end="2147" vertical-scroll-proportion="-4.254902" vertical-offset="633" max-vertical-offset="1071">
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="34416" selection-start="34636" selection-end="34636" vertical-scroll-proportion="-5.44" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="16" selection-start="3060" selection-end="3060" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="2635">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="334" selection-end="334" vertical-scroll-proportion="0.3420523" vertical-offset="0" max-vertical-offset="1224">
-          <folding />
+        <state line="57" column="17" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.22894168" vertical-offset="863" max-vertical-offset="1581">
+          <folding>
+            <element signature="n#style#0;n#li#7;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
