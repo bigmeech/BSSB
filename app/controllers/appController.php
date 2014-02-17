@@ -16,13 +16,17 @@ class appController extends \BaseController {
         $scholarship = Scholarship::all();
         $biodata = BioData::all();
         $highinst = HigherInst::all();
+        $profQualification = ProfQualifications::all();
 
         $allApplicantData = new stdClass();
         $allApplicantData -> scholarship = $scholarship ? $scholarship -> toArray(): null;
         $allApplicantData -> bioData = $biodata ? $biodata -> toArray(): null;
         $allApplicantData -> higherInst = $highinst ? $highinst -> toArray() : null;
+        $allApplicantData -> profQualification = $profQualification ? $profQualification -> toArray() : null;
 
+        //return Response::json($allApplicantData,200);
         return Response::json($allApplicantData,200);
+
 	}
 
 	/**
@@ -54,26 +58,18 @@ class appController extends \BaseController {
 	public function show($id)
 	{
 		//
-		$scholarship = Scholarship::find(Input::all()['user_id']);
-                $biodata = BioData::find(Input::all()['user_id']);
-                $highinst = HigherInst::find(Input::all()['user_id']);
+		        $scholarship = Scholarship::find($id);
+                $biodata = BioData::find($id);
+                $highinst = HigherInst::find($id);
+                $profQualification = ProfQualifications::find($id);
 
                  $singleApplicant = new stdClass();
                  $singleApplicant -> scholarship = $scholarship ? $scholarship -> toArray(): null;
                  $singleApplicant -> bioData = $biodata ? $biodata -> toArray(): null;
+                 $singleApplicant -> higherInst = $highinst ? $highinst -> toArray() : null;
+                 $singleApplicant -> profQualification = $profQualification ? $profQualification -> toArray() : null;
 
-                 return Response::json(
-                                 array(
-
-                                     "reg_number"=>$singleApplicant->reg_number,
-                                     "First Name"=>$singleApplicant->firstName,
-                                     "Surname"=>$singleApplicant->surname,
-                                     "Scholarship type"=>$singleApplicant->scholarship_type,
-                                     "Grade"=>$singleApplicant->inst1_grade,
-                                     "L.G.A"=>$singleApplicant->mLGA
-
-                                 )
-                             );
+                 return Response::json($singleApplicant,200);
 	}
 
 	/**
@@ -85,6 +81,7 @@ class appController extends \BaseController {
 	public function edit($id)
 	{
 		//
+
 	}
 
 	/**
