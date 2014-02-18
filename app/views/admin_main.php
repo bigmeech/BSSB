@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../css/admin/css/bootstrap.min.css"/>
     <link href='http://fonts.googleapis.com/css?family=Duru+Sans|Open+Sans:300italic,400italic,400,600,700|Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Droid+Sans:400,700|Duru+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/750df92c88/UntitledProject1/style.css">
+    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/bc550e0868/UntitledProject1/style.css">
     <link href="/css/ng-grid.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
@@ -77,6 +77,30 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Send Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+   Modal for Delete User confirmation
+-->
+<div class="modal" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #eee">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <strong><h5 class="modal-title" id="myModalLabel">Delete User?</h5></strong>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    <p><strong>WARNING!</strong> The user will never be able to log in again to complete his application and will have to register again. All associated scholarship data will be deleted as well.</p>
+                </div>
+                <p>Are you sure you want to delete <strong>"{{selectedUser.firstname}} {{selectedUser.lastname}}"</strong>.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" data-dismiss="modal" ng-click="deleteUser()" class="btn btn-primary">Yes, Delete!</button>
             </div>
         </div>
     </div>

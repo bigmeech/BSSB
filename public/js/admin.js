@@ -64,11 +64,11 @@ admin.factory('UserService',function($http){
         },
         deleteUser:function(id)
         {
-            return $http.delete('/admin/users',{
-                params:{
-                    id:id
-                }
-            })
+            return $http.delete('/admin/users/'+id,{})
+        },
+        getUsers:function()
+        {
+            return $http.get('/admin/users',{})
         }
     }
 })
@@ -77,6 +77,7 @@ admin.controller("ApplicantsController",function($scope,ApplicantsPromise){
     $scope.applicants = ApplicantsPromise.data;
 });
 
+//user controller...loads of todos in here
 admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserService){
     //initialize control bar controls
     $scope.enableAddUser = true
@@ -115,16 +116,25 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
         }
         else
         {
-            console.log(newVal);
+            //console.log(newVal);
             btnDeleteUser.find(".icon-remove").removeClass('disabled');
-            console.log("something changed")
         }
         $rootScope.enableDeleteUser = true;
+        $rootScope.selectedUser = newVal[0];
     });
 
-    $scope.deleteUser=function(id)
+    $rootScope.deleteUser=function(id)
     {
-        UserService.deleteUser(id)
+        console.log($scope.selectedUser[0].id);
+        UserService.deleteUser($rootScope.selectedUser.id)
+            .success(function(data){
+                UserService.getUsers()
+                    .success(function(data){
+                        $scope.users = data
+                    });
+            }).error(function(data){
+                console.log(data)
+            });
     }
 
     $scope.showMoreOptions=function(){

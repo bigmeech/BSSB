@@ -105,7 +105,7 @@ class AdminUsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-        $affected_user_id=User::destroy(Input::all()['id']);
+        $affected_user_id=User::where("id",'=',$id)->delete();
         if($affected_user_id>0)
         {
             return Response::json(array(

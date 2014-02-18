@@ -4,7 +4,7 @@
         <ul style="float:right;margin: 0;padding: 0;list-style-type: none">
             <li id="addUserMenuItem" data-toggle="modal" data-target="#addUserModal" class="view-control" data-toggle="tooltip" data-placement="left" title="Add New User"><a style="cursor: pointer" class="icon-plus"></a></li>
             <li id="deleteMenuItem" class="view-control" data-toggle="tooltip" data-placement="left" title="Delete User">
-                <a style="cursor: pointer" class="icon-remove"></a>
+                <a data-toggle="modal" data-target="#deleteUserModal" style="cursor: pointer" class="icon-remove"></a>
             </li>
         </ul>
     </div>
@@ -14,7 +14,7 @@
                 <span ng-class="hideElement" class="input-group-btn">
                     <img style="margin-right: 15px" width="32" height="32" src="/img/loadinfo.net.gif"/>
                 </span>
-                    <input type="text" placeholder="Search By Applicant's Surname" size="30" ng-keyup="filterUsers($event)" class="form-control">
+                <input type="text" placeholder="Search By Applicant's Surname" size="30" ng-keyup="filterUsers($event)" class="form-control">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button">Search User</button>
                 </span>
