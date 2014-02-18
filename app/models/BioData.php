@@ -16,4 +16,5 @@ class BioData extends Eloquent{
         return $this->belongs_to('User');
     }
 
+
 } 

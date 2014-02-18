@@ -15,8 +15,7 @@ class CreateFormSubmit extends Migration {
 	{
 		//
 		Schema::create('submitted_application', function(Blueprint $table){
-            $table->increments('id');
-            $table->string('user_id');
+            $table->integer('user_id')->unique();
             $table->timestamps();
         });
 	

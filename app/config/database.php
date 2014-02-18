@@ -56,7 +56,7 @@ return array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
 			//'database'  => 'bssbgov_scholarship',
-            'database'  => 'BSHIS',
+            'database'  => 'bssb',
 			//'username'  => 'bssbgov_dev',
             'username'  => 'root',
 			//'password'  => 'opensesamie',

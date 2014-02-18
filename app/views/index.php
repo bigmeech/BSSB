@@ -6,8 +6,8 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="main">
-        <div  ui-view>
+    <div style="height: 100%" id="main">
+        <div style="height: 100%"  ui-view>
 
         </div>
     </div>

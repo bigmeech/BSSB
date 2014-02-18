@@ -40,6 +40,17 @@ Route::get('main/getFormCompleteData','ApplicantController@fetchFormCompleteData
 
 Route::post('main/submit','ApplicantController@submitApplication');
 
+//routes for admin
 Route::get('admin','AdminController@index');
 Route::post('admin/auth','AdminAuthController@authenticate');
 Route::get('admin/main','AdminController@dashboard');
+Route::get('admin/applicants','AdminApplicationController@getApplicants');
+Route::get('admin/search','AdminApplicationController@findApplicant');
+
+//routes for approves and declines
+Route::get('admin/get-approved','AdminApplicationController@getApproved');
+Route::post('admin/set-approved','AdminApplicationController@setApproved');
+Route::get('admin/get-declined','AdminApplicationController@getDeclined');
+Route::post('admin/set-declined','AdminApplicationController@setDeclined');
+Route::resource('admin/applicant','AdminApplicantController');
+Route::resource('admin/users','AdminUsersController');
