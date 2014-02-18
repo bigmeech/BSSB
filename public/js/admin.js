@@ -133,7 +133,7 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
         var moreOptionBtn = searchBox.find("#moreOptions")
         if(moreOptionBtn.text() === "More Options"){
             moreOptionBtn.text("Less Options")
-            searchBox.css("height","300px");
+            searchBox.css("height","270px");
             searchBox.find(".more-search-controls").css("opacity",1)
         }
         else

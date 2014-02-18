@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c534df42-2dd4-4f2b-98f2-d2aade5342a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/loadinfo.net.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/AdminApplicantController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/AdminApplicationController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/AdminUsersController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/SettingsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/admin/admin-applicants.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/admin/admin-users.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/ng-grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/ext/ng-grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/admin/view-loader.html" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\Scholarship_app\public\js\ext\Programming Ruby 1.9.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_01_30_231410_create_form_submit.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_01_30_231410_create_form_submit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/BioData.php" afterPath="$PROJECT_DIR$/app/models/BioData.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/SubmittedApplication.php" afterPath="$PROJECT_DIR$/app/models/SubmittedApplication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-users.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-users.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin.js" afterPath="$PROJECT_DIR$/public/js/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin_main.php" afterPath="$PROJECT_DIR$/app/views/admin_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bssb_admin.css" afterPath="$PROJECT_DIR$/public/css/bssb_admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.php" afterPath="$PROJECT_DIR$/app/views/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/t1_s1.html" afterPath="$PROJECT_DIR$/public/views/t1_s1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Scholarship_app.iws" />
@@ -79,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-users.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin-users.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/admin/admin-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="35" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.5263761" vertical-offset="0" max-vertical-offset="1020">
+            <state line="35" column="96" selection-start="2266" selection-end="2266" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1020">
               <folding>
                 <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -128,10 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admin.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="67" selection-start="4504" selection-end="4504" vertical-scroll-proportion="0.0" vertical-offset="1686" max-vertical-offset="2601">
+            <state line="119" column="35" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.37527838" vertical-offset="1686" max-vertical-offset="2601">
               <folding />
             </state>
           </provider>
@@ -168,9 +148,9 @@
         <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
         <option value="$PROJECT_DIR$/app/views/admin_main.php" />
         <option value="$PROJECT_DIR$/app/controllers/AdminUsersController.php" />
-        <option value="$PROJECT_DIR$/public/js/admin.js" />
         <option value="$PROJECT_DIR$/public/css/bssb_admin.css" />
         <option value="$PROJECT_DIR$/public/views/admin/admin-users.html" />
+        <option value="$PROJECT_DIR$/public/js/admin.js" />
       </list>
     </option>
   </component>
@@ -634,20 +614,29 @@
       <created>1391582495848</created>
       <updated>1391582495848</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bunch of Changes....Admin UI,Registered User Sections, Dashboard, Control Bars, Some CRUD Operations">
+      <created>1392717268009</created>
+      <updated>1392717268009</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Some missing Assets for the UI">
+      <created>1392718220106</created>
+      <updated>1392718220106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2281106" sideWeight="0.66842103" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961598" sideWeight="0.66842103" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18385416" sideWeight="0.6699134" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18385416" sideWeight="0.6699134" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -657,7 +646,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -701,7 +689,9 @@
     <MESSAGE value="FormCompleteData class and some half assed admin UI changes" />
     <MESSAGE value="Some left over stuff related to form complete data. submitted form table and form complete table definitions" />
     <MESSAGE value="Some Major UI changes..Added Notification Dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some Major UI changes..Added Notification Dialog" />
+    <MESSAGE value="Bunch of Changes....Admin UI,Registered User Sections, Dashboard, Control Bars, Some CRUD Operations" />
+    <MESSAGE value="Some missing Assets for the UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some missing Assets for the UI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -711,7 +701,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="53" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-2.948052" vertical-offset="385" max-vertical-offset="901" />
+        <state line="45" column="53" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-2.948052" vertical-offset="385" max-vertical-offset="901">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/ng-grid.css">
@@ -775,9 +767,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
+    <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="67" selection-start="4504" selection-end="4504" vertical-scroll-proportion="0.0" vertical-offset="1686" max-vertical-offset="2601">
+        <state line="105" column="24" selection-start="4471" selection-end="4495" vertical-scroll-proportion="-17.846153" vertical-offset="1321" max-vertical-offset="2652">
           <folding />
         </state>
       </provider>
@@ -789,21 +781,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="24" selection-start="4471" selection-end="4495" vertical-scroll-proportion="-17.846153" vertical-offset="1321" max-vertical-offset="2652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/admin/admin-users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="35" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.5263761" vertical-offset="0" max-vertical-offset="1020">
+        <state line="35" column="96" selection-start="2266" selection-end="2266" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1020">
           <folding>
             <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="35" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.37527838" vertical-offset="1686" max-vertical-offset="2601">
+          <folding />
         </state>
       </provider>
     </entry>
