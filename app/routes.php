@@ -43,3 +43,5 @@ Route::post('main/submit','ApplicantController@submitApplication');
 Route::get('admin','AdminController@index');
 Route::post('admin/auth','AdminAuthController@authenticate');
 Route::get('admin/main','AdminController@dashboard');
+
+Route::resource('applicants','appController');
