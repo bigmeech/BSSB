@@ -325,14 +325,15 @@ h1,h2,h3,h4,h5,h6
     height: 74px;
     transition: height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-transition: height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    background-color: #bbb;
-    -webkit-box-shadow:inset 1px 1px 5px 2px #949494;
-    box-shadow:inset 1px 1px 5px 2px #949494;
-    border-left: none;
-    border-right: none;
+    background-color: #4B4B4B;
 }
 
 #search-box{
     width: 800px;
     margin: auto;
+}
+
+#search-box a:hover{
+    text-decoration: none;
+    color: #adadad;
 }

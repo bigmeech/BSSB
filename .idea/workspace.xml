@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c534df42-2dd4-4f2b-98f2-d2aade5342a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-users.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin.js" afterPath="$PROJECT_DIR$/public/js/admin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bssb_admin.css" afterPath="$PROJECT_DIR$/public/css/bssb_admin.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Scholarship_app.iws" />
@@ -62,7 +62,7 @@
       <file leaf-file-name="admin-users.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/admin/admin-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="96" selection-start="2266" selection-end="2266" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1020">
+            <state line="28" column="58" selection-start="1898" selection-end="1898" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1020">
               <folding>
                 <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -72,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bssb_admin.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bssb_admin.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="307" column="1" selection-start="5178" selection-end="5178" vertical-scroll-proportion="-5.27451" vertical-offset="4950" max-vertical-offset="5831">
+            <state line="337" column="19" selection-start="5728" selection-end="5728" vertical-scroll-proportion="0.9598583" vertical-offset="4916" max-vertical-offset="5848">
               <folding />
             </state>
           </provider>
@@ -108,10 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="35" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.37527838" vertical-offset="1686" max-vertical-offset="2601">
+            <state line="119" column="35" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.0" vertical-offset="1686" max-vertical-offset="2601">
               <folding />
             </state>
           </provider>
@@ -148,9 +148,9 @@
         <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
         <option value="$PROJECT_DIR$/app/views/admin_main.php" />
         <option value="$PROJECT_DIR$/app/controllers/AdminUsersController.php" />
-        <option value="$PROJECT_DIR$/public/css/bssb_admin.css" />
-        <option value="$PROJECT_DIR$/public/views/admin/admin-users.html" />
         <option value="$PROJECT_DIR$/public/js/admin.js" />
+        <option value="$PROJECT_DIR$/public/views/admin/admin-users.html" />
+        <option value="$PROJECT_DIR$/public/css/bssb_admin.css" />
       </list>
     </option>
   </component>
@@ -622,7 +622,11 @@
       <created>1392718220106</created>
       <updated>1392718220106</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changes to Search box comntainer width and More Search Controls/Parameters">
+      <created>1392719436179</created>
+      <updated>1392719436179</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -636,7 +640,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2281106" sideWeight="0.66842103" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961598" sideWeight="0.66842103" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18385416" sideWeight="0.6699134" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18385416" sideWeight="0.6699134" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -691,7 +695,8 @@
     <MESSAGE value="Some Major UI changes..Added Notification Dialog" />
     <MESSAGE value="Bunch of Changes....Admin UI,Registered User Sections, Dashboard, Control Bars, Some CRUD Operations" />
     <MESSAGE value="Some missing Assets for the UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some missing Assets for the UI" />
+    <MESSAGE value="Changes to Search box comntainer width and More Search Controls/Parameters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to Search box comntainer width and More Search Controls/Parameters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -774,16 +779,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
+    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="1" selection-start="5178" selection-end="5178" vertical-scroll-proportion="-5.27451" vertical-offset="4950" max-vertical-offset="5831">
+        <state line="119" column="35" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.0" vertical-offset="1686" max-vertical-offset="2601">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/admin/admin-users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="96" selection-start="2266" selection-end="2266" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1020">
+        <state line="28" column="58" selection-start="1898" selection-end="1898" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1020">
           <folding>
             <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -792,9 +797,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
+    <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="35" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.37527838" vertical-offset="1686" max-vertical-offset="2601">
+        <state line="337" column="19" selection-start="5728" selection-end="5728" vertical-scroll-proportion="0.9598583" vertical-offset="4916" max-vertical-offset="5848">
           <folding />
         </state>
       </provider>
