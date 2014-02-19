@@ -66,9 +66,20 @@ class AdminUsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        //return Input::all()['name'];
-        $user =User::where('lastname','LIKE',"%".Input::all()['name']."%")->get();
-        return Response::json($user,200);
+        if($id === "like")
+        {
+            $user =User::where('lastname','LIKE',"%".Input::all()['name']."%")->get();
+            return Response::json($user,200);
+        }
+        else if($id === "more"){
+            $user =User::where('lastname','LIKE',"%".Input::all()['lastname']."%")
+                ->where('id','LIKE',"%".Input::all()['applicant_id']."%")
+                ->where('type',"LIKE","%".Input::all()['user_type']."%")
+                ->where('firstname',"LIKE","%".Input::all()['firstname']."%")
+                ->where('email',"LIKE","%".Input::all()['email']."%")
+                ->get();
+            return Response::json($user,200);
+        }
 	}
 
 	/**

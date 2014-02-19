@@ -14,26 +14,26 @@
                 <span ng-class="hideElement" class="input-group-btn">
                     <img style="margin-right: 15px" width="32" height="32" src="/img/loadinfo.net.gif"/>
                 </span>
-                <input type="text" placeholder="Search By Applicant's Surname" size="30" ng-keyup="filterUsers($event)" class="form-control">
+                <input type="text" placeholder="Search By Applicant's Surname" ng-model="userSearch.lastname" size="30" ng-keyup="filterUsers($event)" class="form-control">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Search User</button>
+                    <button class="btn btn-default" ng-click="expandSearch()" type="button">Search User</button>
                 </span>
                 <a id="moreOptions" style="margin-left: 15px;cursor: pointer" ng-click="showMoreOptions()">More Options</a>
             </div>
             <div class="more-search-controls">
                 <div style="margin-top: 10px;" class="form-group">
-                    <input size="30" type="text" class="form-control" placeholder="Applicant ID">
+                    <input ng-model="userSearch.applicant_id" size="30" type="text" class="form-control" placeholder="Applicant ID">
                 </div>
                 <div class="form-group">
-                    <select required="" class="form-control" ng-model="userType" ng-options="uType.value for uType in userTypeList">
+                    <select required="" class="form-control" ng-model="userSearch.user_type" ng-options="uType.value for uType in userTypeList">
                         <option value="">Select Admin type</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input size="30" type="text" class="form-control" placeholder="First name">
+                    <input size="30" type="text" ng-model="userSearch.firstname" class="form-control" placeholder="First name">
                 </div>
                 <div class="form-group">
-                    <input size="30" type="text" class="form-control" placeholder="Email Address">
+                    <input size="30" type="text" ng-model="userSearch.email" class="form-control" placeholder="Email Address">
                 </div>
             </div>
         </div>

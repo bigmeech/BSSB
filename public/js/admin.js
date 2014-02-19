@@ -69,6 +69,17 @@ admin.factory('UserService',function($http){
         getUsers:function()
         {
             return $http.get('/admin/users',{})
+        },
+        searchUser:function(application_id,user_type,email,lastname,firstname){
+            return $http.get('/admin/users/more',{
+                params:{
+                    applicant_id:application_id,
+                    user_type:user_type,
+                    email:email,
+                    lastname:lastname,
+                    firstname:firstname
+                }
+            })
         }
     }
 })
@@ -122,6 +133,26 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
         $rootScope.enableDeleteUser = true;
         $rootScope.selectedUser = newVal[0];
     });
+
+    $scope.expandSearch=function(){
+        UserService.searchUser(
+            $scope.userSearch.applicant_id||"",
+            $scope.userSearch.user_type.value||"",
+            $scope.userSearch.email||"",
+            $scope.userSearch.lastname||"",
+            $scope.userSearch.firstname||""
+        )
+            .success(function(data){
+                $scope.users = data;
+            });
+    }
+    $scope.userSearch={
+        applicant_id:"",
+        user_type:"",
+        firstname:"",
+        email:"",
+        lastname:""
+    };
 
     $rootScope.deleteUser=function(id)
     {
