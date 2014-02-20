@@ -116,45 +116,48 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Add New User</h4>
             </div>
+            <form class="form" style="width: 360px;margin: auto">
             <div class="modal-body">
-                <form class="form" style="width: 360px;margin: auto">
                     <div class="form-group">
                         <label>First name</label>
-                        <input class="form-control" required type="text" ng-model="credentials.firstname" placeholder="Enter First Name"/>
+                        <input class="form-control" required type="text" ng-model="userModel.firstname" placeholder="Enter First Name"/>
                     </div>
                     <div class="form-group">
                         <label>Last name</label>
-                        <input class="form-control" required type="text" ng-model="credentials.lastname" placeholder="Enter Last Name"/>
+                        <input class="form-control" required type="text" ng-model="userModel.lastname" placeholder="Enter Last Name"/>
                     </div>
                     <div class="form-group">
                         <label>User Type</label>
-                        <select required="" class="form-control" ng-model="userType" ng-options="uType.value for uType in userTypeList">
+                        <select required="" class="form-control" ng-model="userModel.userType" ng-options="uType.value for uType in userTypeList">
                             <option value="">--- Select Admin type----</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input class="form-control" required type="email" ng-model="credentials.retype_email" placeholder="Retype email address"/>
+                        <input id="email" class="form-control" autocomplete="false" ng-keyup="onConfirm($event)" type="text" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" ng-model="userModel.email" placeholder="Retype email address"/>
                     </div>
                     <div class="form-group">
                         <label>Retype Email Address</label>
-                        <input class="form-control" required type="email" ng-model="credentials.retype_email" placeholder="Retype email address"/>
+                        <input id="conf_email" class="form-control" autocomplete="false" ng-keyup="onConfirm($event)" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" type="text" ng-model="userModel.conf_email" placeholder="Retype email address"/>
+                        <p ng-show="showEmailMatchError" class="error-text">Email Addresses do not match</p>
+                        {{userModel.email !== userModel.conf_email}}
                     </div>
                     <hr/>
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" required type="password" ng-model="credentials.retype_email" placeholder="Retype email address"/>
+                        <input id="password" class="form-control" ng-keyup="onConfirm($event)" required type="password" ng-model="userModel.password" placeholder="Retype email address"/>
                     </div>
                     <div class="form-group">
                         <label>Confirm Password</label>
-                        <input class="form-control" required type="password" ng-model="credentials.retype_email" placeholder="Retype email address"/>
+                        <input id="conf_password" class="form-control" ng-keyup="onConfirm($event)" required type="password" ng-model="userModel.conf_password" placeholder="Retype email address"/>
+                        <p ng-show="showPasswordMatchError" class="error-text">Passwords do not match</p>
                     </div>
-                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create User</button>
+                <button type="submit" ng-click="createUser()" data-dismiss="modal" class="btn btn-primary">Create User</button>
             </div>
+            </form>
         </div>
 </div>
 

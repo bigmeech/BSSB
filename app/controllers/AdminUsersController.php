@@ -53,8 +53,17 @@ class AdminUsersController extends \BaseController {
 	 */
 	public function store()
 	{
+        $user =  new User;
+        $user->firstname = Input::all()['firstname'];
+        $user->lastname = Input::all()['lastname'];
+        $user->type = Input::all()['userType'];
+        $user->email = Input::all()['emailaddress'];
+        $user->password = Hash::make(Input::all()['password']);
+        $id = $user->save();
         return Response::json(array(
-            "user"=>"wwhhhaaattt"
+            "user_id"   =>$id,
+            "operation" =>"create user",
+            "sucess"    =>true
         ),200);
 	}
 

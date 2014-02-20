@@ -52,6 +52,16 @@ admin.directive('viewLoader',function(){
     }
 });
 
+admin.factory('DashboardService',function($http){
+    return{
+        getSystemStats:function(){
+
+        },
+        getRecentActivities:function(){
+
+        }
+    }
+})
 admin.factory('UserService',function($http){
     return{
         getUserLike:function(name)
@@ -79,6 +89,20 @@ admin.factory('UserService',function($http){
                     lastname:lastname,
                     firstname:firstname
                 }
+            })
+        },
+        createUser:function(
+            firstname,
+            lastname,
+            userType,
+            emailaddress,
+            password){
+            return $http.post('/admin/users',{
+                firstname:firstname,
+                lastname:lastname,
+                userType:userType,
+                emailaddress:emailaddress,
+                password:password
             })
         }
     }
@@ -118,6 +142,37 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
         {id:1,value:"Admin"},
         {id:2,value:"Applicant"}
     ]
+    $rootScope.userModel={
+        firstname:"",
+        lastname:"",
+        userType:"",
+        email:"",
+        conf_email:"",
+        password:"",
+        conf_password:""
+    }
+
+    $rootScope.showEmailMatchError = false;
+    $rootScope.showPasswordMatchError = false;
+    $rootScope.onConfirm =function ($event){
+        switch($event.target.id)
+        {
+            case "conf_email":
+                $rootScope.showEmailMatchError = $event.target.value !== $rootScope.userModel.email?true:false;
+                console.log("Emails not the same "+ $rootScope.showEmailMatchError);
+            case "conf_password":
+                $rootScope.showPasswordMatchError = $event.target.value !== $rootScope.userModel.password?true:false;
+                console.log("Passwords not the same "+ $rootScope.showPasswordMatchError);
+            case "email":
+                $rootScope.showEmailMatchError = $event.target.value !== $rootScope.userModel.conf_email?true:false;
+                console.log("Emails not the same "+ $rootScope.showEmailMatchError);
+            case "password":
+                $rootScope.showPasswordMatchError = $event.target.value !== $rootScope.userModel.conf_password?true:false;
+                console.log("Passwords not the same "+ $rootScope.showPasswordMatchError);
+            default:
+                $rootScope.enableCreateUser = true;
+        }
+    }
 
     $scope.$watchCollection('selectedUser',function(newVal,oldVal){
         if(newVal.length === 0)
@@ -140,8 +195,7 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
             $scope.userSearch.user_type.value||"",
             $scope.userSearch.email||"",
             $scope.userSearch.lastname||"",
-            $scope.userSearch.firstname||""
-        )
+            $scope.userSearch.firstname||"")
             .success(function(data){
                 $scope.users = data;
             });
@@ -169,7 +223,6 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
     }
 
     $scope.showMoreOptions=function(){
-
         var searchBox = angular.element("#search-box-container");
         var moreOptionBtn = searchBox.find("#moreOptions")
         if(moreOptionBtn.text() === "More Options"){
@@ -177,8 +230,7 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
             searchBox.css("height","270px");
             searchBox.find(".more-search-controls").css("opacity",1)
         }
-        else
-        {
+        else{
             moreOptionBtn.text("More Options")
             searchBox.css("height","74px");
             searchBox.find(".more-search-controls").css("opacity",0)
@@ -186,4 +238,25 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
 
     };
 
+    $rootScope.createUser=function()
+    {
+            UserService.createUser(
+                $rootScope.userModel.firstname,
+                $rootScope.userModel.lastname,
+                $rootScope.userModel.userType.value,
+                $rootScope.userModel.email,
+                $rootScope.userModel.password)
+                .success(function(data){
+                    UserService.getUsers()
+                        .success(function(data){
+                            $scope.users = data
+                        })
+                        .error(function(data){
+                            console.log(data);
+                        });
+                })
+                .error(function(data){
+                    console.log(data);
+                })
+        }
 });
