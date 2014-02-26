@@ -5,8 +5,8 @@
     <link rel="stylesheet" type="text/css" href="../css/admin/css/bootstrap.min.css"/>
     <link href='http://fonts.googleapis.com/css?family=Duru+Sans|Open+Sans:300italic,400italic,400,600,700|Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Droid+Sans:400,700|Duru+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/bc550e0868/UntitledProject1/style.css">
-    <link href="/css/ng-grid.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/admin/style.css">
+    <link href="../css/ui-grid-unstable.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div id="main-content">
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li>
-                <a ui-sref="dashboard">
+                <a ui-sref="applicants">
                     <span class="icon-user"></span>&nbsp;Applicants
                 </a>
             </li>
@@ -166,8 +166,7 @@
 <script src="/js/ext/angular-1-2-0.js"></script>
 <script src="/js/ext/angular-cookies.js"></script>
 <script src="/js/ext/angular-ui-router.js"></script>
-
-<script src="/js/ext/ng-grid.js"></script>
+<script src="/js/ext/ui-grid-unstable.js"></script>
 <script src="/js/admin.js"></script>
 <script>
     $('.view-control').tooltip({

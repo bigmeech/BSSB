@@ -324,7 +324,11 @@ tarapet.factory('ApplicationService',function($rootScope,$location,$http,Session
         },
         submit:function()
         {
-            console.log("Submitting all your data. This cannot be undone");
+            return $http.get("main/submit",{
+                params:{
+                    user_id:SessionService.get('user_id')
+                }
+            });
         },
         getFormCompleteData:function()
         {

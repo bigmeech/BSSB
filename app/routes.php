@@ -38,7 +38,7 @@ Route::get('main/getPreview','ApplicantController@fetchPreview');
 Route::get('main/getAppData','ApplicantController@fetchAppData');
 Route::get('main/getFormCompleteData','ApplicantController@fetchFormCompleteData');
 
-Route::post('main/submit','ApplicantController@submitApplication');
+Route::get('main/submit','ApplicantController@submitApplication');
 
 //routes for admin
 Route::get('admin','AdminController@index');
@@ -54,3 +54,4 @@ Route::get('admin/get-declined','AdminApplicationController@getDeclined');
 Route::post('admin/set-declined','AdminApplicationController@setDeclined');
 Route::resource('admin/applicant','AdminApplicantController');
 Route::resource('admin/users','AdminUsersController');
+Route::resource('admin/overview','OverviewController');

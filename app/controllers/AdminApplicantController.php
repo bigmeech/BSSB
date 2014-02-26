@@ -8,21 +8,25 @@ class AdminApplicantController extends \BaseController {
 	 * @return Response
 	 */
 	public function index(){
-        $biodatas = BioData::all()->toArray();
-        $scholarships = Scholarship::all()->toArray();
-        $data = array();
-        $result=new stdClass;
-        //return Response::json($biodata,200);
+        //gets all submitted apps to extract their user ids
+        $applications = SubmittedApplication::all();
+        $applicants = [];
 
+        foreach($applications as $application){
+            //get biodata and regnumber with user id
+            $applicant = new stdClass();
+            $biodata = Biodata::find($application->user_id)->toArray();
+            $reg_num = Scholarship::find($application->user_id)->toArray();
 
-        foreach($biodatas as $biodata){
-            foreach($scholarships as $scholarship)
+            //build applicant object
+            foreach($biodata as $key => $value)
             {
-                $biodata["reg_number"]=$scholarship['reg_number'];
+                $applicant->$key=$value;
             }
-            $data[]=$biodata;
+            $applicant->reg_num = $reg_num['reg_number'];
+            $applicants[] = $applicant;
         }
-        return Response::json($data,200);
+        return Response::json($applicants,200);
 	}
 
 	public function create()

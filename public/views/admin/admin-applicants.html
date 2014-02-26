@@ -2,45 +2,64 @@
     <div class="view-control-bar">
         <h2 style="margin: 0;padding: 0;float: left;">Applicants</h2>
         <ul style="float:right;margin: 0;padding: 0;list-style-type: none">
-            <li class="view-control" data-toggle="tooltip" data-placement="left" title="Add New User"><a href="#" class="glyphicon glyphicon-plus-sign"></a></li>
-            <li class="view-control" data-toggle="modal" data-target="#sendNotificationModal" data-toggle="tooltip" data-placement="left" title="Delete User"><a href="#" class="glyphicon glyphicon-trash"></a></li>
+
         </ul>
     </div>
-    <div id="search-box">
-        <div style="width: 70%;
-margin-left: auto;
-margin: auto;" class="input-group">
-            <input type="text" class="form-control">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Search User</button>
-            </span>
+    <div id="search-box-container">
+        <div  id="search-box">
+            <div id="main-search" class="input-group">
+                <span ng-class="hideElement" class="input-group-btn">
+                    <!--<img style="margin-right: 15px" width="32" height="32" src="/img/loadinfo.net.gif"/>-->
+                </span>
+                <input type="text" placeholder="Search by registration number. e.g BSSB/PGD/2014" ng-model="userSearch.lastname" size="30" ng-keyup="filterUsers($event)" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="expandSearch()" type="button">Search User</button>
+                </span>
+                <a id="moreOptions" style="margin-left: 15px;cursor: pointer" ng-click="showMoreOptions()">More Options</a>
+            </div>
+            <div class="more-search-controls">
+                <div style="margin-top: 10px;" class="form-group">
+                    <input ng-model="userSearch.applicant_id" size="30" type="text" class="form-control" placeholder="Applicant ID">
+                </div>
+                <div class="form-group">
+                    <select required="" class="form-control" ng-model="userSearch.user_type" ng-options="uType.value for uType in userTypeList">
+                        <option value="">Select Admin type</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input size="30" type="text" ng-model="userSearch.firstname" class="form-control" placeholder="First name">
+                </div>
+                <div class="form-group">
+                    <input size="30" type="text" ng-model="userSearch.email" class="form-control" placeholder="Email Address">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="user-list">
+        <div class="scroller" style="margin-top: 50px">
+            <ul>
+                <li ng-repeat="applicant in applicants">
+                    <div class="user-list-item">
+                        <div class="item-icon" style="float: left"><img width="64" height="64" src="{{applicant.passportPhoto}}"/></div>
+                        <div class="item-content">
+                            <div>
+                                <h3>{{applicant.surname}} {{applicant.middleName}} {{applicant.firstName}}</h3>
+                                <span>{{applicant.reg_num}}</span>
+                            </div>
+                            <div class="item-controls">
+                                <a class="icon-eye item-control btn btn-primary" data-placement="left" data-toggle="tooltip" title="Start Review"></a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-    <div id="user-list-container">
-        <ul class="list">
-            <li class="list-item">
-                <div>
-                    <img src="../img/nophoto.png" width="64" height="64"/>
-                    <div>
-                        <h4>Adewale Ayuba</h4>
-                        <span>BSSB/2014/PGD006</span>
-                    </div>
-                    <span class="clearfix"></span>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <img/>
-                    <span>Adewale Ayuba</span>
-                    <span>BSSB/2014/PGD006</span>
-                </div>
-            </li>
-        </ul>
-    </div>
     <view-loader></view-loader>
-    sddfsdfsf
     <script>
-        $('.view-control').tooltip({
+        $('.item-control').tooltip({
             placement:'bottom'
         });
         //$('#sendNotification').modal(options)

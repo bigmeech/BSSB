@@ -1,11 +1,17 @@
-var admin = angular.module('admin',['ui.router','ngGrid'])
+var admin = angular.module('admin',['ui.router','ui.grid'])
     .config(
         function($provide,$stateProvider,$urlRouterProvider,$httpProvider){
         $urlRouterProvider.otherwise('dashboard');
         $stateProvider
             .state('dashboard',{
                 url:'/dashboard',
-                templateUrl:'/views/admin/admin-dashboard.html'
+                templateUrl:'/views/admin/admin-dashboard.html',
+                controller:'DashboardController',
+                resolve:{
+                    DashBoardDataPromise:function($http){
+                        return $http.get('/admin/overview');
+                    }
+                }
             }).state('users',{
                 url:'/users',
                 templateUrl:'/views/admin/admin-users.html',
@@ -23,7 +29,7 @@ var admin = angular.module('admin',['ui.router','ngGrid'])
                 resolve:{
                     ApplicantsPromise:function($http)
                     {
-                        return $http.get('/admin/applicant')
+                        return $http.get('/admin/applicant');
                     }
                 }
             });
@@ -33,13 +39,8 @@ admin.run(function($rootScope){
     $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
         $rootScope.showLoader = true;
     });
-
     $rootScope.$on('$viewContentLoaded',function(){
         $rootScope.showLoader = false;
-    });
-    $rootScope.$on('$viewContentLoading',function(){
-        console.log("view content loading");
-        $rootScope.showLoader = true;
     });
 })
 admin.directive('viewLoader',function(){
@@ -52,16 +53,26 @@ admin.directive('viewLoader',function(){
     }
 });
 
-admin.factory('DashboardService',function($http){
+admin.factory('OverviewService',function($http){
     return{
         getSystemStats:function(){
-
+            return $http.get('/admin/overview',{});
         },
         getRecentActivities:function(){
 
         }
     }
-})
+});
+admin.factory('ApplicantService',function($http){
+    return{
+        getApplicants:function(){
+            return $http.get('admin/applicant',{});
+        },
+        findApplicants:function(id){
+            return $http.get('admin/applicant/like');
+        }
+    }
+});
 admin.factory('UserService',function($http){
     return{
         getUserLike:function(name)
@@ -108,8 +119,25 @@ admin.factory('UserService',function($http){
     }
 })
 
-admin.controller("ApplicantsController",function($scope,ApplicantsPromise){
+admin.controller("ApplicantsController",function($rootScope,$scope,ApplicantsPromise,ApplicantService){
     $scope.applicants = ApplicantsPromise.data;
+    $rootScope.$on('$viewContentLoading',function(){
+        console.log("view content loading");
+        $rootScope.showLoader = true;
+    });
+
+});
+
+admin.controller("DashboardController",function($rootScope,$scope,OverviewService,DashBoardDataPromise){
+    $scope.systemData=DashBoardDataPromise.data;
+    OverviewService.getSystemStats()
+        .success(function(data){
+            $scope.systemData = data;
+        })
+    $rootScope.$on('$viewContentLoading',function(){
+        console.log("view content loading");
+        $rootScope.showLoader = true;
+    });
 });
 
 //user controller...loads of todos in here
@@ -122,18 +150,20 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
 
     $scope.hideElement = "hide-element";
     $scope.selectedUser=[];
-    $scope.users = UsersPromise.data;
+    $scope.data = UsersPromise.data;
+    /**
     $scope.gridOptions={
         data:'users',
         multiSelect:false,
         selectedItems:$scope.selectedUser
     };
     $scope.totalUsers=$scope.users.length;
+     **/
     $scope.filterUsers=function($event){
         $scope.hideElement = "";
         UserService.getUserLike($event.target.value)
             .success(function(result){
-                $scope.users=result;
+                $scope.data=result;
                 $scope.hideElement = "hide-element";
             });
     };
@@ -210,30 +240,31 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
 
     $rootScope.deleteUser=function(id)
     {
-        console.log($scope.selectedUser[0].id);
-        UserService.deleteUser($rootScope.selectedUser.id)
+        console.log(id);
+        UserService.deleteUser(id)
             .success(function(data){
                 UserService.getUsers()
                     .success(function(data){
-                        $scope.users = data
+                        $scope.data = data
                     });
             }).error(function(data){
                 console.log(data)
             });
     }
 
-    $scope.showMoreOptions=function(){
+    $rootScope.showMoreOptions=function(){
         var searchBox = angular.element("#search-box-container");
-        var moreOptionBtn = searchBox.find("#moreOptions")
+        var moreOptionBtn = searchBox.find("#moreOptions");
+        var moreOptions = searchBox.find(".more-search-controls")
         if(moreOptionBtn.text() === "More Options"){
-            moreOptionBtn.text("Less Options")
+            moreOptionBtn.text("Less Options");
             searchBox.css("height","270px");
-            searchBox.find(".more-search-controls").css("opacity",1)
+            searchBox.find(".more-search-controls").css("opacity",1);
         }
         else{
             moreOptionBtn.text("More Options")
             searchBox.css("height","74px");
-            searchBox.find(".more-search-controls").css("opacity",0)
+            searchBox.find(".more-search-controls").css("opacity",0);
         }
 
     };
@@ -249,7 +280,7 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
                 .success(function(data){
                     UserService.getUsers()
                         .success(function(data){
-                            $scope.users = data
+                            $scope.data = data
                         })
                         .error(function(data){
                             console.log(data);
@@ -258,5 +289,10 @@ admin.controller("UsersController",function($rootScope,$scope,UsersPromise,UserS
                 .error(function(data){
                     console.log(data);
                 })
-        }
+    }
+
+    $rootScope.$on('$viewContentLoading',function(){
+        console.log("view content loading");
+        $rootScope.showLoader = true;
+    });
 });

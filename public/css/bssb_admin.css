@@ -122,6 +122,9 @@ h1,h2,h3,h4,h5,h6
     font-family: calibri;
     font-size: 25px;
     height: 60px;
+    position: absolute;
+    width: 100%;
+    z-index: 3000;
 }
 .view
 {
@@ -182,6 +185,7 @@ h1,h2,h3,h4,h5,h6
 .desc
 {
     margin-left: 20px;
+    margin-top: 70px;
 }
 .recent
 {
@@ -327,6 +331,12 @@ h1,h2,h3,h4,h5,h6
     transition: height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-transition: height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     background-color: #4B4B4B;
+    position: absolute;
+    width: 100%;
+    top: 61px;
+    -webkit-box-shadow: 1px 1px 2px 1px #666666;
+    box-shadow: 1px 1px 2px 1px #666666;
+    z-index: 2000;
 }
 
 #search-box{
@@ -344,3 +354,144 @@ h1,h2,h3,h4,h5,h6
     font-size: 10px;
     color: #F10000;
 }
+/* Styles go here */
+
+.user-list
+{
+    font-size: 12px;
+    margin-top: 113px;
+    padding: 0px;
+    height: inherit;
+    position: absolute;
+    width: 100%;
+    margin-right: 100px;
+    background-color: #F7F7F7;
+}
+.scroller{
+    overflow-y: scroll;
+    margin: 25px;
+    height: 813px;
+}
+.scroller::-webkit-scrollbar{
+    width:10px;
+    background-color:#cccccc;
+    margin-right: 20px;
+}
+.scroller::-webkit-scrollbar-thumb{
+    background: #afafaf; /* Old browsers */
+    background: -moz-linear-gradient(left,  #afafaf 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#afafaf), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #afafaf 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #afafaf 0%,#efefef 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #afafaf 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(to right,  #afafaf 0%,#efefef 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afafaf', endColorstr='#efefef',GradientType=1 ); /* IE6-9 */
+    border: 1px solid #555555;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 20px;
+
+}
+.scroller::-webkit-scrollbar-thumb:hover{
+    background-color: #204C69;
+    margin-right: 20px;
+    background: #687e99; /* Old browsers */
+    background: -moz-linear-gradient(left, #687e99 0%, #83a2c1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#687e99), color-stop(100%,#83a2c1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #687e99 0%,#83a2c1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #687e99 0%,#83a2c1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #687e99 0%,#83a2c1 100%); /* IE10+ */
+    background: linear-gradient(to right, #687e99 0%,#83a2c1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#687e99', endColorstr='#83a2c1',GradientType=1 ); /* IE6-9 */
+}
+.scroller::-webkit-scrollbar-thumb:active{
+    background-color: #204C69;
+    margin-right: 20px;
+}
+.scroller::-webkit-scrollbar-track{
+    border:1px gray solid;
+    -webkit-box-shadow:0 0 6px gray inset;
+    padding-right: 20px;-webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+
+}
+
+
+.user-list ul
+{
+    list-style-type: none;
+    padding-right: 50px;
+    padding-top: 30px;
+}
+.user-list ul li
+{
+    width: 100%;
+    cursor: pointer;
+}
+
+.user-list ul li:hover .item-controls
+{
+    visibility:visible;
+    float: right;
+    margin-right: 20px;
+}
+
+
+.user-list ul h3
+{
+    margin:0px;
+}
+
+.user-list-item{
+    border-bottom: 1px solid #DDD;
+    height: 90px;
+    border-top: 1px solid #F7F7F7;
+    border-left: 1px solid #F7F7F7;
+    border-right: 1px solid #F7F7F7;
+
+}
+
+.user-list-item:hover{
+    background-color:#eee;
+    border: 1px solid #ffffff;
+}
+
+.item-controls
+{
+    visibility: hidden;
+    float: right;
+    margin-top:10px;
+}
+
+.item-control
+{
+    margin-left:5px;
+    display:inline-block;
+    text-decoration:none;
+    color:#000;
+}
+
+.item-content
+{
+    margin: 0px;
+    height: 80px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.clearfix
+{
+    clear:left;
+}
+.item-content div
+{
+    float: left;
+}
+
+.item-icon
+ {
+     font-size: 29px;
+     margin-top: 10px;
+     margin-left: 20px;
+     margin-right: 10px;
+ }

@@ -392,7 +392,26 @@ class ApplicantController extends BaseController {
 
     public function submitApplication()
     {
+
+        $user_id=Input::all()['user_id'];
     	$submit_table = new SubmittedApplication;
+        if(is_null(SubmittedApplication::find($user_id))){
+            $submit_table->user_id=$user_id;
+            $submit_table->save();
+            return Response::json(array(
+                "operation"=>"submit",
+                "message"=>"Your application has been tended in successfully",
+                "success"=>"true"
+            ),200);
+        }
+        else{
+            return Response::json(array(
+                "operation"=>"submit",
+                "message"=>"Application has already been submitted",
+                "success"=>"false"
+            ),406);
+        }
+
     }
 
 }

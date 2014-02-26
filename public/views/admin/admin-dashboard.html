@@ -16,12 +16,12 @@
                     <li>
                         <span>Applications Tended In</span>
                         <br>
-                        <span>0</span>
+                        <span>{{systemData.applicant_count}}</span>
                     </li>
                     <li>
                         <span>Registered Users</span>
                         <br>
-                        <span>0</span>
+                        <span>{{systemData.user_count}}</span>
                     </li>
                     <li>
                         <span>Applications Under Review</span>
@@ -45,15 +45,13 @@
             <div class="panel-body">
                 No Recent Activity
             </div>
-
         </div>
-
     </div>
 
+    <view-loader></view-loader>
     <script>
         $('.view-control').tooltip({
             placement:'bottom'
         });
-        //$('#sendNotification').modal(options)
     </script>
 </div>

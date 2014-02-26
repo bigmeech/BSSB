@@ -3,9 +3,7 @@
         <h2 style="margin: 0;padding: 0;float: left;">Users</h2>
         <ul style="float:right;margin: 0;padding: 0;list-style-type: none">
             <li id="addUserMenuItem" data-toggle="modal" data-target="#addUserModal" class="view-control" data-toggle="tooltip" data-placement="left" title="Add New User"><a style="cursor: pointer" class="icon-plus"></a></li>
-            <li id="deleteMenuItem" class="view-control" data-toggle="tooltip" data-placement="left" title="Delete User">
-                <a data-toggle="modal" data-target="#deleteUserModal" style="cursor: pointer" class="icon-remove"></a>
-            </li>
+
         </ul>
     </div>
     <div id="search-box-container">
@@ -39,12 +37,27 @@
         </div>
 
     </div>
-    <div class="user-grid-style" ng-grid="gridOptions">
-
+    <div class="user-list">
+        <div class="scroller">
+            <ul>
+                <li ng-repeat="user in data">
+                    <div class="user-list-item">
+                        <div class="icon-users item-icon" style="float: left"></div>
+                        <div class="item-content">
+                            <div>
+                                <h3>{{user.firstname}} {{user.lastname}}</h3>
+                                <span>{{user.email}}</span>
+                            </div>
+                            <div class="item-controls">
+                                <a class="icon-remove item-control btn btn-primary" ng-click="deleteUser({{user.id}})"></a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div>{{selectedUser}}</div>
-    <view-loader></view-loader>
-    sddfsdfsf
     <script>
         $('.view-control').tooltip({
             placement:'bottom'
