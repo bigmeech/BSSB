@@ -2,12 +2,12 @@
     <ul class="nav nav-list">
         <li class="nav-header">My Account</li>
         <li><a href="#changePasswordModal" data-toggle="modal">Change Password</a></li>
-        <li class="nav-header">My Application</li>
-        <li><a ui-sref="main.startapp">Scholarship Application</a></li>
-        <li id="biodata_list_item"><a href="#">BIO Data</a></li>
-        <li id="basic_quali_list_item"><a href="#">Basic Qualifications</a></li>
-        <li id="higher_inst_list_item"><a href="#">Higher Institution</a></li>
-        <li id="prof_quali_list_item"><a href="#">Professional Qualifications</a></li>
+        <li ng-hide="formComplete" class="nav-header">My Application</li>
+        <li ng-hide="formComplete"><a ui-sref="main.startapp">Scholarship Application</a></li>
+        <li ng-hide="formComplete" id="biodata_list_item"><a href="#">BIO Data</a></li>
+        <li ng-hide="formComplete" id="basic_quali_list_item"><a href="#">Basic Qualifications</a></li>
+        <li ng-hide="formComplete" id="higher_inst_list_item"><a href="#">Higher Institution</a></li>
+        <li ng-hide="formComplete" id="prof_quali_list_item"><a href="#">Professional Qualifications</a></li>
         <li class="nav-header">My Status</li>
         <li ><a ui-sref="main.preview">My Details</a></li>
         <li><a href="#">Check Status</a></li>

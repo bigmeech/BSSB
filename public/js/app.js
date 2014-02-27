@@ -467,6 +467,7 @@ tarapet.controller('BSSBController',function($rootScope,$scope,$location,AuthSer
     console.log(SessionService.get('applicant_id'));
     $scope.userData={};
     $rootScope.appData={};
+    $rootScope.formComplete = getAppDataPromise.data.formComplete;
     $scope.userData.firstname=SessionService.get('firstname');
     $scope.userData.lastname=SessionService.get('lastname');
     $scope.userData.email=SessionService.get('email');
@@ -1214,7 +1215,7 @@ tarapet.controller('ProfQualiController',function($scope,$rootScope,$location,$u
                 });
     }
 });
-tarapet.controller('PreviewController',function($scope,$location,ApplicationService,getPreviewPromise){
+tarapet.controller('PreviewController',function($rootScope,$scope,$location,ApplicationService,getPreviewPromise){
 
     var previewData = getPreviewPromise.data;
     $scope.previewDetails={
@@ -1232,12 +1233,17 @@ tarapet.controller('PreviewController',function($scope,$location,ApplicationServ
             $scope.previewDetails[category][data] = previewData[category][data];
         }
     }
-
     $scope.submitApplication=function()
     {
         ApplicationService.submit()
-
-
+            .success(function(data,status){
+                console.log(status)
+                $rootScope.formComplete = true;
+            }).error(function(data,status){
+                if(status == 406 && data.message === "Application has already been submitted"){
+                    $rootScope.formComplete = true;
+                }
+            });
     }
 })
 

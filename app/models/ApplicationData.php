@@ -7,7 +7,6 @@
  */
 
 class ApplicationData extends Eloquent{
-
     protected $table = "application_data";
     protected $primaryKey = "user_id";
 

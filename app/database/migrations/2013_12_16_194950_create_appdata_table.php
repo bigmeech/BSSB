@@ -15,6 +15,7 @@ class CreateAppdataTable extends Migration {
 	    Schema::create('application_data',function(Blueprint $table){
             $table->integer("user_id")->unique();
             $table->integer("app_progress")->default(0);
+            $table->enum("formComplete",array("false","true"))->default("false");
             $table->timestamps();
         });
 	}

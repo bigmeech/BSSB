@@ -395,9 +395,14 @@ class ApplicantController extends BaseController {
 
         $user_id=Input::all()['user_id'];
     	$submit_table = new SubmittedApplication;
-        if(is_null(SubmittedApplication::find($user_id))){
+        $appData_table = ApplicationData::find($user_id);
+        if(is_null(SubmittedApplication::find($user_id)))
+        {
             $submit_table->user_id=$user_id;
             $submit_table->save();
+            $appData_table->formComplete=true;
+            $appData_table->save();
+
             return Response::json(array(
                 "operation"=>"submit",
                 "message"=>"Your application has been tended in successfully",

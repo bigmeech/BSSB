@@ -513,8 +513,15 @@
                 </div>
            </div>
             <div class="modal-footer">
-                <a class="btn" data-dismiss="modal">No, I still have more details to add</a>
-                <a class="btn btn-primary" ng-click="submitApplication()">Yes i'm sure i want to submit</a>
+                <div>
+                    <a class="btn" data-dismiss="modal">No, I still have more details to add</a>
+                    <a data-dismiss="modal" class="btn btn-primary" ng-click="submitApplication()">Yes i'm sure i want to submit</a>
+                </div>
+                <div ng-show="">
+                    <div class="alert alert-info">
+                        Application already submitted!
+                    </div>
+                </div>
             </div>
         </div>
     </div>
