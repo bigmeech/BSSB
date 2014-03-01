@@ -39,11 +39,11 @@
     <div class="user-list">
         <div class="scroller" style="margin-top: 50px">
             <ul>
-                <li ng-repeat="applicant in applicants">
+                <li ng-repeat="applicant in applicants" ng-click="showApplicantDetails('{{applicant.user_id}}')">
                     <div class="user-list-item">
                         <div class="item-icon" style="float: left"><img width="64" height="64" src="{{applicant.passportPhoto}}"/></div>
                         <div class="item-content">
-                            <div>
+                            <div >
                                 <h3>{{applicant.surname}} {{applicant.middleName}} {{applicant.firstName}}</h3>
                                 <span>{{applicant.reg_num}}</span>
                             </div>

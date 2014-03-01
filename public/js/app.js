@@ -590,7 +590,7 @@ tarapet.controller('StartController',function($rootScope,$scope,$location,$uploa
             console.log('Whats:'+data.message);
             $scope.filename=data.filename;
             $scope.pathReturned=true;
-            $scope.startDetails.path_to_essay=data.filepath;
+            $scope.startDetails.path_to_essay=data.url;
             $scope.uploading=false;
             $rootScope.$$phase || $rootScope.$apply();
             $scope.uploadErrorMessage=null;
@@ -854,27 +854,27 @@ tarapet.controller('QualificationsController',function($scope,$rootScope,$locati
             switch(data.type)
             {
                 case "sitting1":
-                    $scope.quali_details.s1_cert_url=data.filepath;
+                    $scope.quali_details.s1_cert_url=data.url;
                     $scope.s1_filename=data.filename;
                     $scope.s1_url=data.url;
                     break;
                 case "sitting2":
-                    $scope.quali_details.s2_cert_url=data.filepath;
+                    $scope.quali_details.s2_cert_url=data.url;
                     $scope.s2_filename=data.filename;
                     $scope.s2_url=data.url;
                     break;
                 case "jamb":
-                    $scope.quali_details.jamb_cert_url=data.filepath;
+                    $scope.quali_details.jamb_cert_url=data.url;
                     $scope.jamb_filename=data.filename;
                     $scope.jamb_url=data.url
                     break;
                 case "aLevels":
-                    $scope.quali_details.a_cert_url=data.filepath;
+                    $scope.quali_details.a_cert_url=data.url;
                     $scope.aLevels_filename=data.filename;
                     $scope.aLevels_url=data.url;
             }
             $scope.pathReturned=true;
-            $scope.quali_details.s2_cert_url=data.filepath;
+            $scope.quali_details.s2_cert_url=data.url;
             $scope.uploadErrorMessage=null;
 
             $scope.uploadingSitting1=false;
@@ -947,7 +947,6 @@ tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$
         basicQualiNextBtn.attr('ui-sref','main.profQuali');
         basicQualiNextBtn.attr('href','#/main/profquali');
     }
-
     $scope.grade_types=[
         {id:1,value:'First Class'},
         {id:2,value:'Second Class Upper'},
@@ -1040,17 +1039,17 @@ tarapet.controller('HigherInstController',function($scope,$rootScope,$location,$
                 case "inst1":
                     $scope.inst1_filename=data.filename;
                     $scope.inst1_filepath=data.filepath;
-                    $scope.higherInstDetails.inst1_cert_url=data.filepath;
+                    $scope.higherInstDetails.inst1_cert_url=data.url;
                     break;
                 case "inst2":
                     $scope.inst2_filename=data.filename;
                     $scope.inst2_filepath=data.filepath;
-                    $scope.higherInstDetails.inst2_cert_url=data.filepath;
+                    $scope.higherInstDetails.inst2_cert_url=data.url;
                     break;
                 case "nysc":
                     $scope.nysc_filename=data.filename;
                     $scope.nysc_filepath=data.filepath;
-                    $scope.higherInstDetails.nysc_cert=data.filepath;
+                    $scope.higherInstDetails.nysc_cert=data.url;
                     break;
 
             }

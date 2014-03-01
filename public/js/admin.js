@@ -70,6 +70,9 @@ admin.factory('ApplicantService',function($http){
         },
         findApplicants:function(id){
             return $http.get('admin/applicant/like');
+        },
+        getApplicantDetails:function(id){
+            return $http.get('/admin/applicant/'+id);
         }
     }
 });
@@ -125,6 +128,17 @@ admin.controller("ApplicantsController",function($rootScope,$scope,ApplicantsPro
         console.log("view content loading");
         $rootScope.showLoader = true;
     });
+
+    $scope.showApplicantDetails=function(id){
+        //alert("Should show details for applicant with user id:"+id);
+        ApplicantService.getApplicantDetails(id).success(
+            function(data){
+                $rootScope.selectedApplicant=data;
+        });
+        $('#applicantDetailsModal').modal({
+
+        })
+    }
 
 });
 

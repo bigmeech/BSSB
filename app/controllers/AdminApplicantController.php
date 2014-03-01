@@ -72,30 +72,15 @@ class AdminApplicantController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $id = Input::all()['user_id'];
-        $application = SubmittedApplication::find($id);
-        if(is_null($application))
-        {
-            return Response::json(
-                array(
-                    "error"=>"no submitted application for user id ".$id
-                ),403
-            );
-        }
-        else
-        {
-            $data=BioData::find($id);
-            return Response::json(
-                array(
-                    "user_id"=>$data->user_id,
-                    "firstname"=>$data->firstName,
-                    "surname"=>$data->surname,
-                    "passport"=>$data->passportPhoto
-                ),200
-            );
-        }
+        $scholarship    = Scholarship::find($id)->toArray();
+        $bioData        = BioData::find($id)->toArray();
+        $basicQualification=BasicQualifications::find($id)->toArray();
+        $highInst       = HigherInst::find($id)->toArray();
+        $profQualification = ProfQualifications::find($id)->toArray();
 
-
+        return Response::json(array(
+            $scholarship,$bioData,$basicQualification,$highInst,$profQualification
+        ),200);
 	}
 
 	/**
