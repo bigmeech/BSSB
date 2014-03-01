@@ -25,10 +25,10 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/53/jamb/How to Play youtube Videos on your IPhone.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/60/inst2/Hydrangeas.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6/sitting1/IMAG0331.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/65/prof1_cert/Jellyfish.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/65/prof2_cert/Jellyfish.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/60/sitting2/Koala.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/65/prof1_cert/Koala.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/65/jamb/Lighthouse.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/65/prof2_cert/Lighthouse.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/60/essay/Sample_Business_Plan.doc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/65/essay/Sample_Business_Plan.doc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/66/essay/Sample_Business_Plan.doc" />
@@ -54,7 +54,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/52/passportPhoto/images (1).jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/66/nysc/login_screen.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/53/passportPhoto/men-images-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/msword_logo.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6/sitting2/muscle - Copy (2).png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/4/sitting1/muscle.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6/jamb/muscle.png" />
@@ -77,11 +76,13 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6/passportPhoto/words.fw.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/4/passportPhoto/install.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminApplicantController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminApplicantController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminAuthController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminAuthController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-applicants.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-applicants.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" afterPath="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin.js" afterPath="$PROJECT_DIR$/public/js/admin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin_main.php" afterPath="$PROJECT_DIR$/app/views/admin_main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bssb_admin.css" afterPath="$PROJECT_DIR$/public/css/bssb_admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Scholarship_app.iws" />
@@ -113,16 +114,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1179" column="41" selection-start="44803" selection-end="44803" vertical-scroll-proportion="0.0" vertical-offset="17389" max-vertical-offset="25109">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicantController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/ApplicantController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="392" column="39" selection-start="13539" selection-end="13539" vertical-scroll-proportion="-149.0" vertical-offset="2790" max-vertical-offset="7259">
+            <state line="1142" column="20" selection-start="43650" selection-end="43650" vertical-scroll-proportion="0.0" vertical-offset="12748" max-vertical-offset="25109">
               <folding />
             </state>
           </provider>
@@ -131,34 +123,60 @@
       <file leaf-file-name="admin.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="27" selection-start="4315" selection-end="4332" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="5389">
+            <state line="93" column="9" selection-start="2979" selection-end="2979" vertical-scroll-proportion="0.0" vertical-offset="2221" max-vertical-offset="5814">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-applicants.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admin-dashboard.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="116" selection-start="666" selection-end="666" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1071">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="27" selection-start="1970" selection-end="1970" vertical-scroll-proportion="-16.23077" vertical-offset="190" max-vertical-offset="918">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminAuthController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AdminAuthController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="47" selection-start="465" selection-end="465" vertical-scroll-proportion="-9.807693" vertical-offset="153" max-vertical-offset="1870">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-applicants.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/views/admin/admin-applicants.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="10" selection-start="3207" selection-end="3207" vertical-scroll-proportion="-20.26923" vertical-offset="459" max-vertical-offset="1241">
+            <state line="26" column="17" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.6251768" vertical-offset="0" max-vertical-offset="714">
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_main.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin_main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="496" column="14" selection-start="30308" selection-end="30308" vertical-scroll-proportion="0.2651297" vertical-offset="8248" max-vertical-offset="12478">
+            <state line="643" column="36" selection-start="39784" selection-end="39784" vertical-scroll-proportion="-15.076923" vertical-offset="10539" max-vertical-offset="12835">
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#7;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -177,6 +195,8 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#li#5;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#li#6;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#li#7;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#li#9;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -184,10 +204,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/FileController.php">
+      <file leaf-file-name="AdminApplicantController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AdminApplicantController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="33.346153" vertical-offset="867" max-vertical-offset="2584">
+            <state line="75" column="11" selection-start="1870" selection-end="1870" vertical-scroll-proportion="-12.807693" vertical-offset="942" max-vertical-offset="2142">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminUsersController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AdminUsersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="39.23077" vertical-offset="1020" max-vertical-offset="2584">
               <folding />
             </state>
           </provider>
@@ -197,24 +226,6 @@
         <entry file="file://$PROJECT_DIR$/public/css/bssb_admin.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="522" column="1" selection-start="9905" selection-end="9905" vertical-scroll-proportion="0.0" vertical-offset="8804" max-vertical-offset="9622">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2013_12_16_194950_create_appdata_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_12_16_194950_create_appdata_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="646">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminApplicantController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminApplicantController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="7" selection-start="1740" selection-end="1740" vertical-scroll-proportion="-8.230769" vertical-offset="908" max-vertical-offset="2108">
               <folding />
             </state>
           </provider>
@@ -238,9 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/OverviewController.php" />
-        <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
         <option value="$PROJECT_DIR$/public/views/admin/admin-users.html" />
         <option value="$PROJECT_DIR$/public/views/preview.html" />
         <option value="$PROJECT_DIR$/public/views/side-menu.html" />
@@ -248,12 +256,15 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2013_12_16_194950_create_appdata_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/ApplicantController.php" />
         <option value="$PROJECT_DIR$/public/views/t1_m1.html" />
-        <option value="$PROJECT_DIR$/public/views/admin/admin-applicants.html" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminApplicantController.php" />
-        <option value="$PROJECT_DIR$/public/js/admin.js" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/css/bssb_admin.css" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/public/views/admin/admin-dashboard.html" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminAuthController.php" />
         <option value="$PROJECT_DIR$/app/views/admin_main.php" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/public/js/admin.js" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminApplicantController.php" />
+        <option value="$PROJECT_DIR$/public/views/admin/admin-applicants.html" />
       </list>
     </option>
   </component>
@@ -823,13 +834,18 @@
       <created>1393519074223</created>
       <updated>1393519074223</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="A tone of changes. Now displays full Applicant details in the admin section. Made a few changes to remote paths for uploaded document. Some basic styling. TODO: removed some planned features like the Approved and Declined section. Will implement logout for admin">
+      <created>1393637953874</created>
+      <updated>1393637953874</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13907285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -846,7 +862,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -907,34 +922,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/views/preview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="519" column="30" selection-start="21320" selection-end="21320" vertical-scroll-proportion="-22.153847" vertical-offset="8247" max-vertical-offset="9095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/t1_m1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/appController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769" vertical-offset="102" max-vertical-offset="1955">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/side-menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ApplicationData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="39" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="374">
@@ -956,20 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminApplicantController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="7" selection-start="1740" selection-end="1740" vertical-scroll-proportion="-8.230769" vertical-offset="908" max-vertical-offset="2108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="27" selection-start="4315" selection-end="4332" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="5389">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ApplicantController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="392" column="39" selection-start="13539" selection-end="13539" vertical-scroll-proportion="-149.0" vertical-offset="2790" max-vertical-offset="7259">
@@ -984,28 +957,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/admin/admin-applicants.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="10" selection-start="3207" selection-end="3207" vertical-scroll-proportion="-20.26923" vertical-offset="459" max-vertical-offset="1241">
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/admin/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1179" column="41" selection-start="44803" selection-end="44803" vertical-scroll-proportion="0.0" vertical-offset="17389" max-vertical-offset="25109">
           <folding />
         </state>
       </provider>
@@ -1017,13 +971,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/admin/admin-dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="116" selection-start="666" selection-end="666" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="27" selection-start="1970" selection-end="1970" vertical-scroll-proportion="-16.23077" vertical-offset="190" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminAuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="47" selection-start="465" selection-end="465" vertical-scroll-proportion="-9.807693" vertical-offset="153" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin_main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="496" column="14" selection-start="30308" selection-end="30308" vertical-scroll-proportion="0.2651297" vertical-offset="8248" max-vertical-offset="12478">
+        <state line="643" column="36" selection-start="39784" selection-end="39784" vertical-scroll-proportion="-15.076923" vertical-offset="10539" max-vertical-offset="12835">
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1042,8 +1018,48 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#li#5;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#li#6;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#li#7;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#9;n#ul#0;n#div#1;n#div#5;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1142" column="20" selection-start="43650" selection-end="43650" vertical-scroll-proportion="0.0" vertical-offset="12748" max-vertical-offset="25109">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminUsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="39.23077" vertical-offset="1020" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="9" selection-start="2979" selection-end="2979" vertical-scroll-proportion="0.0" vertical-offset="2221" max-vertical-offset="5814">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminApplicantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="11" selection-start="1870" selection-end="1870" vertical-scroll-proportion="-12.807693" vertical-offset="942" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/admin/admin-applicants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="17" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.6251768" vertical-offset="0" max-vertical-offset="714">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

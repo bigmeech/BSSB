@@ -72,15 +72,17 @@ class AdminApplicantController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $scholarship    = Scholarship::find($id)->toArray();
-        $bioData        = BioData::find($id)->toArray();
-        $basicQualification=BasicQualifications::find($id)->toArray();
-        $highInst       = HigherInst::find($id)->toArray();
-        $profQualification = ProfQualifications::find($id)->toArray();
 
-        return Response::json(array(
-            $scholarship,$bioData,$basicQualification,$highInst,$profQualification
-        ),200);
+           $scholarship    = Scholarship::find($id)->toArray();
+           $bioData        = BioData::find($id)->toArray();
+           $basicQualification=BasicQualifications::find($id)->toArray();
+           $highInst       = HigherInst::find($id)->toArray();
+           $profQualification = ProfQualifications::find($id)->toArray();
+
+           return Response::json(array(
+               $scholarship,$bioData,$basicQualification,$highInst,$profQualification
+           ),200);
+
 	}
 
 	/**

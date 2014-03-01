@@ -28,8 +28,14 @@ class AdminAuthController extends \BaseController {
             return Redirect::action('AdminController@dashboard');
         }
         else{
-            return Redirect::action('AdminController@index')->with('message','Invalid user name  Password');;
+            return Redirect::action('AdminController@index')->with('message','Invalid user name Password');;
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to("admin");
     }
 
 	/**

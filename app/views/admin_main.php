@@ -28,6 +28,8 @@
                     <span class="icon-user"></span>&nbsp;Applicants
                 </a>
             </li>
+
+            <!--
             <li>
                 <a ui-sref="dashboard">
                     <span class="icon-eye"></span>&nbsp;Under Review
@@ -47,8 +49,9 @@
                     <span class="icon-cog"></span>&nbsp;Settings
                 </a>
             </li>
+            -->
             <li style="border-top: 1px dashed #999;color: #005580">
-                <a ui-sref="dashboard">
+                <a href="/admin/logout">
                     <span class="icon-exit"></span>&nbsp;Log out
                 </a>
             </li>
@@ -635,6 +638,24 @@
                                         <div style="float: right;text-align: right">
                                             <h4>NYSC Certificate</h4>
                                             <a href="{{selectedApplicant[3].nysc_cert}}" target="_blank">Click to View</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img width="64" height="64" src="{{selectedApplicant[4].inst1_cert_url}}"/>
+                                        <div style="float: right;text-align: right">
+                                            <h4>Professional Institution 1 Certificate</h4>
+                                            <a href="{{selectedApplicant[4].inst1_cert_url}}" target="_blank">Click to View</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img width="64" height="64" src="{{selectedApplicant[4].inst2_cert_url}}"/>
+                                        <div style="float: right;text-align: right">
+                                            <h4>Professional Institution 2 Certificate</h4>
+                                            <a href="{{selectedApplicant[4].inst2_cert_url}}" target="_blank">Click to View</a>
                                         </div>
                                     </div>
                                 </li>

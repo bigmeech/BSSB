@@ -35,13 +35,20 @@ var admin = angular.module('admin',['ui.router','ui.grid'])
             });
 });
 
-admin.run(function($rootScope){
+admin.run(function($rootScope,$location){
     $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
         $rootScope.showLoader = true;
     });
     $rootScope.$on('$viewContentLoaded',function(){
         $rootScope.showLoader = false;
     });
+
+    $rootScope.logout=function(AuthService){
+        AuthService.logout()
+            .sucess(function(data){
+                $location.url="http://localhost:8000/admin";
+        });
+    }
 })
 admin.directive('viewLoader',function(){
     return{
@@ -49,6 +56,14 @@ admin.directive('viewLoader',function(){
         templateUrl:'/views/admin/view-loader.html',
         link:function(scope,element,attrib,controller){
             console.log("View loader directive's link function called");
+        }
+    }
+});
+
+admin.factory('AuthService',function($http){
+    return{
+        logout:function(){
+            $http.get('admin/logout',{});
         }
     }
 });
@@ -73,6 +88,9 @@ admin.factory('ApplicantService',function($http){
         },
         getApplicantDetails:function(id){
             return $http.get('/admin/applicant/'+id);
+        },
+        searchApplicantsByRegNumber:function(reg_num){
+            return $http.get('/admin/applicant/'+reg_num);
         }
     }
 });
@@ -138,6 +156,13 @@ admin.controller("ApplicantsController",function($rootScope,$scope,ApplicantsPro
         $('#applicantDetailsModal').modal({
 
         })
+    }
+
+    $scope.searchByRegNum=function($event){
+        ApplicantService.searchApplicantsByRegNumber($event.target.value)
+            .success(function(data){
+                $scope.applicants = data;
+            });
     }
 
 });

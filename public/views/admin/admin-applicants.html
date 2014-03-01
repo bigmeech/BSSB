@@ -5,37 +5,7 @@
 
         </ul>
     </div>
-    <div id="search-box-container">
-        <div  id="search-box">
-            <div id="main-search" class="input-group">
-                <span ng-class="hideElement" class="input-group-btn">
-                    <!--<img style="margin-right: 15px" width="32" height="32" src="/img/loadinfo.net.gif"/>-->
-                </span>
-                <input type="text" placeholder="Search by registration number. e.g BSSB/PGD/2014" ng-model="userSearch.lastname" size="30" ng-keyup="filterUsers($event)" class="form-control">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="expandSearch()" type="button">Search User</button>
-                </span>
-                <a id="moreOptions" style="margin-left: 15px;cursor: pointer" ng-click="showMoreOptions()">More Options</a>
-            </div>
-            <div class="more-search-controls">
-                <div style="margin-top: 10px;" class="form-group">
-                    <input ng-model="userSearch.applicant_id" size="30" type="text" class="form-control" placeholder="Applicant ID">
-                </div>
-                <div class="form-group">
-                    <select required="" class="form-control" ng-model="userSearch.user_type" ng-options="uType.value for uType in userTypeList">
-                        <option value="">Select Admin type</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input size="30" type="text" ng-model="userSearch.firstname" class="form-control" placeholder="First name">
-                </div>
-                <div class="form-group">
-                    <input size="30" type="text" ng-model="userSearch.email" class="form-control" placeholder="Email Address">
-                </div>
-            </div>
-        </div>
 
-    </div>
     <div class="user-list">
         <div class="scroller" style="margin-top: 50px">
             <ul>
@@ -62,6 +32,5 @@
         $('.item-control').tooltip({
             placement:'bottom'
         });
-        //$('#sendNotification').modal(options)
     </script>
 </div>

@@ -1155,11 +1155,11 @@ tarapet.controller('ProfQualiController',function($scope,$rootScope,$location,$u
             switch(type)
             {
                 case "prof1_cert":
-                    $scope.profQualiDetails.inst1_cert_url=data.filepath;
+                    $scope.profQualiDetails.inst1_cert_url=data.url;
                     $scope.inst1_cert_filename=data.filename;
                     break;
                 case "prof2_cert":
-                    $scope.profQualiDetails.inst2_cert_url=data.filepath;
+                    $scope.profQualiDetails.inst2_cert_url=data.url;
                     $scope.inst2_cert_filename=data.filename;
                     break;
             }

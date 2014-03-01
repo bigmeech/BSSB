@@ -43,6 +43,7 @@ Route::get('main/submit','ApplicantController@submitApplication');
 //routes for admin
 Route::get('admin','AdminController@index');
 Route::post('admin/auth','AdminAuthController@authenticate');
+Route::get('admin/logout','AdminAuthController@logout');
 Route::get('admin/main','AdminController@dashboard');
 Route::get('admin/applicants','AdminApplicationController@getApplicants');
 Route::get('admin/search','AdminApplicationController@findApplicant');
