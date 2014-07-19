@@ -1,0 +1,13 @@
+<div class="approve-content">
+    <div class="view-control-bar">
+        <h2 style="margin: 0;padding: 0;float: left;">Scholarship Status</h2>
+    </div>
+    <div>
+        <p>
+            <br>This scholarship application has being declined <br>
+        </p>
+
+    </div>
+
+    <view-loader></view-loader>
+</div>
